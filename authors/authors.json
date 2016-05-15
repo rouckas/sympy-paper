@@ -61,5 +61,12 @@
         "institution": "Birla Institute of Technology and Science, Pilani, K.K. Birla Goa Campus",
         "institution_address": "NH 17B Bypass Road, Zuarinagar, Sancoale, Goa 403726, India",
         "name": "Ashutosh Saboo"
+    },
+    {
+        "email": "ellisonbg@gmail.com",
+        "github_id": "ellisonbg",
+        "institution": "California Polytechnic State University",
+        "institution_address": "1 Grand Avenue, San Luis Obispo, CA 93407, USA",
+        "name": "Brian E. Granger"
     }
 ]
