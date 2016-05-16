@@ -54,5 +54,12 @@
         "institution": "Sandia National Laboratories",
         "institution_address": "P.O. Box 5800, Mail Stop 1322, Albuquerque, NM 87185-1322, USA",
         "name": "Rick Muller"
+    },
+    {
+        "email": "cimrman3@ntc.zcu.cz",
+        "github_id": "rc",
+        "institution": "University of West Bohemia",
+        "institution_address": "Univerzitní 8, 306 14 Pilsen, Czech Republic",
+        "name": "Robert Cimrman"
     }
 ]
