@@ -16,30 +16,6 @@
         "np": 1443
     },
     {
-        "email": "jkm@ucdavis.edu",
-        "github_id": "moorepants",
-        "institution": "University of California, Davis",
-        "institution_address": "One Shields Ave, Davis, CA, 95616, USA",
-        "name": "Jason K. Moore",
-        "np": 253
-    },
-    {
-        "email": "francesco.bonazzi@mpikg.mpg.de",
-        "github_id": "Upabjojr",
-        "institution": "Max Planck Institute of Colloids and Interfaces",
-        "institution_address": "Am Mühlenberg 1, 14476 Potsdam, Germany",
-        "name": "Francesco Bonazzi",
-        "np": 150
-    },
-    {
-        "email": "shivamvats.iitkgp@gmail.com",
-        "github_id": "shivamvats",
-        "institution": "Indian Institute of Technology Kharagpur",
-        "institution_address": "Indian Institute of Technology Kharagpur, Kharagpur, West Bengal, India - 721302",
-        "name": "Shivam Vats",
-        "np": 122
-    },
-    {
         "email": "dtu.amit@gmail.com",
         "github_id": "aktech",
         "institution": "Delhi Technological University",
@@ -48,36 +24,12 @@
         "np": 263
     },
     {
-        "email": "hargup@protonmail.com",
-        "github_id": "hargup",
-        "institution": "Indian Institute of Technology Kharagpur",
-        "institution_address": "Indian Institute of Technology Kharagpur, Kharagpur, West Bengal, India - 721302",
-        "name": "Harsh Gupta",
-        "np": 123
-    },
-    {
-        "email": "isuru.11@cse.mrt.ac.lk",
-        "github_id": "isuruf",
-        "institution": "University of Moratuwa",
-        "institution_address": "Bandaranayake Mawatha, Katubedda, Moratuwa 10400, Sri Lanka",
-        "name": "Isuru Fernando",
-        "np": 7
-    },
-    {
-        "email": "ashutosh.saboo@gmail.com",
-        "github_id": "ashutoshsaboo",
-        "institution": "Birla Institute of Technology and Science, Pilani, K.K. Birla Goa Campus",
-        "institution_address": "NH 17B Bypass Road, Zuarinagar, Sancoale, Goa 403726, India",
-        "name": "Ashutosh Saboo",
-        "np": 17
-    },
-    {
-        "email": "sumith@cse.iitb.ac.in",
-        "github_id": "Sumith1896",
-        "institution": "Indian Institute of Technology Bombay",
-        "institution_address": "Indian Institute of Technology Bombay, Powai, Mumbai, Maharashtra, India - 400076",
-        "name": "Sumith",
-        "np": 6
+        "email": "jkm@ucdavis.edu",
+        "github_id": "moorepants",
+        "institution": "University of California, Davis",
+        "institution_address": "One Shields Ave, Davis, CA, 95616, USA",
+        "name": "Jason K. Moore",
+        "np": 253
     },
     {
         "email": "singhsartaj94@gmail.com",
@@ -88,28 +40,12 @@
         "np": 199
     },
     {
-        "email": "fredrik.johansson@gmail.com",
-        "github_id": "fredrik-johansson",
-        "institution": "INRIA Bordeaux-Sud-Ouest - LFANT project-team",
-        "institution_address": "200 Avenue de la Vieille Tour, 33405 Talence, France",
-        "name": "Fredrik Johansson",
-        "np": 119
-    },
-    {
         "email": "thilinarmtb.10@cse.mrt.ac.lk",
         "github_id": "thilinarmtb",
         "institution": "University of Moratuwa",
         "institution_address": "Bandaranayake Mawatha, Katubedda, Moratuwa 10400, Sri Lanka",
         "name": "Thilina Rathnayake",
         "np": 186
-    },
-    {
-        "email": "f@bianp.net",
-        "github_id": "fabianp",
-        "institution": "INRIA - SIERRA project-team",
-        "institution_address": "2 Rue Simone IFF, 75012 Paris",
-        "name": "Fabian Pedregosa",
-        "np": 114
     },
     {
         "email": "ellisonbg@gmail.com",
@@ -126,6 +62,70 @@
         "institution_address": "P.O. Box 5800, Mail Stop 1322, Albuquerque, NM 87185-1322, USA",
         "name": "Richard P. Muller",
         "np": 158
+    },
+    {
+        "email": "francesco.bonazzi@mpikg.mpg.de",
+        "github_id": "Upabjojr",
+        "institution": "Max Planck Institute of Colloids and Interfaces",
+        "institution_address": "Am Mühlenberg 1, 14476 Potsdam, Germany",
+        "name": "Francesco Bonazzi",
+        "np": 150
+    },
+    {
+        "email": "hargup@protonmail.com",
+        "github_id": "hargup",
+        "institution": "Indian Institute of Technology Kharagpur",
+        "institution_address": "Indian Institute of Technology Kharagpur, Kharagpur, West Bengal, India - 721302",
+        "name": "Harsh Gupta",
+        "np": 123
+    },
+    {
+        "email": "shivamvats.iitkgp@gmail.com",
+        "github_id": "shivamvats",
+        "institution": "Indian Institute of Technology Kharagpur",
+        "institution_address": "Indian Institute of Technology Kharagpur, Kharagpur, West Bengal, India - 721302",
+        "name": "Shivam Vats",
+        "np": 122
+    },
+    {
+        "email": "fredrik.johansson@gmail.com",
+        "github_id": "fredrik-johansson",
+        "institution": "INRIA Bordeaux-Sud-Ouest - LFANT project-team",
+        "institution_address": "200 Avenue de la Vieille Tour, 33405 Talence, France",
+        "name": "Fredrik Johansson",
+        "np": 119
+    },
+    {
+        "email": "f@bianp.net",
+        "github_id": "fabianp",
+        "institution": "INRIA - SIERRA project-team",
+        "institution_address": "2 Rue Simone IFF, 75012 Paris",
+        "name": "Fabian Pedregosa",
+        "np": 114
+    },
+    {
+        "email": "ashutosh.saboo@gmail.com",
+        "github_id": "ashutoshsaboo",
+        "institution": "Birla Institute of Technology and Science, Pilani, K.K. Birla Goa Campus",
+        "institution_address": "NH 17B Bypass Road, Zuarinagar, Sancoale, Goa 403726, India",
+        "name": "Ashutosh Saboo",
+        "np": 17
+    },
+    {
+        "email": "isuru.11@cse.mrt.ac.lk",
+        "github_id": "isuruf",
+        "institution": "University of Moratuwa",
+        "institution_address": "Bandaranayake Mawatha, Katubedda, Moratuwa 10400, Sri Lanka",
+        "name": "Isuru Fernando",
+        "np": 7
+    },
+    {
+        "email": "sumith@cse.iitb.ac.in",
+        "github_id": "Sumith1896",
+        "institution": "Indian Institute of Technology Bombay",
+        "institution_address": "Indian Institute of Technology Bombay, Powai, Mumbai, Maharashtra, India - 400076",
+        "name": "Sumith",
+        "np": 6
     },
     {
         "email": "cimrman3@ntc.zcu.cz",
