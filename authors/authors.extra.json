@@ -47,5 +47,12 @@
         "institution": "California Polytechnic State University",
         "institution_address": "1 Grand Avenue, San Luis Obispo, CA 93407, USA",
         "name": "Brian E. Granger"
+    },
+    {
+        "email": "rmuller@sandia.gov",
+        "github_id": "rpmuller",
+        "institution": "Sandia National Laboratories",
+        "institution_address": "P.O. Box 5800, Mail Stop 1322, Albuquerque, NM 87185-1322, USA",
+        "name": "Rick Muller"
     }
 ]
