@@ -40,5 +40,12 @@
         "institution": "University of South Carolina",
         "institution_address": "541 Main St., Columbia, SC, 29201",
         "name": "Anthony Scopatz"
+    },
+    {
+        "email": "ellisonbg@gmail.com",
+        "github_id": "ellisonbg",
+        "institution": "California Polytechnic State University",
+        "institution_address": "1 Grand Avenue, San Luis Obispo, CA 93407, USA",
+        "name": "Brian E. Granger"
     }
 ]
