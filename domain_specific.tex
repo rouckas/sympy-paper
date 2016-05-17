@@ -53,7 +53,7 @@ kinematics and kinetics of a rigid multi-body system. These objects store all
 of the information needed to derive the ordinary differential or differential
 algebraic equations that govern the motion of the system, i.e., the equations
 of motion. These equations of motion abide by Newton's laws of motion and can
-handle any arbitrary kinematical constraints or complex loads. The package
+handle any arbitrary kinematic constraints or complex loads. The package
 offers two automated methods for formulating the equations of motion based on
 Lagrangian Dynamics~\cite{Lagrange1811} and Kane's Method~\cite{Kane1985}. Lastly, there
 are automated linearization routines for constrained dynamical
@@ -62,18 +62,17 @@ systems based on~\cite{Peterson2014}.
 \subsection{Symbolic Quantum Mechanics}
 
 The \verb|sympy.physics.quantum| package has extensive capabilities for
-symbolic quantum mechanics, with Python objects to represent the different
-mathematical objects relevant in quantum theory \cite{Sakurai2010}: states
-(bras and kets), operators (unitary, hermitian, etc.) and basis sets as well
-as operations on these objects such as representations, tensor products, inner
-products, outer products, commutators, anticommutators, etc. The base objects
-are designed in the most general way possible to enable any particular quantum
-system to be implemented by subclassing the base operators to provide system
-specific logic.
+performing symbolic quantum mechanics, using Python objects to represent the
+different mathematical objects relevant in quantum theory \cite{Sakurai2010}:
+states (bras and kets), operators (unitary, hermitian, etc.), and basis sets, as
+well as operations on these objects such as representations, tensor products,
+inner products, outer products, commutators, anticommutators, etc. The base
+objects are designed in the most general way possible to enable any particular
+quantum system to be implemented by subclassing the base operators and defining
+the relevant class methods to provide system specific logic.
 
 For example, you can define symbolic quantum operators and states and perform
 a full range of operations with them:
-
 \begin{verbatim}
 >>> from sympy.physics.quantum import Commutator, Dagger, Operator
 >>> from sympy.physics.quantum import Ket, qapply
@@ -94,23 +93,27 @@ Commutators can be expanded using common commutator identities:
 -[A,B]*D - [A,C]*D + A*[B,D] + A*[C,D]
 \end{verbatim}
 
-On top of this set of base objects, a number of specific quantum systems have been implemented. These include:
+On top of this set of base objects, a number of specific quantum systems have
+been implemented in a fully symbolic framework. These include:
 
 \begin{itemize}
 
-\item Position/momentum operators and states, raising/lowering operators and states, simple harmonic oscillator, density matrices, hydrogen atom.
+\item Many of the exactly solvable quantum systems, including simple harmonic
+oscillator states and raising/lowering operators, infinite square well states,
+and 3D position and momentum operators and states.
 
-\item Second quantized formalism of non-relativistic many-body quantum mechanics
-\cite{FetterWalecka2003}.
+\item Second quantized formalism of non-relativistic many-body quantum
+mechanics~\cite{FetterWalecka2003}.
 
-\item Quantum angular momentum \cite{Zare1991}. Spin operators and their
+\item Quantum angular momentum~\cite{Zare1991}. Spin operators and their
 eigenstates can be represented in any basis and for any quantum numbers.
-Facilities for Clebsch-Gordan Coefficients, Wigner Coefficients, rotations,
-and angular momentum coupling are also present in their symbolic and numerical
-forms.
+A rotation operator representing the Wigner-D matrix, which may be defined
+symbolically or numerically, is also implemented to rotate spin eigenstates.
+Functionality for coupling and uncoupling of arbitrary spin eigenstates is
+provided, including symbolic representations of Clebsch-Gordon coefficients and
+Wigner symbols.
 
-
-\item Quantum information and computing \cite{Nielsen2011}. Multidimensional
+\item Quantum information and computing~\cite{Nielsen2011}. Multidimensional
 qubit states, and a full set of one- and two-qubit gates are provided and can
 be represented symbolically or as matrices/vectors. With these building blocks
 it is possible to implement a number of basic quantum algorithms including the
