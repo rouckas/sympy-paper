@@ -189,8 +189,8 @@ instance, the assumptions system knows that being an integer implies being
 rational, so \verb|Symbol('x', integer=True).is_rational| returns
 \texttt{True}. Furthermore, expressions compute the assumptions on themselves
 based on the assumptions of their arguments. For instance, if \texttt{x} and
-\texttt{y} are both created with \texttt{positive=True}, then \verb|(x + y).is_positive|
-will be \texttt{True}.
+\texttt{y} are both created with \texttt{positive=True}, then
+\verb|(x + y).is_positive| will be \texttt{True}.
 
 SymPy also has an experimental assumptions system where facts are stored
 separate from objects, and deductions are made with a SAT solver. We will not
