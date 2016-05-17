@@ -225,7 +225,7 @@ class method \texttt{eval}, which returns values for which the function should
 be automatically evaluated, and \texttt{None} for arguments that should not be
 automatically evaluated.
 
-Many SymPy functions require various evaluations down the expression tree.
+Many SymPy functions perform various evaluations down the expression tree.
 Classes define their behavior in such functions by defining a relevant
 \verb|_eval_|\texttt{\textit{*}} method. For instance, an object can indicate
 to the \texttt{diff} function how to take the derivative of itself by defining
