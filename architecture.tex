@@ -95,15 +95,16 @@ Here, we note that in SymPy, the \texttt{==} operator represents exact
 structural equality, not mathematical equality. This allows one to test if
 any two expressions are equal to one another as expression trees.
 
-Python allows classes to override mathematical operators. The Python interpreter
-translates the above \texttt{x*y + 2} to, roughly,
-\verb|(x.__mul__(y)).__add__(2)|. Both \texttt{x} and \texttt{y}, returned from
-the \texttt{symbols} function, are \texttt{Symbol} instances. The \texttt{2}
-in the expression is processed by Python as a literal, and is stored as
-Python's builtin \texttt{int} type. When \texttt{2} is passed to the
+Python allows classes to override mathematical operators. The Python
+interpreter translates the above \texttt{x*y + 2} to, roughly,
+\verb|(x.__mul__(y)).__add__(2)|. Both \texttt{x} and \texttt{y}, returned
+from the \texttt{symbols} function, are \texttt{Symbol} instances. The
+\texttt{2} in the expression is processed by Python as a literal, and is
+stored as Python's builtin \texttt{int} type. When \texttt{2} is passed to the
 \verb|__add__| method of \texttt{Symbol}, it is converted to the SymPy type
-\verb|Integer(2)|. In this way, SymPy expressions can be built in the natural
-way using Python operators and numeric literals.
+\verb|Integer(2)| before being stored in the resulting expression tree. In
+this way, SymPy expressions can be built in the natural way using Python
+operators and numeric literals.
 
 One must be careful in one particular instance. Python does not have a builtin
 rational literal type. Given a fraction of integers such as \texttt{1/2},
