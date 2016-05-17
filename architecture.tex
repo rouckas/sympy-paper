@@ -177,7 +177,7 @@ assumptions use a three-valued logic using the Python builtin objects
 true or false under the given information, for instance,
 \verb|Symbol('x', real=True).is_positive| will give \texttt{None} because a real
 symbol might be positive or it might not. It could also mean not enough is
-implemented to compute the given fact, for instance,
+implemented to compute the given fact. For instance,
 \verb|(pi + E).is_irrational| gives \texttt{None}, because SymPy does not know
 how to determine if $\pi + e$ is rational or irrational, indeed, it is an open
 problem in mathematics.
