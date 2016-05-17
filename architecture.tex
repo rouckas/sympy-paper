@@ -78,9 +78,9 @@ indicating that it is a leaf node.
 ()
 \end{verbatim}
 
-The function \texttt{srepr} returns a string representation of the object as
-valid Python code, which contains all the nested class constructor calls to
-create the given expression.
+A useful way to view an expression tree is with the \texttt{srepr} function,
+which returns a string representation of an expression as valid Python code
+with all the nested class constructor calls to create the given expression.
 \begin{verbatim}
 >>> srepr(expr)
 "Add(Mul(Symbol('x'), Symbol('y')), Integer(2))"
