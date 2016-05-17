@@ -66,9 +66,10 @@ x + 3/(x + 1) + 2/(x - 1)
 \bottomrule
 \end{longtable}
 
-Substitutions are performed through the \texttt{.subs} method, which is
-sensible to some mathematical properties while matching, such as
-associativity, commutativity, additive and multiplicative inverses, and
-matching of powers.
+Substitutions are performed through the \texttt{.subs} method.
+\begin{verbatim}
+>>> (sin(x) + x**2 + 1).subs(x, y + 1)
+(y + 1)**2 + sin(y + 1) + 1
+\end{verbatim}
 
 %% TODO: add examples
