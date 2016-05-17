@@ -100,7 +100,7 @@ translates the above \texttt{x*y + 2} to, roughly,
 \verb|(x.__mul__(y)).__add__(2)|. Both \texttt{x} and \texttt{y}, returned from
 the \texttt{symbols} function, are \texttt{Symbol} instances. The \texttt{2}
 in the expression is processed by Python as a literal, and is stored as
-Python's builtin \texttt{int} type. When \texttt{2} is called by the
+Python's builtin \texttt{int} type. When \texttt{2} is passed to the
 \verb|__add__| method of \texttt{Symbol}, it is converted to the SymPy type
 \verb|Integer(2)|. In this way, SymPy expressions can be built in the natural
 way using Python operators and numeric literals.
