@@ -235,16 +235,16 @@ the \verb|_eval_derivative(self, x)| method, which may in turn call
 \verb|_eval_is_|\texttt{\textit{assumption}} defines the assumptions for
 \textit{assumption}.
 
-As an example of the notions presented in this section, we present below
-a stripped down version of the gamma function $\Gamma(x)$ from SymPy,
-which evaluates itself on positive integer arguments, has the positive and
-real assumptions defined, can be rewritten in terms of factorial with
-\verb|gamma(x).rewrite(factorial)|, and can be differentiated.
-\texttt{fdiff} is a convenience method for subclasses of \texttt{Function}.
-\texttt{fdiff} returns the derivative of the function without worrying about
-the chain rule. \texttt{self.func} is used throughout instead of referencing
-\texttt{gamma} explicitly so that potential subclasses of \texttt{gamma} can
-reuse the methods.
+As an example of the notions presented in this section, presented below is a
+stripped down version of the gamma function $\Gamma(x)$ from SymPy, which
+evaluates itself on positive integer arguments, has the positive and real
+assumptions defined, can be rewritten in terms of factorial with
+\verb|gamma(x).rewrite(factorial)|, and can be differentiated. \texttt{fdiff}
+is a convenience method for subclasses of \texttt{Function}. \texttt{fdiff}
+returns the derivative of the function without worrying about the chain rule.
+\texttt{self.func} is used throughout instead of referencing \texttt{gamma}
+explicitly so that potential subclasses of \texttt{gamma} can reuse the
+methods.
 \begin{verbatim}
 from sympy import Integer, Function, floor, factorial, polygamma
 
