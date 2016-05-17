@@ -106,21 +106,21 @@ stored as Python's builtin \texttt{int} type. When \texttt{2} is passed to the
 this way, SymPy expressions can be built in the natural way using Python
 operators and numeric literals.
 
-One must be careful in one particular instance. Python does not have a builtin
+One must be careful in one particular instance: Python does not have a builtin
 rational literal type. Given a fraction of integers such as \texttt{1/2},
 Python will perform floating point division and produce
 \texttt{0.5}~\footnote{This is the behavior in Python 3. In Python 2,
-\texttt{1/2} will perform integer division and produce \texttt{0}, unless one
-uses \texttt{from \_\_future\_\_ import division}.}. Python uses eager
-evaluation, so expressions like \texttt{x + 1/2} will produce \texttt{x + 0.5},
-and by the time any SymPy function sees the \texttt{1/2} it has already been
-converted to \texttt{0.5} by Python. However, for a CAS like SymPy, one
-typically wants to work with exact rational numbers whenever possible. Working
-around this is simple, however: one can wrap one of the integers with
-\texttt{Integer}, like \verb|x + Integer(1)/2|, or using
+  \texttt{1/2} will perform integer division and produce \texttt{0}, unless
+  one uses \texttt{from \_\_future\_\_ import division}.}. Python uses eager
+evaluation, so expressions like \texttt{x + 1/2} will produce \texttt{x +
+  0.5}, because by the time any SymPy function sees the \texttt{1/2} it will
+have already been converted to \texttt{0.5} by Python. However, for a CAS like
+SymPy, one typically wants to work with exact rational numbers whenever
+possible. Working around this is simple, however: one can wrap one of the
+integers with \texttt{Integer}, like \verb|x + Integer(1)/2|, or using
 \verb|x + Rational(1, 2)|. SymPy provides a function \texttt{S} which can be
 used to convert objects to SymPy types with minimal typing, such as
-\verb|x + S(1)/2|.  This gotcha is a small downside to using Python directly
+\verb|x + S(1)/2|. This gotcha is a small downside to using Python directly
 instead of a custom domain specific language (DSL), and we consider it to be
 worth it for the advantages listed above.
 
