@@ -242,7 +242,7 @@ arguments, has the positive and real assumptions defined, can be rewritten in
 terms of factorial with \verb|gamma(x).rewrite(factorial)|, and can be
 differentiated. \texttt{fdiff} is a convenience method for subclasses of
 \texttt{Function}. \texttt{fdiff} returns the derivative of the function
-without worrying about the chain rule. \texttt{self.func} is used throughout
+without considering the chain rule. \texttt{self.func} is used throughout
 instead of referencing \texttt{gamma} explicitly so that potential subclasses
 of \texttt{gamma} can reuse the methods.
 \begin{figure}
