@@ -6,7 +6,7 @@ from json import load
 from io import open
 
 author_list = load(open("authors.json"))
-author_list = list(filter(lambda x: x["np"] > 0, author_list))
+author_list = list(filter(lambda x: x["sympy_commits"] > 0, author_list))
 
 with open("../authors.tex", "w", encoding='utf-8') as f:
     f.write(u"\\author{%\n")

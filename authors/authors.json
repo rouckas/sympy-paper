@@ -5,7 +5,7 @@
         "institution": "University of South Carolina",
         "institution_address": "541 Main St., Columbia, SC 29201",
         "name": "Aaron Meurer",
-        "np": 2636
+        "sympy_commits": 2636
     },
     {
         "email": "ondrej.certik@gmail.com",
@@ -13,7 +13,7 @@
         "institution": "Los Alamos National Laboratory",
         "institution_address": "P.O. Box 1663, Los Alamos, New Mexico 87545, USA",
         "name": "Ondřej Čertík",
-        "np": 1443
+        "sympy_commits": 1443
     },
     {
         "email": "dtu.amit@gmail.com",
@@ -21,7 +21,7 @@
         "institution": "Delhi Technological University",
         "institution_address": "Delhi Technological University, Shahbad Daulatpur, Bawana Road, New Delhi 110042, India ",
         "name": "AMiT Kumar",
-        "np": 263
+        "sympy_commits": 263
     },
     {
         "email": "jkm@ucdavis.edu",
@@ -29,7 +29,7 @@
         "institution": "University of California, Davis",
         "institution_address": "One Shields Ave, Davis, CA, 95616, USA",
         "name": "Jason K. Moore",
-        "np": 253
+        "sympy_commits": 253
     },
     {
         "email": "singhsartaj94@gmail.com",
@@ -37,7 +37,7 @@
         "institution": "Indian Institute of Technology (BHU)",
         "institution_address": "Indian Institute of Technology (BHU), Varanasi, Uttar Pradesh, India - 221005",
         "name": "Sartaj Singh",
-        "np": 199
+        "sympy_commits": 199
     },
     {
         "email": "thilinarmtb.10@cse.mrt.ac.lk",
@@ -45,7 +45,7 @@
         "institution": "University of Moratuwa",
         "institution_address": "Bandaranayake Mawatha, Katubedda, Moratuwa 10400, Sri Lanka",
         "name": "Thilina Rathnayake",
-        "np": 186
+        "sympy_commits": 186
     },
     {
         "email": "ellisonbg@gmail.com",
@@ -53,7 +53,7 @@
         "institution": "California Polytechnic State University",
         "institution_address": "1 Grand Avenue, San Luis Obispo, CA 93407, USA",
         "name": "Brian E. Granger",
-        "np": 160
+        "sympy_commits": 160
     },
     {
         "email": "rmuller@sandia.gov",
@@ -61,7 +61,7 @@
         "institution": "Center for Computing Research, Sandia National Laboratories",
         "institution_address": "P.O. Box 5800, Mail Stop 1322, Albuquerque, NM 87185-1322, USA",
         "name": "Richard P. Muller",
-        "np": 158
+        "sympy_commits": 158
     },
     {
         "email": "francesco.bonazzi@mpikg.mpg.de",
@@ -69,7 +69,7 @@
         "institution": "Max Planck Institute of Colloids and Interfaces",
         "institution_address": "Am Mühlenberg 1, 14476 Potsdam, Germany",
         "name": "Francesco Bonazzi",
-        "np": 150
+        "sympy_commits": 150
     },
     {
         "email": "hargup@protonmail.com",
@@ -77,7 +77,7 @@
         "institution": "Indian Institute of Technology Kharagpur",
         "institution_address": "Indian Institute of Technology Kharagpur, Kharagpur, West Bengal, India - 721302",
         "name": "Harsh Gupta",
-        "np": 123
+        "sympy_commits": 123
     },
     {
         "email": "shivamvats.iitkgp@gmail.com",
@@ -85,7 +85,7 @@
         "institution": "Indian Institute of Technology Kharagpur",
         "institution_address": "Indian Institute of Technology Kharagpur, Kharagpur, West Bengal, India - 721302",
         "name": "Shivam Vats",
-        "np": 122
+        "sympy_commits": 122
     },
     {
         "email": "fredrik.johansson@gmail.com",
@@ -93,7 +93,7 @@
         "institution": "INRIA Bordeaux-Sud-Ouest - LFANT project-team",
         "institution_address": "200 Avenue de la Vieille Tour, 33405 Talence, France",
         "name": "Fredrik Johansson",
-        "np": 119
+        "sympy_commits": 119
     },
     {
         "email": "f@bianp.net",
@@ -101,7 +101,7 @@
         "institution": "INRIA - SIERRA project-team",
         "institution_address": "2 Rue Simone IFF, 75012 Paris",
         "name": "Fabian Pedregosa",
-        "np": 114
+        "sympy_commits": 114
     },
     {
         "email": "ashutosh.saboo@gmail.com",
@@ -109,7 +109,7 @@
         "institution": "Birla Institute of Technology and Science, Pilani, K.K. Birla Goa Campus",
         "institution_address": "NH 17B Bypass Road, Zuarinagar, Sancoale, Goa 403726, India",
         "name": "Ashutosh Saboo",
-        "np": 17
+        "sympy_commits": 17
     },
     {
         "email": "isuru.11@cse.mrt.ac.lk",
@@ -117,7 +117,7 @@
         "institution": "University of Moratuwa",
         "institution_address": "Bandaranayake Mawatha, Katubedda, Moratuwa 10400, Sri Lanka",
         "name": "Isuru Fernando",
-        "np": 7
+        "sympy_commits": 7
     },
     {
         "email": "sumith@cse.iitb.ac.in",
@@ -125,7 +125,7 @@
         "institution": "Indian Institute of Technology Bombay",
         "institution_address": "Indian Institute of Technology Bombay, Powai, Mumbai, Maharashtra, India - 400076",
         "name": "Sumith",
-        "np": 6
+        "sympy_commits": 6
     },
     {
         "email": "cimrman3@ntc.zcu.cz",
@@ -133,7 +133,7 @@
         "institution": "New Technologies - Research Centre, University of West Bohemia",
         "institution_address": "Univerzitní 8, 306 14 Plzeň, Czech Republic",
         "name": "Robert Cimrman",
-        "np": 1
+        "sympy_commits": 1
     },
     {
         "email": "scopatz@cec.sc.edu",
@@ -141,6 +141,6 @@
         "institution": "University of South Carolina",
         "institution_address": "541 Main St., Columbia, SC, 29201",
         "name": "Anthony Scopatz",
-        "np": 0
+        "sympy_commits": 0
     }
 ]
