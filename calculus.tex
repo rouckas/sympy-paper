@@ -5,14 +5,10 @@ of Manuel Bronstein's ``Poor Man's Integrator''~\cite{Bronstein2005pmint}, and
 an algorithm for computing integrals based on Meijer G-functions. These allow
 SymPy to compute a wide variety of indefinite and definite integrals.
 % TODO: What is the best citation for the Meijer G-function algorithm.
-% TODO: A more interesting examples here
+% TODO: More interesting examples here
 \begin{verbatim}
 >>> integrate(sin(x), x)
 -cos(x)
-\end{verbatim}
-Definite integrals are calculated with the same function by specifying a
-range of the integration variable. The following computes $\int_0^1\sin(x)\,dx$.
-\begin{verbatim}
 >>> integrate(sin(x), (x, 0, 1))
 -cos(1) + 1
 \end{verbatim}
