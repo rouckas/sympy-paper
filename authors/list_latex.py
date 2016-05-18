@@ -13,7 +13,7 @@ with open("../authors.tex", "w", encoding='utf-8') as f:
     for n, author in enumerate(author_list):
         f.write((u"%s%%\n" % author["name"]))
         f.write(u"\\thanks{%s, %s (\\email{%s}).}%%\n" \
-                % (author["institution"], author["institution_address"],
+                % (author["institution"], author["institution_address_siam"],
                     author["email"]))
         if n < len(author_list) - 1:
             f.write(u"\\and\n")
