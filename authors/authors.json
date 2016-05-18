@@ -4,6 +4,7 @@
         "github_id": "asmeurer",
         "institution": "University of South Carolina",
         "institution_address": "541 Main St., Columbia, SC 29201",
+        "institution_address_siam": "Columbia, SC 29201",
         "name": "Aaron Meurer",
         "sympy_commits": 2636
     },
@@ -12,6 +13,7 @@
         "github_id": "certik",
         "institution": "Los Alamos National Laboratory",
         "institution_address": "P.O. Box 1663, Los Alamos, New Mexico 87545, USA",
+        "institution_address_siam": "Los Alamos, NM 87545",
         "name": "Ondřej Čertík",
         "sympy_commits": 1443
     },
@@ -28,6 +30,7 @@
         "github_id": "moorepants",
         "institution": "University of California, Davis",
         "institution_address": "One Shields Ave, Davis, CA, 95616, USA",
+        "institution_address_siam": "Davis, CA 95616",
         "name": "Jason K. Moore",
         "sympy_commits": 253
     },
@@ -52,6 +55,7 @@
         "github_id": "ellisonbg",
         "institution": "California Polytechnic State University",
         "institution_address": "1 Grand Avenue, San Luis Obispo, CA 93407, USA",
+        "institution_address_siam": "San Luis Obispo, CA 93407",
         "name": "Brian E. Granger",
         "sympy_commits": 160
     },
@@ -60,6 +64,7 @@
         "github_id": "rpmuller",
         "institution": "Center for Computing Research, Sandia National Laboratories",
         "institution_address": "P.O. Box 5800, Mail Stop 1322, Albuquerque, NM 87185-1322, USA",
+        "institution_address_siam": "Albuquerque, NM 87185",
         "name": "Richard P. Muller",
         "sympy_commits": 158
     },
@@ -140,6 +145,7 @@
         "github_id": "scopatz",
         "institution": "University of South Carolina",
         "institution_address": "541 Main St., Columbia, SC, 29201",
+        "institution_address_siam": "Columbia, SC 29201",
         "name": "Anthony Scopatz",
         "sympy_commits": 0
     }
