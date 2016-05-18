@@ -13,26 +13,26 @@ results using SymPy.
 
 \begin{itemize}
 \item
-  It displays integration steps, differentiation steps in detail, which
+  SymPy Gamma displays integration and differentiation steps in detail, which
   can be viewed in Figure~\ref{fig:integralsteps}:\par
-\begin{minipage}{\textwidth}
+  {
     \centering
     \includegraphics[width=0.7\textwidth]{integral_steps.png}
     \captionof{figure}{Integral steps of $\tan (x)$}\label{fig:integralsteps}
-\end{minipage}
+    \par
+  }
 \item
-  It also displays the factor tree diagrams for different numbers.
+  SymPy Gamma displays the factor tree diagrams for different numbers.
 \item
-  SymPy Gamma also saves user search queries, and offers many such
-  similar features for free, which Wolfram\textbar{}Alpha only offers
-  to its paid users.
+  SymPy Gamma saves user search queries, and offers many such similar features
+  for free, which Wolfram\textbar{}Alpha only offers to its paid users.
 \end{itemize}
-Every input query from the user on SymPy Gamma is first, parsed by its
+Every input query from the user on SymPy Gamma is first parsed by its
 own parser, which handles several different forms of function names,
-which SymPy as a library doesn't support. For instance, SymPy Gamma
+which SymPy as a library does not support. For instance, SymPy Gamma
 supports queries like \texttt{sin\ x}, whereas SymPy doesn't support
 this, and supports only \verb|sin(x)|.
 
-This parser converts the input query to the equivalent SymPy readable
-code, which is then eventually processed by SymPy and the result is
-finally formatted in LaTeX and displayed on the SymPy Gamma web-application.
+This parser converts the input query to the equivalent SymPy readable code,
+which is then eventually processed by SymPy, and the result is finally printed
+with the built-in LaTeX output and rendered on the SymPy Gamma web-application.
