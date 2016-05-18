@@ -72,4 +72,4 @@ Finally, all authors agreed to the requirement 4.
 
     f.write(u"\n")
     f.write(u"Note: This file was automatically generated from "
-        "`authors.json` using `list_text.py`\n")
+        "`authors.json` using `list_text.py`.\n")
