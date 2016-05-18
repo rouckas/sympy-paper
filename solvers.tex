@@ -9,8 +9,10 @@ cleaner input API\@:  it only asks for the necessary information from the user.
 The function signatures of \texttt{solve} and \texttt{solveset} are
 \begin{verbatim}
 solve(f, *symbols, **flags)
-solveset(f, symbol, domain)
+solveset(f, symbol, domain=S.Complexes)
 \end{verbatim}
+The \texttt{domain} parameter is typically either \texttt{S.Complexes} (the
+default) or \texttt{S.Reals}, which causes it to only return real solutions.
 
 Additionally, \texttt{solve} has an inconsistent output API for various types
 of inputs. For instance, depending on the input, sometimes it returns a Python
