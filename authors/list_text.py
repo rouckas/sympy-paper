@@ -61,7 +61,7 @@ Finally, all authors agreed to the requirement 4.
             "[%d](https://github.com/sympy/sympy/commits?author=%s) | "
             "[commits](https://github.com/sympy/sympy-paper/commits?author=%s),"
                 " [comments](https://github.com/sympy/sympy-paper/search"
-                "?q=%s&type=Issues) "
+                "?q=commenter:%s&type=Issues) "
             "| %s, %s |\n" % (
                 author["name"],
                 author["github_id"], author["github_id"],
