@@ -6,30 +6,34 @@ polynomials, to advanced methods for factoring multivariate polynomials
 into irreducibles, symbolically determining real and complex root isolation
 intervals, or computing Gröbner bases.
 
-Polynomial manipulation is useful on its own, but in SymPy, it's mostly
-used indirectly as a tool in other areas of the library. In fact, many
-mathematical problems in symbolic computing are first expressed using
-entities from the symbolic core, preprocessed, and then transformed into
-a problem in the polynomial algebra, where generic and efficient algorithms
-are used to solve the problem and in the end, solutions to original one
-are recovered. For example, this is a common scheme in symbolic integration
-or summation algorithms.
+Polynomial manipulation is useful on its own, but in SymPy, it's mostly used
+indirectly as a tool in other areas of the library. In fact, many mathematical
+problems in symbolic computing are first expressed using entities from the
+symbolic core, preprocessed, and then transformed into a problem in the
+polynomial algebra, where generic and efficient algorithms are used to solve
+the problem and, in the end, solutions to the original one are recovered. For
+example, this is a common scheme in symbolic integration or summation
+algorithms.
 
-SymPy implements dense and sparse polynomial representations. Both
-are used in univariate and multivariate cases. Dense representation is
-the default for univariate polynomials. For multivariate polynomials,
-the choice of representation is based on the application. The most common
-case for sparse representation is algorithms for computing Gröbner bases
-(Buchberger, F4 and F5), because different monomial orderings can be
-expressed easily in this representation. However, algorithms for computing
-multivariate GCDs or factorizations, at least those currently implemented
-in SymPy, are better expressed when the representation is dense. By dense
-multivariate representation we mean a recursively dense representation,
-where polynomial $K[x_0, x_1,\dots, x_n]$ is viewed as a polynomial in
-$K[x_0][x_1]\ldots[x_n]$. Note that despite this, the coefficient domain
-$K$, can be a multivariate polynomial domain as well. Dense recursive
-representation in Python gets inefficient when the number of variables
-gets high.
+SymPy implements dense and sparse polynomial representations. Both are used in
+the univariate and multivariate cases. The dense representation is the default
+for univariate polynomials. For multivariate polynomials, the choice of
+representation is based on the application. The most common case for the sparse
+representation is algorithms for computing Gröbner bases (Buchberger, F4, and
+F5),
+% TODO: citation
+because different monomial orderings can be expressed easily in this
+representation. However, algorithms for computing multivariate GCDs or
+factorizations, at least those currently implemented in SymPy,
+% TODO: citation
+are better expressed when the representation is dense. The dense multivariate
+representation is specifically a recursively dense representation, where
+polynomials in $K[x_0, x_1,\dots, x_n]$ are viewed as a polynomials in
+$K[x_0][x_1]\ldots[x_n]$. Note that despite this, the coefficient domain $K$,
+can be a multivariate polynomial domain as well. The dense recursive
+representation in Python gets inefficient when the number of variables gets
+high.
+
 
 \noindent Factorization:
 \begin{verbatim}
