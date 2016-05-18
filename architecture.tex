@@ -4,7 +4,7 @@
 
 Because SymPy is built on Python, it requires that all variable names be
 defined before they can be used. The following statement
-imports all SymPy functions into the global Python namespace. 
+imports all SymPy functions into the global Python namespace.
 All examples in this paper assume that this has been run.
 
 \begin{verbatim}
@@ -15,11 +15,9 @@ Symbolic variables, called symbols, must be defined and assigned to
 Python variables before they can be used. This is typically done through the
 \texttt{symbols} function, which creates multiple symbols at once. For
 instance,
-
 \begin{verbatim}
 >>> x, y, z = symbols('x y z')
 \end{verbatim}
-
 creates three symbols representing variables named $x$, $y$, and $z$, assigned
 to Python variables of the same name. The Python variable names that symbols
 are assigned to are immaterial---one could have just as well have written
@@ -98,11 +96,9 @@ with all the nested class constructor calls to create the given expression.
 \end{verbatim}
 
 Every SymPy expression satisfies a key invariant:
-
 \begin{verbatim}
 expr.func(*expr.args) == expr
 \end{verbatim}
-
 This means that expressions are
 rebuildable from their \texttt{args}.\footnote{\texttt{expr.func} is used
 instead of \texttt{type(expr)} to allow the function of an expression to be
@@ -137,7 +133,6 @@ holds. However, for general complex $t$, no such identity holds.
 By default, SymPy performs all calculations assuming that symbols are
 complex valued. This assumption makes it easier to treat mathematical problems
 in full generality.
-
 \begin{verbatim}
 >>> t = Symbol('t')
 >>> sqrt(t**2)
@@ -151,7 +146,6 @@ users will wish to simplify expressions containing terms like $\sqrt{t^2}$.
 Assumptions are set on \texttt{Symbol} objects when they are created. For
 instance \verb|Symbol('t', positive=True)| will create a symbol named
 \texttt{t} that is assumed to be positive.
-
 \begin{verbatim}
 >>> t = Symbol('t', positive=True)
 >>> sqrt(t**2)
