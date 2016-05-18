@@ -45,6 +45,15 @@
         "sympy_commits": 263
     },
     {
+        "email": "sergiu.ivanov@u-pec.fr",
+        "github_id": "scolobb",
+        "institution": "Université Paris Est Créteil",
+        "institution_address": "61 av. Général de Gaulle, 94010 Créteil, France",
+        "institution_address_siam": "61 av. Général de Gaulle, 94010 Créteil, France",
+        "name": "Sergiu Ivanov",
+        "sympy_commits": 260
+    },
+    {
         "email": "jkm@ucdavis.edu",
         "github_id": "moorepants",
         "institution": "University of California, Davis",
