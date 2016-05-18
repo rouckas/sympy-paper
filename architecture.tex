@@ -235,7 +235,7 @@ the \verb|_eval_derivative(self, x)| method, which may in turn call
 \textit{assumption}.
 
 As an example of the notions presented in this section,
-Figure~\ref{fig:gamma-example} presents a stripped down version of the gamma
+Listing~\ref{fig:gamma-example} presents a stripped down version of the gamma
 function $\Gamma(x)$ from SymPy, which evaluates itself on positive integer
 arguments, has the positive and real assumptions defined, can be rewritten in
 terms of factorial with \verb|gamma(x).rewrite(factorial)|, and can be
@@ -244,10 +244,12 @@ differentiated. \texttt{fdiff} is a convenience method for subclasses of
 without considering the chain rule. \texttt{self.func} is used throughout
 instead of referencing \texttt{gamma} explicitly so that potential subclasses
 of \texttt{gamma} can reuse the methods.
-\begin{figure}
-\caption{A stripped down version of \texttt{sympy.gamma}.}
-\label{fig:gamma-example}
-\begin{verbatim}
+
+\lstset{
+  basicstyle=\ttfamily,
+}
+
+\begin{lstlisting}[caption={A stripped down version of \texttt{sympy.gamma}.},label=fig:gamma-example]
 from sympy import Integer, Function, floor, factorial, polygamma
 
 class gamma(Function)
@@ -278,7 +280,6 @@ class gamma(Function)
             return self.func(self.args[0])*polygamma(0, self.args[0])
         else:
             raise ArgumentIndexError(self, argindex)
-\end{verbatim}
-\end{figure}
+\end{lstlisting}
 The actual gamma function defined in SymPy has many more capabilities, such as
 evaluation at rational points and series expansion.
