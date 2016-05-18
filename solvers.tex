@@ -20,41 +20,31 @@ list and sometimes it returns a Python dictionary. On the other hand, the
 \texttt{solveset} has a canonical output API. \texttt{solveset} always returns
 a SymPy set object.
 
-\begin{itemize}
-\item Single solution
-\end{itemize}
+\noindent Single solution:
 \begin{verbatim}
 >>> solveset(x - 1)
 {1}
 \end{verbatim}
 
-\begin{itemize}
-\item Finite set of solution, quadratic equation
-\end{itemize}
+\noindent Finite set of solution, quadratic equation:
 \begin{verbatim}
 >>> solveset(x**2 - pi**2, x)
 {-pi, pi}
 \end{verbatim}
 
-\begin{itemize}
-\item No Solution
-\end{itemize}
+\noindent No solution:
 \begin{verbatim}
 >>> solveset(1, x)
 EmptySet()
 \end{verbatim}
 
-\begin{itemize}
-\item Interval of solution
-\end{itemize}
+\noindent Interval solution:
 \begin{verbatim}
 >>> solveset(x**2 - 3 > 0, x, domain=S.Reals)
 (-oo, -sqrt(3)) U (sqrt(3), oo)
 \end{verbatim}
 
-\begin{itemize}
-\item Infinitely many solutions
-\end{itemize}
+\noindent Infinitely many solutions:
 % SymPy 1.0 sstr() prints S.Complexes incorrectly
 % no-doctest
 \begin{verbatim}
@@ -66,10 +56,8 @@ ImageSet(Lambda(_n, 2*_n*pi + pi/2), Integers())
 S.Complexes
 \end{verbatim}
 
-\begin{itemize}
-\item Linear system: finite and infinite solution for determined, under
-determined and over determined problems.
-\end{itemize}
+Linear systems are solved with \texttt{linsolve}. Finite and infinite solution for determined, under
+determined, and over determined problems are supported.
 \begin{verbatim}
 >>> A = Matrix([[1, 2, 3], [4, 5, 6], [7, 8, 10]])
 >>> b = Matrix([3, 6, 9])
@@ -103,12 +91,11 @@ Transcendental& Yes & Not yet \\
 
 \hfill \break{}
 
-Below are some of the examples of old \textbf{solve} function:
+Below are some of the examples of \textbf{solve}, which are not yet supported
+by \texttt{solveset}.
 
-\begin{itemize}
-\item Non Linear (multivariate) System of Equation: Intersection of a circle
-and a parabola.
-\end{itemize}
+\noindent Nonlinear (multivariate) system of equations (the intersection of a circle
+and a parabola):
 \begin{verbatim}
 >>> solve([x**2 + y**2 - 16, 4*x - y**2 + 6], x, y)
 [(-2 + sqrt(14), -sqrt(-2 + 4*sqrt(14))),
@@ -117,9 +104,7 @@ and a parabola.
  (-sqrt(14) - 2, I*sqrt(2 + 4*sqrt(14)))]
 \end{verbatim}
 
-\begin{itemize}
-\item Transcendental Equation
-\end{itemize}
+\noindent Transcendental equations:
 \begin{verbatim}
 >>> solve((x + log(x))**2 - 5*(x + log(x)) + 6, x)
 [LambertW(exp(2)), LambertW(exp(3))]
