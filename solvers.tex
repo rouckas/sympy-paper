@@ -20,6 +20,9 @@ list and sometimes it returns a Python dictionary. On the other hand, the
 \texttt{solveset} has a canonical output API.\ \texttt{solveset} always returns
 a SymPy set object.
 
+Both functions implicitly assume that expressions are equal to 0. For
+instance, \texttt{solveset(x - 1, x)} solves $x - 1 = 0$ for $x$.
+
 \noindent Single solution:
 \begin{verbatim}
 >>> solveset(x - 1)
