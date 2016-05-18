@@ -37,23 +37,23 @@ high.
 Here are some examples of the \texttt{sympy.polys} submodule.
 \noindent Factorization:
 \begin{verbatim}
+>>> t = symbols("t")
 >>> f = (2115*x**4*y + 45*x**3*z**3*t**2 - 45*x**3*t**2 - 423*x*y**4 -
 ...      47*x*y**3 + 141*x*y*z**3 + 94*x*y*z*t - 9*y**3*z**3*t**2 +
 ...      9*y**3*t**2 - y**2*z**3*t**2 + y**2*t**2 + 3*z**6*t**2 +
 ...      2*z**4*t**3 - 3*z**3*t**2 - 2*z*t**3)
 >>> factor(f)
-(47*x*y + z**3*t**2 - t**2)*(45*x**3 - 9*y**3 - y**2 + 3*z**3 + 2*z*t)
+(t**2*z**3 - t**2 + 47*x*y)*(2*t*z + 45*x**3 - 9*y**3 - y**2 + 3*z**3)
 \end{verbatim}
 
 \noindent Gröbner bases:
 \begin{verbatim}
 >>> x0, x1, x2 = symbols('x:3')
 >>> I = [x0 + 2*x1 + 2*x2 - 1, x0**2 + 2*x1**2 + 2*x2**2 - x0, 2*x0*x1 + 2*x1*x2 - x1]
->>> groebner(I, oder='lex')
-GroebnerBasis([
-    7*x0 - 420*x2**3 + 158*x2**2 + 8*x2 - 7,
-    7*x1 + 210*x2**3 - 79*x2**2 + 3*x2,
-    84*x2**4 - 40*x2**3 + x2**2 + x2], x0, x1, x2, domain='ZZ', order='lex')
+>>> groebner(I, order='lex')
+GroebnerBasis([7*x0 - 420*x2**3 + 158*x2**2 + 8*x2 - 7,
+7*x1 + 210*x2**3 - 79*x2**2 + 3*x2,
+84*x2**4 - 40*x2**3 + x2**2 + x2], x0, x1, x2, domain='ZZ', order='lex')
 \end{verbatim}
 
 \noindent Root isolation:
