@@ -49,6 +49,14 @@ Finally, all authors agreed to the requirement 4.
             ":---                  | :---        |\n")
 
     for author in author_list:
+        # Some authors used an alternate email address, not associated with
+        # their GitHub profile, which causes GitHub not to show their commits
+        # if we use the `github_id` field. For these authors we must use the
+        # `sympy_commit_email` field.
+        if "sympy_commit_email" in author:
+            sympy_commit_id = author["sympy_commit_email"]
+        else:
+            sympy_commit_id = author["github_id"]
         f.write(u"| %s | [@%s](https://github.com/%s) | "
             "[%d](https://github.com/sympy/sympy/commits?author=%s) | "
             "[commits](https://github.com/sympy/sympy-paper/commits?author=%s),"
@@ -57,7 +65,7 @@ Finally, all authors agreed to the requirement 4.
             "| %s, %s |\n" % (
                 author["name"],
                 author["github_id"], author["github_id"],
-                author["sympy_commits"], author["github_id"],
+                author["sympy_commits"], sympy_commit_id,
                 author["github_id"], author["github_id"],
                 author["institution"], author["institution_address_siam"],
                 ))
