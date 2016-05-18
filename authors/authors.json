@@ -45,6 +45,15 @@
         "sympy_commits": 263
     },
     {
+        "email": "sergiu.ivanov@u-pec.fr",
+        "github_id": "scolobb",
+        "institution": "Université Paris Est Créteil",
+        "institution_address": "61 av. Général de Gaulle, 94010 Créteil, France",
+        "institution_address_siam": "61 av. Général de Gaulle, 94010 Créteil, France",
+        "name": "Sergiu Ivanov",
+        "sympy_commits": 260
+    },
+    {
         "email": "jkm@ucdavis.edu",
         "github_id": "moorepants",
         "institution": "University of California, Davis",
@@ -173,11 +182,11 @@
     {
         "email": "cimrman3@ntc.zcu.cz",
         "github_id": "rc",
-        "sympy_commit_email": "robert.cimrman@gmail.com",
         "institution": "New Technologies - Research Centre, University of West Bohemia",
         "institution_address": "Univerzitní 8, 306 14 Plzeň, Czech Republic",
         "institution_address_siam": "Univerzitní 8, 306 14 Plzeň, Czech Republic",
         "name": "Robert Cimrman",
+        "sympy_commit_email": "robert.cimrman@gmail.com",
         "sympy_commits": 1
     },
     {
