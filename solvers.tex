@@ -1,23 +1,22 @@
-%% Solvers in SymPy
-
-
 SymPy has a module of equation solvers for symbolic equations. There are two
-submodules to solve algebraic equations in SymPy, referred to as old solve
-function, \texttt{solve}, and new solve function, \texttt{solveset}.
-Solveset is introduced with several design changes with respect to the old
-\texttt{solve} function to resolve the issues with old \texttt{solve} function,
-for example old \texttt{solve} function's input API has many flags which are
-not needed and they make it hard for the user and the developers to work on
-solvers. In contrast to the old solve function, the \texttt{solveset} has a
-clean input API, it only asks for the necessary information from the user.
-The function signatures of the old and new solve function:
+functions for solveing algebraic equations in SymPy. \texttt{solve}, which has
+existed in SymPy for many years, and \texttt{solveset}, which is new in SymPy 1.0.
+\texttt{solveset} has several design changes with respect to the old
+\texttt{solve} function to resolve some of the issues with old \texttt{solve}
+function. For example, the input API of \texttt{solve} has many flags, which
+complicate it for both users and developers. In contrast, \texttt{solveset} has a
+cleaner input API\@:  it only asks for the necessary information from the user.
+The function signatures of \texttt{solve} and \texttt{solveset} are
 \begin{verbatim}
-solve(f, *symbols, **flags)  # old solve function
-solveset(f, symbol, domain)  # new solve function
+solve(f, *symbols, **flags)
+solveset(f, symbol, domain)
 \end{verbatim}
-The old \texttt{solve} function has an inconsistent output API for various types
-of inputs, whereas the \texttt{solveset} has a canonical output API which is
-achieved using sets. It can consistently return various types of solutions.
+
+Additionally, \texttt{solve} has an inconsistent output API for various types
+of inputs. For instance, depending on the input, sometimes it returns a Python
+list and sometimes it returns a Python dictionary. On the other hand, the
+\texttt{solveset} has a canonical output API. \texttt{solveset} always returns
+a SymPy set object.
 
 \begin{itemize}
 \item Single solution
