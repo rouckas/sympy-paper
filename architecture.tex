@@ -7,8 +7,8 @@ before they can be used. The statement
 \begin{verbatim}
 >>> from sympy import *
 \end{verbatim}
-will import all SymPy functions into the global Python namespace. All the
-examples in this paper assume that this has been run.
+will import all SymPy public functions into the global Python namespace. All
+the examples in this paper assume that this has been run.
 
 Symbolic variables, called symbols, must be defined and assigned to
 Python variables before they can be used. This is typically done through the
@@ -19,21 +19,23 @@ instance,
 \end{verbatim}
 creates three symbols representing variables named $x$, $y$, and $z$, assigned
 to Python variables of the same name. The Python variable names that symbols
-are assigned to are immaterial---we could have just as well have written
-\verb|a, b, c = symbol('x y z')|. All the examples in this paper will assume
-that the symbols \verb|x|, \verb|y|, and \verb|z| have been assigned as above.
+are assigned to are immaterial---one could have just as well have written
+\verb|a, b, c = symbol('x y z')|. All examples in this paper will assume that
+the symbols \verb|x|, \verb|y|, and \verb|z| have been assigned to the a symbol
+identical to their names.
 
-Expressions are created from symbols using Python syntax, which mirrors usual
-mathematical notation. Note that in Python, exponentiation is \verb|**|. For
-instance, the following creates the expresion $(x^2 - 2x + 3)/y$.
+Expressions are created from symbols using Python syntax through operator
+overloading, which mirrors usual mathematical notation. Note that in Python,
+exponentiation is \verb|**|. For instance, the following creates the expresion
+$(x^2 - 2x + 3)/y$.
 \begin{verbatim}
 >>> (x**2 - 2*x + 3)/y
 (x**2 - 2*x + 3)/y
 \end{verbatim}
 
 All SymPy expressions are immutable. This simplifies the design by allowing
-interning. It also allows expressions to be hashed and stored in a Python
-dictionary, which enables caching and other features.
+interning. It also allows expressions to be hashed and stored in Python
+dictionaries, therefore enabling caching and other features.
 
 %% I volunteer to write this section. --Aaron
 %%
@@ -43,9 +45,9 @@ dictionary, which enables caching and other features.
 
 The core of a computer algebra system (CAS) refers to the module that is in
 charge of representing symbolic expressions and performing basic manipulations
-with them. In SymPy, every symbolic expression is an instance of a Python class.
-Expressions are represented by expression trees. The operators are represented
-by the type of an expression and the child nodes are stored in the
+with them. In SymPy, every symbolic expression is an instance of properly
+designed Python classes, representing expression trees. The operators are
+represented by the type of an expression and the child nodes are stored in the
 \texttt{args} attribute. A leaf node in the expression tree has an empty
 \texttt{args}.
 The \texttt{args} attribute is provided by the class \texttt{Basic},
