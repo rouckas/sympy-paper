@@ -6,7 +6,7 @@ tex:
 	pdflatex -shell-escape --halt-on-error paper.tex
 	pdflatex -shell-escape --halt-on-error paper.tex
 
-authors.tex: authors/authors.json
+authors.tex: authors/list_latex.py authors/authors.json
 	cd authors; ./list_latex.py
 
 pprint:
