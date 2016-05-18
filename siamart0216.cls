@@ -442,8 +442,10 @@
 \newcommand\maketitle{\par
   \begingroup\def\@fnsymbol##1{\ensuremath{\ifcase##1\or *\or \dagger\or \ddagger\or
    \mathsection\or \mathparagraph\or \|\or \#\or \dagger\dagger
-   \or \ddagger\ddagger \or 1 \or 2 \or 3 \or 4 \or 5 \or 6 \or 7 \or 8 \or
-   9 \or 10 \or 11 \or 12 \else\@ctrerr\fi}}
+   \or \ddagger\ddagger \or \mathsection\mathsection \or
+   \mathparagraph\mathparagraph \or \|\| \or \#\# \or
+   1 \or 2 \or 3 \or 4 \or 5 \or 6 \or 7 \or 8 \or
+   9 \or 10 \or 11 \or 12 \or 13 \or 14 \or 15 \or 16 \or 17 \else\@ctrerr\fi}}
     \renewcommand{\thefootnote}{\fnsymbol{footnote}}%
     \def\@makefnmark{\hbox to\z@{$\m@th^{\@thefnmark}$\hss}}%
     \long\def\@makefntext##1{\parindent 1em\noindent
