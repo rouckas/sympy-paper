@@ -17,25 +17,25 @@ SymPy has the following atomic set classes:
 
     \item \verb|UniversalSet| is an abstract ``universal set'' for which
       everything is a member. The union of the universal set with any set
-      gives the universal set and the intersection gives to the other set
-      itself.
+      gives the universal set and the intersection gives the other set itself.
 
     \item \verb|FiniteSet| is functionally equivalent to Python's built
-      in\texttt{set} object. Its members can be any SymPy object including
-      other sets themselves.
+      in \texttt{set} object. Its members can be any SymPy object including
+      other sets.
 
-    \item \verb|Integers| represents the set of Integers $\mathbb{Z}$.
+    \item \verb|Integers| represents the set of integers $\mathbb{Z}$.
 
-    \item \verb|Naturals| represents the set of Natural numbers $\mathbb{N}$,
+    \item \verb|Naturals| represents the set of natural numbers $\mathbb{N}$,
       i.e., the set of positive integers.
 
-    \item \verb|Naturals0| represents the whole numbers, which are all the
-      non-negative integers.
+    \item \verb|Naturals0| represents the set of whole numbers $\mathbb{N}^0$,
+      which are all the non-negative integers.
 
     \item \verb|Range| represents a range of integers. A range is defined by
-      specifying a start value, an end value, and a step size. Range is
-      functionally equivalent to Python's \texttt{range} except it supports
-      infinite endpoints, allowing the representation of infinite ranges.
+      specifying a start value, an end value, and a step size. The enumeration
+      of a \texttt{Range} object is functionally equivalent to Python's
+      \texttt{range} except it supports infinite endpoints, allowing the
+      representation of infinite ranges.
 
     \item \verb|Interval| represents an interval of real numbers. It is
       specified by giving the start and end point and specifying if it is open
@@ -47,35 +47,36 @@ SymPy has the following atomic set classes:
 
 %% Operations
 
-Other than unevaluated classes of Union, Intersection and Set Difference
-operations, we have following set classes.
+Other than unevaluated classes of \texttt{Union}, \texttt{Intersection}, and
+\texttt{Complement} operations, we have following set classes.
 
 \begin{itemize}
 
     \item \verb|ProductSet| defines the Cartesian product of two
         or more sets. The product set is useful when representing higher
-        dimensional spaces. For example to represent a three-dimensional space
+        dimensional spaces. For example, to represent a three-dimensional space,
         we simply take the Cartesian product of three real sets.
 
       \item \verb|ImageSet| represents the image of a function when applied to
-        a particular set. In notation, the image set of a function $F$ with
-        respect to a set $S$ is $\{ F(x) | x \in S \}$. SymPy uses image sets
-        to represent sets of infinite solutions equations such as $\sin(x)=0$.
+        a particular set. The image set of a function $F$ with respect to a set
+        $S$ is $\{ F(x) | x \in S \}$. SymPy uses image sets to represent sets
+        of infinite solutions equations such as $\sin(x)=0$.
 
 
-      \item \verb|ConditionSet| represents subset of a set whose members
-        satisfies a particular condition. In notation, the condition set of
-        the set $S$ with respect to the condition $H$ is
-        $\{x | H(x), x \in S \}$. SymPy uses condition sets to represent the
-        set of solutions of equations and inequalities, where the equation or
-        the inequality is the condition and the set is the domain being solved
+      \item \verb|ConditionSet| represents a subset of a set whose members
+        satisfies a particular condition. The condition set of the set $S$ with
+        respect to the condition $H$ is $\{x | H(x), x \in S \}$. SymPy uses
+        condition sets to represent the set of solutions of equations and
+        inequalities, where the equation or the inequality is the condition and
+        the set is the domain being solved
         over.
 
 
 \end{itemize}
 
 A few other classes are implemented as special cases of the classes described
-above. The set of real numbers, \verb|Reals| is implemented as a special case
-of \verb|Interval|, $(-\infty, \infty)$. \verb|ComplexRegion| is implemented
-as a special case of \verb|ImageSet|. \verb|ComplexRegion| supports both polar
-and rectangular representation of regions on the complex plane.
+above. The set of real numbers, \verb|Reals|, is implemented as a special case
+of \verb|Interval| over the interval $(-\infty, \infty)$. \verb|ComplexRegion|
+is implemented as a special case of \verb|ImageSet|. \verb|ComplexRegion|
+supports both polar and rectangular representation of regions on the complex
+plane.

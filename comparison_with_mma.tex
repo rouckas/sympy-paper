@@ -1,13 +1,13 @@
 
-Wolfram Mathematica is a popular proprietary CAS.\@
+Wolfram Mathematica is a popular proprietary CAS.
 It features highly advanced algorithms.
 Mathematica has a core implemented in C++~\cite{Wolfram2016}
 which interprets its own programming language (know as Wolfram language).
 
 % M-expressions
 
-Analogously to Lisp's S-expressions,
-Mathematica uses its own style of M-expressions,
+Analogous to Lisp's S-expressions,
+Mathematica uses its own style of M-expres\-sions,
 which are arrays of either atoms or other M-expression.
 The first element of the expression identifies the type of the expression
 and is indexed by zero, whereas the first argument is indexed by one.
@@ -30,45 +30,44 @@ equivalent behavior, such as class inheritance.
 Unlike SymPy, Mathematica's expressions are mutable,
 that is one can change parts of the expression tree without the need of
 creating a new object.
-The reactivity of Mathematica allows for a lazy updating of any references
+The mutability of Mathematica allows for a lazy updating of any references
 to that data structure.
 
 % * comparison with Mathematica: commutativity, associative expressions, one-identity. Advantage of SymPy: multiplicative commutativity defined on symbols.
 % Products and commutativity
 
-Products in Mathematica are determined by some builtin node types,
-such as \texttt{Times}, \texttt{Dot}, and others.
-\texttt{Times} is overloaded by the * operator,
-and is always meant to represent a commutative operator.
-The other notable product is \texttt{Dot}, overloaded by the \texttt{.} operator.
-This product represents matrix multiplication,
-it is not commutative.
-SymPy uses the same node for both scalar and matrix multiplication,
-the only exception being with abstract matrix symbols.
-Unlike Mathematica, SymPy determines commutativity with respect to
-multiplication from the factor's expression type.
-Mathematica puts the \texttt{Orderless} attribute on the expression
-type.
+Products in Mathematica are determined by some builtin node types, such as
+\texttt{Times}, \texttt{Dot}, and others.  \texttt{Times} is a representation of
+the \texttt{*} operator, and is always meant to represent a commutative product
+operator.  The other notable product is \texttt{Dot}, which represents the
+\texttt{.} operator.  This product represents matrix multiplication, it is not
+commutative.  In general, SymPy uses the same node for both scalar and matrix
+multiplication, the only exception being with abstract matrix symbols.  Unlike
+Mathematica, SymPy determines commutativity with respect to multiplication from
+the factor's expression type.  Mathematica puts the \texttt{Orderless} attribute
+on the expression type.
 
 % Associative expressions.
 
 Regarding associative expressions,
 SymPy handles associativity by making associative expressions inherit the
 class \texttt{AssocOp},
-while Mathematica specifies the \texttt{Flat}\cite{WolframRefFlat} attribute on the expression type.
+while Mathematica specifies the \texttt{Flat}~\cite{WolframRefFlat} attribute on the expression type.
 
 % One identity
 
 
 % Pattern matching
 
-Mathematica relies heavily on pattern matching:
+Mathematica relies heavily on pattern matching ---
 even the so-called equivalent of function declaration is in reality
 the definition of a pattern matching generating an expression tree transformation
 on input expressions.
 %
-Mathematica's pattern matching is sensitive to associative\cite{WolframRefFlat}, commutative\cite{WolframRefOrderless},
-and one-identity\cite{WolframRefOneIdentity} properties of its expression tree nodes\cite{WolframRefFlatAndOrderlessFunctions}.
+Mathematica's pattern matching is sensitive to
+associative~\cite{WolframRefFlat}, commutative~\cite{WolframRefOrderless}, and
+one-identity~\cite{WolframRefOneIdentity} properties of its expression tree
+nodes~\cite{WolframRefFlatAndOrderlessFunctions}.
 %
 SymPy has various ways to perform pattern matching.
 All of them play a lesser role in the CAS than in Mathematica
@@ -78,7 +77,7 @@ identify the kind of differential equation, but it is envisaged to replace
 that strategy with analysis of Lie symmetries in the future.
 Mathematica's real advantage is the ability to add new overloading to the
 expression builder at runtime, or for specific subnodes.
-Consider for example
+Consider for example:
 \begin{verbatim}
 In[1]:= Unprotect[Plus]
 
@@ -95,12 +94,12 @@ the functionality of the \texttt{Plus} node (the node for additions in Mathemati
 The trailing underscore after a symbol means that it is to be considered a
 wildcard.
 This example may not be practical, one may wish to keep this identity
-unevaluated, nevertheless it clearly illustrates the potentiality to define
+unevaluated.  Nevertheless, it clearly illustrates the potential to define
 one's own immediate transformation rules.
-In SymPy the operations constructing the addition node in the expression tree
-are Python class constructors,
+In SymPy, the operations constructing the addition node in the expression tree
+are Python class constructors
 and cannot be modified at runtime.\footnote{In reality, Python supports monkey patching,
-nonetheless it is a discouraged programming pattern.}
+nonetheless, it is a discouraged programming pattern.}
 The way SymPy deals with extending the missing runtime overloadability functionality
 is by subclassing the node types.
 Subclasses may overload the class constructor to yield the proper
@@ -112,7 +111,7 @@ extended functionality.
 
 % Type inheritance and polymorphism
 
-Unlike SymPy, Mathematica does not support type inheritance or polymorphism~\cite{Fateman1992}.
+Unlike SymPy, Mathematica does not support type inheritance or poly\-morph\-ism~\cite{Fateman1992}.
 % cite examples of class inheritance in SymPy:
 %
 SymPy relies heavily on class inheritance, but for the most part,
@@ -143,7 +142,7 @@ function.
 % * comparison with Mathematica: avoid misspelling variables through forced declaration (check that you can't do it in Mathematica).
 % * evaluate=False vs HoldForm
 
-Unevaluated expressions can be achieved in various ways,
+Unevaluated expressions in Mathematica can be achieved in various ways,
 most commonly with the \texttt{HoldForm} or \texttt{Hold} nodes,
 that block the evaluation of subnodes by the parser.
 Note that such a node cannot be expressed in Python, because of greedy evaluation.
@@ -152,18 +151,18 @@ to all subnodes, or put the input expression in a string.
 
 % * comparison with Mathematica: == is structural equality, not
 
-The operator == returns a boolean whenever it is able to immediately evaluate
-the truthness of the equality, otherwise it returns an \texttt{Equal} expression.
-In SymPy == means structural equality and is always guaranteed to return a
-boolean expression.
-To express an equality in SymPy it is necessary to explicitly construct the
-\texttt{Equality} class.
+In Mathematica, the operator \texttt{==} returns a boolean whenever it is able
+to immediately evaluate the truth of the equality, otherwise it returns an
+\texttt{Equal} expression.  In SymPy, \texttt{==} means structural equality and
+is always guaranteed to return a boolean expression.  To express an equality in
+SymPy it is necessary to explicitly construct an object of the \texttt{Equality}
+class.
 
 % * comparison with Mathematica: polynomial module.
 % * comparison with Mathematica: space is product, ** vs ^
 
 SymPy, in accordance with Python and unlike the usual programming convention,
-uses ** to express the power operator, while Mathematica uses the more
+uses \texttt{**} to express the power operator, while Mathematica uses the more
 common \verb|^|.
 
 % * comparison with Mathematica: ( ) is Sequence, functions are generally uppercase.
