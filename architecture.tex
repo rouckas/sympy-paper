@@ -90,9 +90,9 @@ with all the nested class constructor calls to create the given expression.
 
 Every SymPy expression satisfies a key invariant, namely,
 \texttt{expr.func(*expr.args) == expr}. This means that expressions are
-rebuildable from their \texttt{args}~\footnote{\texttt{expr.func} is used
+rebuildable from their \texttt{args}.\footnote{\texttt{expr.func} is used
 instead of \texttt{type(expr)} to allow the function of an expression to be
-distinct from its actual Python class. In most cases the two are the same.}.
+distinct from its actual Python class. In most cases the two are the same.}
 Here, we note that in SymPy, the \texttt{==} operator represents exact
 structural equality, not mathematical equality. This allows one to test if
 any two expressions are equal to one another as expression trees.
@@ -111,9 +111,9 @@ operators and numeric literals.
 One must be careful in one particular instance: Python does not have a builtin
 rational literal type. Given a fraction of integers such as \texttt{1/2},
 Python will perform floating point division and produce
-\texttt{0.5}~\footnote{This is the behavior in Python 3. In Python 2,
+\texttt{0.5}.\footnote{This is the behavior in Python 3. In Python 2,
   \texttt{1/2} will perform integer division and produce \texttt{0}, unless
-  one uses \texttt{from \_\_future\_\_ import division}.}. Python uses eager
+  one uses \texttt{from \_\_future\_\_ import division}.} Python uses eager
 evaluation, so expressions like \texttt{x + 1/2} will produce \texttt{x +
   0.5}, because by the time any SymPy function sees the \texttt{1/2} it will
 have already been converted to \texttt{0.5} by Python. However, for a CAS like
@@ -161,9 +161,9 @@ t
 \end{verbatim}
 Some of the common assumptions that SymPy allows are \texttt{positive},
 \texttt{negative}, \texttt{real}, \texttt{nonpositive}, \texttt{nonnegative},
-\texttt{real}, \texttt{integer}, and \texttt{commutative}~\footnote{If $A$ and
+\texttt{real}, \texttt{integer}, and \texttt{commutative}.\footnote{If $A$ and
 $B$ are Symbols created with \texttt{commutative=False} then SymPy will keep
-$A\cdot B$ and $B\cdot A$ distinct.}. Assumptions on any object can be checked with the
+$A\cdot B$ and $B\cdot A$ distinct.} Assumptions on any object can be checked with the
 \verb|is_|\texttt{\textit{assumption}} attributes, like \verb|t.is_positive|.
 
 Assumptions are only needed to restrict a domain so that certain
@@ -209,7 +209,7 @@ functions that are part of SymPy.
 
 The typical way to create a custom SymPy object is to subclass an existing
 SymPy class, generally one of \texttt{Basic}, \texttt{Expr}, or
-\texttt{Function}. All SymPy classes used for expression trees~\footnote{Some
+\texttt{Function}. All SymPy classes used for expression trees\footnote{Some
   internal classes, such as those used in the polynomial module, do not follow
   this rule for efficiency reasons.} should be subclasses of the base class
 \texttt{Basic}, which defines some basic methods for symbolic expression
