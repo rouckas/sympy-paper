@@ -17,7 +17,7 @@ at~\cite{ct4commutativity}.
 In order to achieve the two goals, the module \texttt{categories} defines
 several classes representing some of the essential concepts: objects, morphisms,
 categories, and diagrams.  In category theory, the inner structure of objects is
-often discarded in the favour of studying the properties of morphisms, so the
+often discarded in the favor of studying the properties of morphisms, so the
 class \texttt{Object} is essentially a synonym of the class \texttt{Symbol}.
 There are several morphism classes which do not have a particular internal
 structure either, though an exception is \texttt{CompositeMorphism}, which
@@ -30,7 +30,7 @@ no restrictions are imposed on what the properties may be --- for example, one
 might use strings of the form ``forall'', ``exists'', ``unique'', etc.
 Furthermore, the morphisms of a diagram are grouped into \textit{premises} and
 \textit{conclusions}, in order to be able to represent logical implications of
-the form ``for a collection of mophisms $P$ with properties $p:P\to \Omega$ (the
+the form ``for a collection of morphisms $P$ with properties $p:P\to \Omega$ (the
 premises), there exists a collection of morphisms $C$ with properties $c:C\to
 \Omega$ (the conclusions),'' where $\Omega$ is the universal collection of
 properties.  Finally, the class \texttt{Category} includes a collection of
@@ -72,7 +72,7 @@ embedding of a commutative diagram into a given diagram is found, one concludes
 that the subdiagram is commutative.  Deciding commutativity of the whole diagram
 is therefore based (theoretically) on finding a ``cover'' of the target diagram
 by embeddings of the axioms.  The na\"{i}ve implementation proved to be
-prohibitively slow; a better optimised version is therefore in order, as well as
+prohibitively slow; a better optimized version is therefore in order, as well as
 application of heuristics.
 
 Contributions to automatic inference of commutativity of diagrams are welcome.
