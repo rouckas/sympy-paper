@@ -41,7 +41,7 @@ Python code creates the expression $(x^2 - 2x + 3)/y$.
 (x**2 - 2*x + 3)/y
 \end{verbatim}
 
-Importnatly, SymPy expressions are immutable. This simplifies the design of
+Importantly, SymPy expressions are immutable. This simplifies the design of
 SymPy by allowing expression interning. It also enables expressions to be
 hashed and stored in Python dictionaries, thereby permitting caching and
 other features.
@@ -55,8 +55,8 @@ other features.
 A computer algebra system (CAS) represents mathematical expressions as data
 structures.  For example the mathematical expression $x + y$ is represented as
 a tree with three nodes, $+$, $x$, and $y$, where $x$ and $y$ are ordered
-children of $+$.  As users of the computer algebra system manipulate
-mathematical expressions with traditional mathematical syntax the CAS
+children of $+$.  As users manipulate
+mathematical expressions with traditional mathematical syntax, the CAS
 manipulates the underlying data structures.  Automated optimizations and
 computations such as integration, simplification, etc.\ are all functions that
 consume and produce expression trees.
