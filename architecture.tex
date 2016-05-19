@@ -127,6 +127,7 @@ operators and numeric literals.
 %%
 %% Assumptions
 \subsection{Assumptions}
+\label{sec:assumptions}
 
 SymPy performs logical inference through its assumptions system. The
 assumptions system allows users to specify that symbols have certain common
@@ -192,12 +193,6 @@ rational, so \verb|Symbol('x', integer=True).is_rational| returns
 based on the assumptions of their arguments. For instance, if \texttt{x} and
 \texttt{y} are both created with \texttt{positive=True}, then
 \verb|(x + y).is_positive| will be \texttt{True}.
-
-%% TODO: axe this? Why mention it if we won't discuss it. Maybe move to
-%% future work. - scopatz
-SymPy also has an experimental assumptions system where facts are stored
-separately from objects, and deductions are made with a SAT solver. We will not
-discuss this system here.
 
 %% TODO: describe how assumptions are implemented
 
