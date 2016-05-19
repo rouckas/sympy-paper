@@ -63,9 +63,9 @@ consume and produce expression trees.
 
 In SymPy every symbolic expression is an instance of a Python \texttt{Basic}
 class, a superclass of all SymPy types providing common methods to all SymPy
-tree-elements such as traversals, caching, etc.  The children of a node in the
-tree are held in the \texttt{args} attribute.  A leaf node in the expression
-tree has empty \texttt{args}.
+tree-elements, such as traversals.  The children of a node in the
+tree are held in the \texttt{args} attribute.  A terminal or leaf node in the
+expression tree has empty \texttt{args}.
 
 For example, consider the expression $xy + 2$:
 \begin{verbatim}
@@ -81,10 +81,10 @@ an addition, so it is of type \texttt{Add}. The child nodes of \texttt{expr} are
 (2, x*y)
 \end{verbatim}
 
-One can dig further into the expression tree to see the full expression. For
+Traversing further into the expression tree grants the full expression. For
 example, the first child node, given by \texttt{expr.args[0]}, is
-\texttt{2}. Its class is \texttt{Integer}, and it has empty \texttt{args},
-indicating that it is a leaf node.
+\texttt{2}. Its class is \texttt{Integer}, and it has empty an \texttt{args}
+tuple, indicating that it is a leaf node.
 \begin{verbatim}
 >>> expr.args[0]
 2
@@ -94,20 +94,20 @@ indicating that it is a leaf node.
 ()
 \end{verbatim}
 
-A useful way to view an expression tree is with the \texttt{srepr} function,
-which returns a string representation of an expression as valid Python code
+A useful way to view an expression tree is with the \texttt{srepr} function.
+This returns a string representation of an expression as valid Python code
 with all the nested class constructor calls to create the given expression.
 \begin{verbatim}
 >>> srepr(expr)
 "Add(Mul(Symbol('x'), Symbol('y')), Integer(2))"
 \end{verbatim}
 
-Every SymPy expression satisfies a key invariant:
+Every SymPy expression satisfies a key identity invariant:
 \begin{verbatim}
 expr.func(*expr.args) == expr
 \end{verbatim}
 This means that expressions are
-rebuildable from their \texttt{args}.\footnote{\texttt{expr.func} is used
+rebuildable from their \texttt{args}. \footnote{\texttt{expr.func} is used
 instead of \texttt{type(expr)} to allow the function of an expression to be
 distinct from its actual Python class. In most cases the two are the same.}
 We note that in SymPy, the \texttt{==} operator represents exact
