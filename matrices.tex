@@ -15,7 +15,7 @@ and computing inverses using LU decomposition, LDL decomposition, Gauss-Jordan
 elimination, Cholesky decomposition, Moore-Penrose pseudoinverse, and adjugate
 matrix.
 
-All operations are computed symbolically. Fore example eigenvalues are computed
+All operations are computed symbolically. For instance, eigenvalues are computed
 by generating the characteristic polynomial using the Berkowitz algorithm and
 then solving it using polynomial routines. Diagonalizable matrices can be
 diagonalized first to compute the eigenvalues.
@@ -25,6 +25,8 @@ diagonalized first to compute the eigenvalues.
 {x - sqrt(y*(x + y)): 1, x + sqrt(y*(x + y)): 1}
 \end{verbatim}
 
+%% TODO a Python list is not a dense representation...
+%% Is this supposed to say flat? - scopatz
 Internally these matrices store the elements as a list, making it a dense
 representation. For storing sparse matrices, the \verb|SparseMatrix| class can
 be used. Sparse matrices store the elements in a dictionary of keys (DoK)
@@ -47,7 +49,7 @@ and transpose are stored symbolically as matrix expressions.
 2*T[0, 1] + Sum(R[0, _k]*S[_k, 1], (_k, 0, n - 1))
 \end{verbatim}
 
-Block matrices are also supported in SymPy. \verb|BlockMatrix| elements can be any
+Block matrices are also implemented in SymPy. \verb|BlockMatrix| elements can be any
 matrix expression which includes explicit matrices, matrix symbols, and block
 matrices. All functionalities of matrix expressions are also present in
 \verb|BlockMatrix|.
@@ -71,4 +73,4 @@ X[0, 0]
 When symbolic matrices are combined with the assumptions module for logical
 inference they provide powerful reasoning over invertibility,
 semi-definiteness, orthogonality, etc. which are valuable in the construction
-of numerical linear algebra programs.
+of numerical linear algebra systems.
