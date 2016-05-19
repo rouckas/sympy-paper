@@ -1,5 +1,5 @@
-The \texttt{Float} class holds an arbitrary-precision binary floating-point value
-and a precision in bits. An operation between two \texttt{Float}
+The \texttt{Float} class represents an arbitrary-precision binary floating-point
+by storing it value and precision (in bits). An operation between two \texttt{Float}
 inputs is rounded to the larger of the two precisions.
 Since Python floating-point literals automatically evaluate to \texttt{double}
 (53-bit) precision, strings should be used to input precise decimal values:
@@ -21,11 +21,12 @@ working precision until the estimated accuracy of the
 final result matches the sought number of decimal digits.
 
 The internal error tracking does not provide rigorous error bounds
-(in the sense of interval arithmetic) and cannot be used to track
-uncertainty in measurement data in any meaningful way;
+(in the sense of interval arithmetic) and cannot be used to acurately track
+uncertainty in measurement data;
 the sole purpose is to mitigate loss of accuracy that typically occurs
-when converting symbolic expressions to numerical values, for example
-due to catastrophic cancellation. This is illustrated by the following
+when converting symbolic expressions to numerical values. A weel-known,
+notorious case
+is that of catastrophic cancellation. This is illustrated by the following
 example (the input 25 specifies that 25 digits are sought):
 
 \begin{verbatim}
@@ -41,10 +42,11 @@ special functions, infinite series and integrals.
 
 SymPy does not track the accuracy of
 approximate numbers outside of \texttt{evalf}.
-The familiar dangers of floating-point arithmetic apply~\cite{goldberg1991every}, and
-symbolic expressions containing floating-point numbers should be treated
-with some caution.
+The familiar dangers of floating-point arithmetic apply~\cite{goldberg1991every},
+and symbolic expressions containing floating-point numbers should be treated
+with reasonable caution.
 This approach is similar to Maple and Maxima.
+%% TODO citations needed
 
 By contrast, Mathematica uses a form
 of significance arithmetic~\cite{Sofroniou2005precise} for approximate numbers.
@@ -80,7 +82,7 @@ mpf('0.100000000000000000000192874984794')
 For pure numerical computing, it is convenient to use mpmath directly
 with \texttt{from mpmath import *} (it is best to avoid such an
 import statement when using SymPy simultaneously, since numerical
-functions such as \texttt{exp} will shadow the symbolic counterparts
+functions such as \texttt{exp} will collide names with the symbolic counterparts
 in SymPy).
 
 Like SymPy, mpmath is a pure Python library.
@@ -133,7 +135,7 @@ are also used in a few special cases.
 In general, linear combinations and argument transformations
 give rise to singularities that have to be removed for certain
 combinations of parameters.
-A typical example is the modified Bessel function of the second kind
+A typical example is the modified Bessel function of the second kind,
 
 $$K_{\nu}(z) = \frac{1}{2} \left[
             {\left(\frac{z}{2}\right)}^{-\nu}
