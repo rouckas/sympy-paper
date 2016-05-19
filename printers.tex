@@ -1,4 +1,3 @@
-
 SymPy has a rich collection of expression printers for displaying expressions
 to the user. By default, an interactive Python session will render the
 \verb|str| form of an expression, which has been used in all the examples in
@@ -11,10 +10,11 @@ roughly matches what a user would type to enter the expression.
 'Integral(sqrt(phi0), phi0)'
 \end{verbatim}
 
-Expressions can be printed with 2D monospace text with \verb|pprint|. This
+Expressions can be printed with 2D, monospace fonts via \verb|pprint|. This
 uses Unicode characters to render mathematical symbols such as integral signs,
 square roots, and parentheses. Greek letters and subscripts in symbol names
-are rendered automatically.
+have Unicode code points associated with them
+are therefore rendered automatically.
 
 \noindent
 \includegraphics[width=1\textwidth]{pprint.pdf}
