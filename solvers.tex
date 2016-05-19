@@ -1,11 +1,12 @@
 SymPy has a module of equation solvers for symbolic equations. There are two
-functions for solving algebraic equations in SymPy. \texttt{solve}, which has
-existed in SymPy for many years, and \texttt{solveset}, which is new in SymPy 1.0.
-\texttt{solveset} has several design changes with respect to the old
-\texttt{solve} function to resolve some of the issues with the old \texttt{solve}
-function. For example, the input API of \texttt{solve} has many flags, which
-complicate it for both users and developers. In contrast, \texttt{solveset} has a
-cleaner input API\@:  it only asks for the necessary information from the user.
+functions for solving algebraic equations in SymPy: \texttt{solve}
+and \texttt{solveset}.
+\texttt{solveset} has several design changes with respect to the older
+\texttt{solve} function. This distiction is present in order to resolve the
+usability issues with the
+previous \texttt{solve} function API while maintaining backward compatibility
+with earlier versions of SymPy.
+\texttt{solveset} only requires the necessary input information from the user.
 The function signatures of \texttt{solve} and \texttt{solveset} are
 \begin{verbatim}
 solve(f, *symbols, **flags)
@@ -59,8 +60,8 @@ ImageSet(Lambda(_n, 2*_n*pi + pi/2), Integers())
 S.Complexes
 \end{verbatim}
 
-Linear systems are solved with \texttt{linsolve}. Finite and infinite solution for determined, under
-determined, and over determined problems are supported.
+Linear systems are solved with \texttt{linsolve}. Finite and infinite solution for
+determined, under determined, and over determined problems are supported.
 \begin{verbatim}
 >>> A = Matrix([[1, 2, 3], [4, 5, 6], [7, 8, 10]])
 >>> b = Matrix([3, 6, 9])
