@@ -24,73 +24,10 @@ a SymPy set object.
 Both functions implicitly assume that expressions are equal to 0. For
 instance, \texttt{solveset(x - 1, x)} solves $x - 1 = 0$ for $x$.
 
-\noindent Single solution:
-\begin{verbatim}
->>> solveset(x - 1, x)
-{1}
-\end{verbatim}
-
-\noindent Finite solution set, quadratic equation:
-\begin{verbatim}
->>> solveset(x**2 - pi**2, x)
-{-pi, pi}
-\end{verbatim}
-
-\noindent No solution:
-\begin{verbatim}
->>> solveset(1, x)
-EmptySet()
-\end{verbatim}
-
-\noindent Interval solution:
-\begin{verbatim}
->>> solveset(x**2 - 3 > 0, x, domain=S.Reals)
-(-oo, -sqrt(3)) U (sqrt(3), oo)
-\end{verbatim}
-
-\noindent Infinitely many solutions:
-% SymPy 1.0 sstr() prints S.Complexes incorrectly
-% no-doctest
-\begin{verbatim}
->>> solveset(sin(x) - 1, x, domain=S.Reals)
-ImageSet(Lambda(_n, 2*_n*pi + pi/2), Integers())
->>> solveset(x - x, x, domain=S.Reals)
-(-oo, oo)
->>> solveset(x - x, x, domain=S.Complexes)
-S.Complexes
-\end{verbatim}
-
-Linear systems are solved with \texttt{linsolve}. Finite and infinite solution for
-determined, under determined, and over determined problems are supported.
-\begin{verbatim}
->>> A = Matrix([[1, 2, 3], [4, 5, 6], [7, 8, 10]])
->>> b = Matrix([3, 6, 9])
->>> linsolve((A, b), x, y, z)
-{(-1, 2, 0)}
->>> linsolve(Matrix(([1, 1, 1, 1], [1, 1, 2, 3])), (x, y, z))
-{(-y - 1, y, 2)}
-\end{verbatim}
-
 \texttt{solveset} is under active development as a planned replacement for
 \texttt{solve}. There are certain features which are implemented in
 \texttt{solve} that are not yet implemented in \texttt{solveset}. Notably,
 these include nonlinear multivariate system and transcendental equations.
-Below are examples of \textbf{solve} applied to these two cases.
 
-\noindent Nonlinear (multivariate) system of equations (the intersection of a circle
-and a parabola):
-\begin{verbatim}
->>> solve([x**2 + y**2 - 16, 4*x - y**2 + 6], x, y)
-[(-2 + sqrt(14), -sqrt(-2 + 4*sqrt(14))),
- (-2 + sqrt(14), sqrt(-2 + 4*sqrt(14))),
- (-sqrt(14) - 2, -I*sqrt(2 + 4*sqrt(14))),
- (-sqrt(14) - 2, I*sqrt(2 + 4*sqrt(14)))]
-\end{verbatim}
-
-\noindent Transcendental equations:
-\begin{verbatim}
->>> solve((x + log(x))**2 - 5*(x + log(x)) + 6, x)
-[LambertW(exp(2)), LambertW(exp(3))]
->>> solve(x**3 + exp(x))
-[-3*LambertW((-1)**(2/3)/3)]
-\end{verbatim}
+More examples of \texttt{solveset} and \texttt{solve} can be found in the
+supplement.

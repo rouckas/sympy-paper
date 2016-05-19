@@ -35,38 +35,10 @@ represents a matrix with dimensions $m\times n$, where $m$ and $n$ can be
 symbolic. Matrix addition and multiplication, scalar operations, matrix inverse,
 and transpose are stored symbolically as matrix expressions.
 
-\begin{verbatim}
->>> m, n, p = symbols("m, n, p", integer=True)
->>> R = MatrixSymbol("R", m, n)
->>> S = MatrixSymbol("S", n, p)
->>> T = MatrixSymbol("T", m, p)
->>> U = R*S + 2*T
->>> U.shape
-(m, p)
->>> U[0, 1]
-2*T[0, 1] + Sum(R[0, _k]*S[_k, 1], (_k, 0, n - 1))
-\end{verbatim}
-
 Block matrices are also implemented in SymPy. \verb|BlockMatrix| elements can be any
 matrix expression which includes explicit matrices, matrix symbols, and block
 matrices. All functionalities of matrix expressions are also present in
 \verb|BlockMatrix|.
-
-\begin{verbatim}
->>> n, m, l = symbols('n m l')
->>> X = MatrixSymbol('X', n, n)
->>> Y = MatrixSymbol('Y', m ,m)
->>> Z = MatrixSymbol('Z', n, m)
->>> B = BlockMatrix([[X, Z], [ZeroMatrix(m, n), Y]])
->>> B
-Matrix([
-[X, Z],
-[0, Y]])
->>> B[0, 0]
-X[0, 0]
->>> B.shape
-(m + n, m + n)
-\end{verbatim}
 
 When symbolic matrices are combined with the assumptions module for logical
 inference they provide powerful reasoning over invertibility,
