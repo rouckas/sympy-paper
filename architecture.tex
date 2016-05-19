@@ -118,7 +118,7 @@ interpreter translates the above \texttt{x*y + 2} to, roughly,
 \verb|(x.__mul__(y)).__add__(2)|. Both \texttt{x} and \texttt{y}, returned
 from the \texttt{symbols} function, are \texttt{Symbol} instances. The
 \texttt{2} in the expression is processed by Python as a literal, and is
-stored as Python's builtin \texttt{int} type. When \texttt{2} is passed to the
+stored as Python's built in \texttt{int} type. When \texttt{2} is passed to the
 \verb|__add__| method of \texttt{Symbol}, it is converted to the SymPy type
 \verb|Integer(2)| before being stored in the resulting expression tree. In
 this way, SymPy expressions can be built in the natural way using Python
@@ -173,7 +173,7 @@ $\sum_{n=0}^m f(n)$ as \verb|Sum(f(n), (n, 0, m))| without setting
 \texttt{integer=True} when creating the Symbol object \texttt{n}.
 
 The assumptions system additionally has deductive capabilities. The
-assumptions use a three-valued logic using the Python builtin objects
+assumptions use a three-valued logic using the Python built in objects
 \texttt{True}, \texttt{False}, and \texttt{None}. \texttt{None} represents the
 ``unknown'' case. This could mean that the given assumption could be either
 true or false under the given information, for instance,
