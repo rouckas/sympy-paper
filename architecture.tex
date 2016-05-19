@@ -31,10 +31,11 @@ assume that
 the symbols \verb|x|, \verb|y|, and \verb|z| have been assigned to Python variables
 identical to their symbolic names.
 
-Expressions are created from symbols using Python syntax through operator
-overloading, which mirrors the usual mathematical notation. Note that in Python,
-exponentiation is represented by \verb|**|. For instance, the following
-Python code creates the expression $(x^2 - 2x + 3)/y$.
+Expressions are created from symbols using Python mathematical syntax.  This is
+made possible by defining methods for performing mathematical operations
+between SymPy objects and Python objects.  Note that in Python, exponentiation
+is represented by \verb|**|. For instance, the following Python code creates
+the expression $(x^2 - 2x + 3)/y$.
 
 \begin{verbatim}
 >>> (x**2 - 2*x + 3)/y
