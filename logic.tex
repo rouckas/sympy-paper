@@ -8,7 +8,8 @@ expressions have been implemented in the \texttt{logic} module.
 \subsubsection{Constructing boolean expressions}
 
 A boolean variable can be declared as a SymPy symbol. Python operators
-\texttt{\&}, \texttt{\textbar{}} and \texttt{\textasciitilde{}} are overloaded
+\texttt{\&}, \texttt{\textbar{}} and \texttt{\textasciitilde{}} are overridden
+when using SymPy objects
 to use the SymPy functionality for logical \texttt{And}, \texttt{Or}, and
 \texttt{negate}.  Other logic functions are also integrated into SymPy,
 including \texttt{Xor} and \texttt{Implies}, which are constructed with
