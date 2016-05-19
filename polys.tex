@@ -4,7 +4,7 @@ SymPy implements a wide variety of algorithms for polynomial manipulation,
 which ranges from relatively simple algorithms for doing arithmetics of
 polynomials, to advanced methods for factoring multivariate polynomials
 into irreducibles, symbolically determining real and complex root isolation
-intervals, or computing Gröbner bases.
+intervals, or computing Gr\"{o}bner bases.
 
 Polynomial manipulation is useful on its own, but in SymPy, it's mostly used
 indirectly as a tool in other areas of the library. In fact, many mathematical
@@ -19,8 +19,8 @@ SymPy implements dense and sparse polynomial representations. Both are used in
 the univariate and multivariate cases. The dense representation is the default
 for univariate polynomials. For multivariate polynomials, the choice of
 representation is based on the application. The most common case for the sparse
-representation is algorithms for computing Gröbner bases (Buchberger, F4, and
-F5),
+representation is algorithms for computing Gr\"{o}bner bases (Buchberger, F4,
+and F5),
 % TODO: citation
 because different monomial orderings can be expressed easily in this
 representation. However, algorithms for computing multivariate GCDs or
@@ -47,7 +47,7 @@ Here are some examples of the \texttt{sympy.polys} submodule.
 (t**2*z**3 - t**2 + 47*x*y)*(2*t*z + 45*x**3 - 9*y**3 - y**2 + 3*z**3)
 \end{verbatim}
 
-\noindent Gröbner bases:
+\noindent Gr\"{o}bner bases:
 \begin{verbatim}
 >>> x0, x1, x2 = symbols('x:3')
 >>> I = [x0 + 2*x1 + 2*x2 - 1,
