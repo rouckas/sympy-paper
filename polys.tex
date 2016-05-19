@@ -1,27 +1,27 @@
 % Polynomials
 
-SymPy implements a wide variety of algorithms for polynomial manipulation,
+SymPy implements a suite of algorithms for polynomial manipulation,
 which ranges from relatively simple algorithms for doing arithmetics of
 polynomials, to advanced methods for factoring multivariate polynomials
 into irreducibles, symbolically determining real and complex root isolation
 intervals, or computing Gr\"{o}bner bases.
 
-Polynomial manipulation is useful on its own, but in SymPy, it is mostly used
+Polynomial manipulation is useful on its own. Within SymPy, though, it is mostly used
 indirectly as a tool in other areas of the library. In fact, many mathematical
 problems in symbolic computing are first expressed using entities from the
 symbolic core, preprocessed, and then transformed into a problem in the
 polynomial algebra, where generic and efficient algorithms are used to solve
-the problem and, in the end, solutions to the original one are recovered. For
-example, this is a common scheme in symbolic integration or summation
-algorithms.
+the problem and solutions to the original problem are recovered.
+This is a common scheme in symbolic integration or summation algorithms.
 
 SymPy implements dense and sparse polynomial representations. Both are used in
 the univariate and multivariate cases. The dense representation is the default
 for univariate polynomials. For multivariate polynomials, the choice of
 representation is based on the application. The most common case for the sparse
 representation is algorithms for computing Gr\"{o}bner bases (Buchberger, F4,
-and F5),
+and F5).
 % TODO: citation
+This is
 because different monomial orderings can be expressed easily in this
 representation. However, algorithms for computing multivariate GCDs or
 factorizations, at least those currently implemented in SymPy,
@@ -35,7 +35,7 @@ representation in Python gets inefficient when the number of variables gets
 high.
 
 Here are some examples of the \texttt{sympy.polys} submodule.
-
+%% TODO - explain why these matter
 \noindent Factorization:
 \begin{verbatim}
 >>> t = symbols("t")
