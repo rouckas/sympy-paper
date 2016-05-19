@@ -37,12 +37,13 @@ the Python language itself. The goal is for users of SymPy to be able to
 include SymPy alongside other Python libraries in their workflow, whether that
 is in an interactive environment or programmatic use as part of a larger system.
 
-Being developed as a library, SymPy does not have a built-in graphical user
+As a library, SymPy does not have a built-in graphical user
 interface (GUI). However, SymPy exposes a rich interactive display system,
 including registering printers with Jupyter~\cite{perez2007ipython} frontends,
-including the Notebook and Qt Console, which will pretty print SymPy
-expressions using MathJax~\cite{cervone2012mathjax} or \LaTeX{} rendering.
+including the Notebook and Qt Console, which will render SymPy
+expressions using MathJax~\cite{cervone2012mathjax} or \LaTeX{}.
 
+The remainder of this paper discusses key components of the SymPy software.
 Section~\ref{sec:architecture} discusses the architecture of SymPy.
 Section~\ref{sec:features} enumerates the features of SymPy and takes a closer
 look at some of the important ones. Following that, section~\ref{sec:numerics}
