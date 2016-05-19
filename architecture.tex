@@ -106,7 +106,7 @@ Every SymPy expression satisfies a key identity invariant:
 expr.func(*expr.args) == expr
 \end{verbatim}
 This means that expressions are
-rebuildable from their \texttt{args}. \footnote{\texttt{expr.func} is used
+rebuildable from their \texttt{args}.\footnote{\texttt{expr.func} is used
 instead of \texttt{type(expr)} to allow the function of an expression to be
 distinct from its actual Python class. In most cases the two are the same.}
 We note that in SymPy, the \texttt{==} operator represents exact
@@ -193,6 +193,8 @@ based on the assumptions of their arguments. For instance, if \texttt{x} and
 \texttt{y} are both created with \texttt{positive=True}, then
 \verb|(x + y).is_positive| will be \texttt{True}.
 
+%% TODO: axe this? Why mention it if we won't discuss it. Maybe move to
+%% future work. - scopatz
 SymPy also has an experimental assumptions system where facts are stored
 separately from objects, and deductions are made with a SAT solver. We will not
 discuss this system here.
@@ -203,15 +205,15 @@ discuss this system here.
 %% Extensibility
 \subsection{Extensibility}
 
-While the core of SymPy is quite small it has been extended to a broad variety
-of domains by a broad variety of contributors.  This is due in part because the
+While the core of SymPy is relatively small, it has been extended to a wide variety
+of domains by a broad range of contributors.  This is due in part because the
 same language, Python, is used both for the internal implementation and the
 external usage by users.  All of the extensibility capabilities available to
-users are also used by functions that are part of SymPy.  It is easy for most
-SymPy users to transition to development.
+users are also utilized by SymPy itself. This eases the transition pathway from
+SymPy user to SymPy developer.
 
 The typical way to create a custom SymPy object is to subclass an existing
-SymPy class, generally one of \texttt{Basic}, \texttt{Expr}, or
+SymPy class, usually  \texttt{Basic}, \texttt{Expr}, or
 \texttt{Function}. All SymPy classes used for expression trees\footnote{Some
   internal classes, such as those used in the polynomial module, do not follow
   this rule for efficiency reasons.} should be subclasses of the base class
