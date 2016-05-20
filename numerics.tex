@@ -116,6 +116,8 @@ Mathematica produced incorrect numerical values for large $x > 0$.
 Here, mpmath automatically removes an internal singularity
 and compensates for cancellations (amounting to 656 bits
 of precision when $x = 10000$), giving correct values:
+% doctest printer doesn't display "mpf"
+% no-doctest
 \begin{verbatim}
 >>> mpmath.mp.dps = 15
 >>> mpmath.meijerg([[],[0]],[[-0.5,-1,-1.5],[]],10000)
@@ -132,4 +134,3 @@ Symbolic integration and summation often produces hypergeometric
 and Meijer G-function closed forms (see section~\ref{sec:calculus});
 numerical evaluation of such special functions is a useful complement
 to direct numerical integration and summation.
-
