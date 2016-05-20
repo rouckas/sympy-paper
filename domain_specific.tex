@@ -71,7 +71,7 @@ objects are designed in the most general way possible to enable any particular
 quantum system to be implemented by subclassing the base operators and defining
 the relevant class methods to provide system specific logic.
 
-For example, symbolic quantum operators and states may be defined and perform
+For example, symbolic quantum operators and states may be defined, and one can perform
 a full range of operations with them:
 \begin{verbatim}
 >>> from sympy.physics.quantum import Commutator, Dagger, Operator
@@ -124,15 +124,18 @@ Grover's algorithm, dense coding, etc.
 \end{itemize}
 
 Here are a few short examples of the quantum information and computing capabilities
-in \verb|sympy.physics.quantum|. Start with a simple 4 qubit state and flip one of
-the qubits:
+in \verb|sympy.physics.quantum|. Start with a simple four-qubit state and flip the second
+qubit from the right using a Pauli-X gate:
 
 \begin{verbatim}
 >>> from sympy.physics.quantum.qubit import Qubit
+>>> from sympy.physics.quantum.gate import XGate
+>>> from sympy.physics.quantum import qapply
 >>> q = Qubit('0101')
 >>> q
 |0101>
->>> q.flip(1)
+>>> X = XGate(1)
+>>> qapply(X*q)
 |0111>
 \end{verbatim}
 Qubit states can also be used in adjoint operations, tensor products, inner/outer
