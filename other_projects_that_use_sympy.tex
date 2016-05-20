@@ -37,7 +37,7 @@ Some of them are listed below:
 \item
   \href{http://www.sagemath.org/}{\textbf{Sage}}: A CAS, visioned to be
   a viable free open source alternative to Magma, Maple, Mathematica and
-  Matlab.
+  MATLAB\@.
 \item
   \href{https://cloud.sagemath.com}{\textbf{SageMathCloud}}:
   SageMathCloud is a web-based cloud computing and course management
@@ -53,7 +53,7 @@ Some of them are listed below:
   analyzing and visualizing volumetric data (yt.units uses SymPy).
 \item
   \href{http://sfepy.org/}{\textbf{SfePy}}: Simple finite elements in
-  Python, see Section~\ref{sfepy}.
+  Python, see section~\ref{sfepy}.
 \item
   \href{http://quameon.sourceforge.net/}{\textbf{Quameon}}: Quantum
   Monte Carlo in Python.
@@ -82,22 +82,23 @@ listed above.
 \subsubsection{SfePy}\label{sfepy}
 
 \href{http://sfepy.org/}{\textbf{SfePy}} (Simple finite elements in Python),
-cf.~\cite{cimrman2014sfepy}. is a Python package for solving partial
+cf.~\cite{cimrman2014sfepy} is a Python package for solving partial
 differential equations (PDEs) in 1D, 2D and 3D by the finite element (FE)
-method \cite{Zienkiewicz2013FEM}. SymPy is used within this package mostly for
+method~\cite{Zienkiewicz2013FEM}. SymPy is used within this package mostly for
 code generation and testing, namely:
 
 \begin{itemize}
 \item generation of the hierarchical FE basis module, involving generation and
   symbolic differentiation of 1D Legendre and Lobatto polynomials, constructing
-  the FE basis polynomials \cite{Solin2003hpfem} and generating the C code;
+  the FE basis polynomials~\cite{Solin2003hpfem} and generating the C code;
 \item generation of symbolic conversion formulas for various groups of elastic
-  constants \cite{Fung1993contmech} -- provide any two of the Young's modulus,
-  Poisson's ratio, bulk modulus, Lamé's first parameter, shear modulus (Lamé's
-  second parameter) or longitudinal wave modulus and get the other ones;
+  constants~\cite{Fung1993contmech}:  provide any two of the Young's modulus,
+  Poisson's ratio, bulk modulus, Lam\'{e}'s first parameter, shear modulus
+  (Lam\'{e}'s second parameter) or longitudinal wave modulus and get the other
+  ones;
 \item simple physical unit conversions, generation of consistent unit sets;
-\item testing FE solutions using method of manufactured (analytical) solutions
-  -- the differential operator of a PDE is symbolically applied and a symbolic
+\item testing FE solutions using method of manufactured (analytical)
+  solutions:  the differential operator of a PDE is symbolically applied and a symbolic
   right-hand side is created, evaluated in quadrature points, and subsequently
   used to obtain a numerical solution that is then compared to the analytical
   one;

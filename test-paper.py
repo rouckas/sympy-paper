@@ -26,7 +26,8 @@ files = ["introduction.tex",
          "live.tex",
          "comparison_with_mma.tex",
          "other_projects_that_use_sympy.tex",
-         "tensors.tex"
+         "tensors.tex",
+         "polys.tex"
         ]
 
 output_file = "test_full_paper.py"

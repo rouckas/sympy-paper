@@ -5,14 +5,10 @@ of Manuel Bronstein's ``Poor Man's Integrator''~\cite{Bronstein2005pmint}, and
 an algorithm for computing integrals based on Meijer G-functions. These allow
 SymPy to compute a wide variety of indefinite and definite integrals.
 % TODO: What is the best citation for the Meijer G-function algorithm.
-% TODO: A more interesting examples here
+% TODO: More interesting examples here
 \begin{verbatim}
 >>> integrate(sin(x), x)
 -cos(x)
-\end{verbatim}
-Definite integrals are calculated with the same function by specifying a
-range of the integration variable. The following computes $\int_0^1\sin(x)\,dx$.
-\begin{verbatim}
 >>> integrate(sin(x), (x, 0, 1))
 -cos(1) + 1
 \end{verbatim}
@@ -24,8 +20,8 @@ computed recursively using the various differentiation rules.
 exp(x)*sin(x) + exp(x)*cos(x)
 \end{verbatim}
 
-Summations and products are also supported, via \verb|summation| and
-\verb|product|. Summations are computed using a combination of Gosper's
+Summations and products are computed with \verb|summation| and \verb|product|,
+respectively. Summations are computed using a combination of Gosper's
 algorithm, an algorithm that uses Meijer G-functions, and heuristics. Products
 are computed via some heuristics.
 % TODO: Citations for Gosper and Meijer G-function algorithms
@@ -34,7 +30,8 @@ are computed via some heuristics.
 
 Limits are computed with the \verb|limit| function. The limit module
 implements the Gruntz algorithm~\cite{Gruntz1996limits} for computing symbolic
-limits. For example, the following computes
+limits (a description of the Gruntz algorithm can be found in the supplement).
+For example, the following computes
 $\lim\limits_{x\to \infty} x\sin(\frac{1}{x})=1$ (note that $\infty$ is
 \verb|oo| in SymPy).
 \begin{verbatim}
@@ -49,7 +46,7 @@ As a more complicated example, SymPy computes $\lim\limits_{x\to 0}{\left(2 e^{\
 E
 \end{verbatim}
 
-Integrals, derivatives, summations, products, and limits that can't be
+Integrals, derivatives, summations, products, and limits that cannot be
 computed return unevaluated objects. These can also be created directly if the
 user chooses.
 \begin{verbatim}

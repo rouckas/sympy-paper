@@ -9,22 +9,23 @@ Matrix([
 [y,     x]])
 \end{verbatim}
 
-All SymPy matrix types can do linear algebra including matrix addition,
-multiplication, exponentiation, computing determinant, solving linear systems,
+All SymPy matrix types perform linear algebra including matrix addition,
+multiplication, exponentiation, computing determinants, solving linear systems,
 and computing inverses using LU decomposition, LDL decomposition, Gauss-Jordan
 elimination, Cholesky decomposition, Moore-Penrose pseudoinverse, and adjugate
 matrix.
 
-All operations are computed symbolically. Eigenvalues are computed by generating
-the characteristic polynomial using the Berkowitz algorithm and then solving it
-using polynomial routines. Diagonalizable matrices can be diagonalized first to
-compute the eigenvalues.
+All operations are computed symbolically. For instance, eigenvalues are computed
+by generating the characteristic polynomial using the Berkowitz algorithm and
+then solving it using polynomial routines. Diagonalizable matrices can be
+diagonalized first to compute the eigenvalues.
+
 \begin{verbatim}
 >>> A.eigenvals()
 {x - sqrt(y*(x + y)): 1, x + sqrt(y*(x + y)): 1}
 \end{verbatim}
 
-Internally these matrices store the elements as a list, making it a dense
+Internally these matrices store the elements as a list of lists, making it a dense
 representation. For storing sparse matrices, the \verb|SparseMatrix| class can
 be used. Sparse matrices store the elements in a dictionary of keys (DoK)
 format.
@@ -33,36 +34,13 @@ SymPy also supports matrices with symbolic dimension values. \verb|MatrixSymbol|
 represents a matrix with dimensions $m\times n$, where $m$ and $n$ can be
 symbolic. Matrix addition and multiplication, scalar operations, matrix inverse,
 and transpose are stored symbolically as matrix expressions.
-\begin{verbatim}
->>> m, n, p = symbols("m, n, p", integer=True)
->>> R = MatrixSymbol("R", m, n)
->>> S = MatrixSymbol("S", n, p)
->>> T = MatrixSymbol("T", m, p)
->>> U = R*S + 2*T
->>> U.shape
-(m, p)
->>> U[0, 1]
-2*T[0, 1] + Sum(R[0, _k]*S[_k, 1], (_k, 0, n - 1))
-\end{verbatim}
 
-Block matrices are also supported in SymPy. \verb|BlockMatrix| elements can be any
+Block matrices are also implemented in SymPy. \verb|BlockMatrix| elements can be any
 matrix expression which includes explicit matrices, matrix symbols, and block
 matrices. All functionalities of matrix expressions are also present in
 \verb|BlockMatrix|.
 
-
-\begin{verbatim}
->>> n, m, l = symbols('n m l')
->>> X = MatrixSymbol('X', n, n)
->>> Y = MatrixSymbol('Y', m ,m)
->>> Z = MatrixSymbol('Z', n, m)
->>> B = BlockMatrix([[X, Z], [ZeroMatrix(m, n), Y]])
->>> B
-Matrix([
-[X, Z],
-[0, Y]])
->>> B[0, 0]
-X[0, 0]
->>> B.shape
-(m + n, m + n)
-\end{verbatim}
+When symbolic matrices are combined with the assumptions module for logical
+inference they provide powerful reasoning over invertibility,
+semi-definiteness, orthogonality, etc. which are valuable in the construction
+of numerical linear algebra systems.

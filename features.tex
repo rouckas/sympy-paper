@@ -1,15 +1,15 @@
 % Features to discuss in-depth:
 
-SymPy has an extensive feature set that encompasses too much to cover in-depth
-here. Bedrock areas, such as calculus, receive their own subsections below.
+SymPy has an extensive feature set that is too encompassing to cover each topic
+in-depth in this paper. Here though, calculus and other bedrock areas receive their
+own subsections. Additionally,
 Table~\ref{features-table} gives a compact listing of all major capabilities
-present in the SymPy codebase. This gives a sampling from the breadth of
+present in the SymPy codebase. This grants a sampling from the breadth of
 topics and application domains that SymPy services. Unless stated otherwise,
 all features noted in Table~\ref{features-table} are symbolic in nature.
 Numeric features are discussed in Section~\ref{sec:numerics}.
 
-
-\begin{longtable}[htbc]{p{0.25\linewidth}p{0.68\linewidth}}
+\begin{longtable}[htbc]{p{0.20\linewidth}p{0.73\linewidth}}
 \caption{SymPy Features and Descriptions\label{features-table}}\\
 \toprule
 \textbf{Feature} & \textbf{Description} \\
@@ -22,7 +22,7 @@ for drawing diagrams with Xy-pic.\\
 Code Generation & Enables generation of compilable and executable code in a
 variety of different programming languages directly from expressions. Target
 languages include C, Fortran, Julia, JavaScript,
-Mathematica, Matlab and Octave, Python, and Theano.\\
+Mathematica, MATLAB and Octave, Python, and Theano.\\
 
 Combinatorics \& Group Theory & Implements permutations, combinations,
 partitions, subsets, various permutation groups (such as polyhedral, Rubik,
@@ -39,7 +39,8 @@ substitution, Vigenere's, Hill's, bifid, RSA, Kid RSA,
 linear-feedback shift registers, and Elgamal encryption\\
 
 Differential Geometry & Classes to represent manifolds, metrics, tensor
-products, and coordinate systems.\\
+products, and coordinate systems in Riemannian and pseudo-Riemannian
+geometries~\cite{FunctionalDifferentialGeometry}.\\
 % TODO: Someone verify that this is a good summary of the diffgeom module
 
 Geometry & Allows the creation of 2D geometrical entities, such as lines and
@@ -49,7 +50,7 @@ points, or finding the intersection between two lines.\\
 
 Lie Algebras & Represents Lie algebras and root systems.\\
 
-Logic & boolean expression, equivalence testing, satisfiability, normal
+Logic & Boolean expression, equivalence testing, satisfiability, and normal
 forms.\\
 
 Matrices & Tools for creating matrices of symbols and expressions. This is
@@ -59,10 +60,10 @@ symbolic linear algebraic operations (e.g., inversion and factorization).\\
 Matrix Expressions & Matrices with symbolic dimensions (unspecified entries).
 Block matrices.\\
 
-Number Theory & prime number generation, primality testing, integer
+Number Theory & Prime number generation, primality testing, integer
 factorization, continued fractions, Egyptian fractions, modular arithmetic,
 quadratic residues, partitions, binomial and multinomial coefficients,
-prime number tools, integer factorization. \\
+prime number tools, and integer factorization. \\
 
 Plotting & Hooks for visualizing expressions via matplotlib~\cite{Hunter:2007}
 or as text drawings when lacking a graphical back-end. 2D function plotting,
@@ -75,11 +76,15 @@ advanced (e.g., Gr\"obner bases~\cite{adams1994introduction} and multivariate
 factorization over algebraic number domains).\\
 
 Printing & Functions for printing SymPy expressions in the terminal with ASCII
-or Unicode characters, and converting SymPy expressions to \LaTeX{} and
+or Unicode characters and converting SymPy expressions to \LaTeX{} and
 MathML.\\
 
+Quantum Mechanics & Quantum states, bra--ket notation, operators, basis sets,
+representations, tensor products, inner products, outer products, commutators,
+anticommutators.\\
+
 Series & Implements series expansion, sequences, and limit of sequences.
-This includes Taylor, Laurent and Puiseux series as well as special series, such
+This includes Taylor, Laurent, and Puiseux series as well as special series, such
 as Fourier and formal power series.\\
 
 Sets & Representations of empty, finite, and infinite sets. This includes

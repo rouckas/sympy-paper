@@ -1,66 +1,40 @@
 % Polynomials
 
-SymPy implements a wide variety of algorithms for polynomial manipulation,
-which ranges from relatively simple algorithms for doing arithmetics of
+SymPy implements a suite of algorithms for polynomial manipulation,
+which ranges from relatively simple algorithms for doing arithmetic of
 polynomials, to advanced methods for factoring multivariate polynomials
 into irreducibles, symbolically determining real and complex root isolation
-intervals, or computing Gröbner bases.
+intervals, or computing Gr\"{o}bner bases.
 
-Polynomial manipulation is useful on its own, but in SymPy, it's mostly
-used indirectly as a tool in other areas of the library. In fact, many
-mathematical problems in symbolic computing are first expressed using
-entities from the symbolic core, preprocessed and then transformed into
-a problem in the polynomial algebra, where generic and efficient algorithms
-are used to solve the problem and in the end, solutions to original one
-are recovered. For example, this is a common scheme in symbolic integration
-or summation algorithms.
+Polynomial manipulation is useful on its own. Within SymPy, though, it is mostly used
+indirectly as a tool in other areas of the library. In fact, many mathematical
+problems in symbolic computing are first expressed using entities from the
+symbolic core, preprocessed, and then transformed into a problem in the
+polynomial algebra, where generic and efficient algorithms are used to solve
+the problem and solutions to the original problem are recovered.
+This is a common scheme in symbolic integration or summation algorithms.
 
-SymPy implements dense and sparse polynomial representations. Both
-are used in univariate and multivariate cases. Dense representation is
-the default for univariate polynomials. For multivariate polynomials,
-the choice of representation is based on the application. The most common
-case for sparse representation is algorithms for computing Gröbner bases
-(Buchberger, F4 and F5), because different monomial orderings can be
-expressed easily in this representation. However, algorithms for computing
-multivariate GCDs or factorizations, at least those currently implemented
-in SymPy, are better expressed when the representation is dense. By dense
-multivariate representation we mean a recursively dense representation,
-where polynomial $K[x_0, x_1,\dots, x_n]$ is viewed as a polynomial in
-$K[x_0][x_1]\ldots[x_n]$. Note that despite this, the coefficient domain
-$K$, can be a multivariate polynomial domain as well. Dense recursive
-representation in Python gets inefficient when the number of variables
-gets high.
+SymPy implements dense and sparse polynomial representations.\footnote{In a
+dense representation, the coefficients for all terms up to the degree of each
+variable are stored in memory. In a sparse representation, only the nonzero
+coefficients are stored.} Both are used in the univariate and multivariate
+cases. The dense representation is the default for univariate polynomials. For
+multivariate polynomials, the choice of representation is based on the
+application. The most common case for the sparse representation is algorithms
+for computing Gr\"{o}bner bases (Buchberger, F4, and F5).
+% TODO: citation
+This is
+because different monomial orderings can be expressed easily in this
+representation. However, algorithms for computing multivariate GCDs or
+factorizations, at least those currently implemented in SymPy,
+% TODO: citation
+are better expressed when the representation is dense. The dense multivariate
+representation is specifically a recursively dense representation, where
+polynomials in $K[x_0, x_1, \dotsc, x_n]$ are viewed as a polynomials in
+$K[x_0][x_1]\dotso[x_n]$. Note that despite this, the coefficient domain $K$,
+can be a multivariate polynomial domain as well. The dense recursive
+representation in Python gets inefficient when the number of variables gets
+high.
 
-\noindent Factorization:
-\begin{verbatim}
->>> var("x,y,z,t")
->>> f = 2115*x**4*y + 45*x**3*z**3*t**2 - 45*x**3*t**2 - 423*x*y**4 - \
-        47*x*y**3 + 141*x*y*z**3 + 94*x*y*z*t - 9*y**3*z**3*t**2 +    \
-        9*y**3*t**2 - y**2*z**3*t**2 + y**2*t**2 + 3*z**6*t**2 +      \
-        2*z**4*t**3 - 3*z**3*t**2 - 2*z*t**3
->>> factor(f)
-(47*x*y + z**3*t**2 - t**2)*(45*x**3 - 9*y**3 - y**2 + 3*z**3 + 2*z*t)
-\end{verbatim}
-
-\noindent Gröbner bases:
-\begin{verbatim}
->>> var('x:3')
->>> I = [x0 + 2*x1 + 2*x2 - 1, x0**2 + 2*x1**2 + 2*x2**2 - x0, 2*x0*x1 + 2*x1*x2 - x1]
->>> groebner(I, oder='lex')
-GroebnerBasis([
-    7*x0 - 420*x2**3 + 158*x2**2 + 8*x2 - 7,
-    7*x1 + 210*x2**3 - 79*x2**2 + 3*x2,
-    84*x2**4 - 40*x2**3 + x2**2 + x2], x0, x1, x2, domain='ZZ', order='lex')
-\end{verbatim}
-
-\noindent Root isolation:
-\begin{verbatim}
->>> var('z')
->>> f = 7*z**4 - 19*z**3 + 20*z**2 + 17*z + 20
->>> intervals(f, all=True, eps=0.001)
-([],
- [((-425/1024 - 625*I/1024, -1485/3584 - 2185*I/3584), 1),
-  ((-425/1024 + 2185*I/3584, -1485/3584 + 625*I/1024), 1),
-  ((3175/1792 - 2605*I/1792, 1815/1024 - 10415*I/7168), 1),
-  ((3175/1792 + 10415*I/7168, 1815/1024 + 2605*I/1792), 1)])
-\end{verbatim}
+Some examples for the \texttt{sympy.polys} module can be found in the
+supplement.

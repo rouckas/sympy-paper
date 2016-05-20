@@ -10,34 +10,35 @@
 
 The generic way to simplify an expression is by calling the \texttt{simplify}
 function.
-It must be emphasized that simplification is not an unambigously defined
+It must be emphasized that simplification is not an unambiguously defined
 mathematical operation~\cite{Carette2004understanding}.
 The \texttt{simplify} function applies several simplification routines along
 with some heuristics to make the output expression as ``simple'' as possible.
 
 It is often preferable to apply more directed simplification functions. These
-apply very specific rules to the input expression, and are often able to make
+apply very specific rules to the input expression and are often able to make
 guarantees about the output (for instance, the \texttt{factor} function, given
 a polynomial with rational coefficients in several variables, is guaranteed to
-produce a factorization into irreducible factors).
-Table~\ref{simplify-table} lists some common simplification functions.
+produce a factorization into irreducible factors). Table~\ref{simplify-table}
+lists some common simplification functions.
 
-% TODO: add a simple example for each
+% TODO: remove the empty lines between rows
 \begin{longtable}[htbc]{lp{0.83\linewidth}}
-\caption{SymPy Simplification Functions\label{simplify-table}}\\
+\caption{Some SymPy Simplification Functions\label{simplify-table}}\\
 \toprule
 \verb|expand| & expand the expression \\
 \verb|factor| & factor a polynomial into irreducibles \\
 \verb|collect| & collect polynomial coefficients \\
-\verb|cancel| & rewrite a rational function as $p/q$ with common factors canceled \\
-\verb|apart| & compute the partial fraction decomposition of a rational function \\
+\verb|cancel| & rewrite a rational function as $p/q$ with common factors
+canceled \\
+\verb|apart| & compute the partial fraction decomposition of a rational function
+\\
 \verb|trigsimp| & simplify trigonometric expressions~\cite{fu2006automated} \\
 \bottomrule
 \end{longtable}
 
-Substitutions are performed through the \texttt{.subs} method, which is
-sensible to some mathematical properties while matching, such as
-associativity, commutativity, additive and multiplicative inverses, and
-matching of powers.
-
-%% TODO: add examples
+Substitutions are performed through the \texttt{.subs} method.
+\begin{verbatim}
+>>> (sin(x) + x**2 + 1).subs(x, y + 1)
+(y + 1)**2 + sin(y + 1) + 1
+\end{verbatim}
