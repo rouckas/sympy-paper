@@ -46,17 +46,12 @@ The familiar dangers of floating-point arithmetic apply~\cite{goldberg1991every}
 and symbolic expressions containing floating-point numbers should be treated
 with reasonable caution.
 This approach is similar to Maple and Maxima.
-%% TODO citations needed
-
 By contrast, Mathematica uses a form
 of significance arithmetic~\cite{Sofroniou2005precise} for approximate numbers.
 This offers further protection against numerical errors,
 but leads to non-obvious semantics while
 still not being mathematically rigorous
 (for a critique of significance arithmetic, see Fateman~\cite{Fateman1992}).
-SymPy's \texttt{evalf} internals are non-rigorous in the same sense,
-but have no bearing on the semantics of floating-point
-numbers in the rest of the system.
 
 \subsection{The mpmath library}
 
@@ -90,15 +85,15 @@ Internally, mpmath represents a floating-point number
 ${(-1)}^s x \cdot 2^y$ by a tuple $(s, x, y, b)$ where
 $x$ and $y$ are arbitrary-size Python integers
 and the redundant integer $b$ stores the bit length of $x$ for quick access.
-If GMPY~\cite{GMPY} is installed, mpmath automatically switches to
-using the \texttt{gmpy.mpz} type for $x$ and using GMPY helper methods
-to perform rounding-related operations, improving performance.
+If GMPY~\cite{GMPY} is installed, mpmath automatically uses
+the \texttt{gmpy.mpz} type for~$x$, and GMPY methods
+for rounding-related operations, improving performance.
 
-The mpmath library includes support for
+The mpmath library supports
 special functions, root-finding, linear algebra, polynomial approximation,
 and numerical computation of limits, derivatives, integrals, infinite
 series, and ODE solutions. All features work in arbitrary precision
-and use algorithms that support computing hundreds of digits rapidly,
+and use algorithms that allow computing hundreds of digits rapidly,
 except in degenerate cases.
 
 The double exponential (tanh-sinh) quadrature is used for numerical
@@ -109,7 +104,7 @@ However, for good performance, singularities
 in the middle of the interval must be specified
 by the user.
 To evaluate slowly converging limits and infinite series, mpmath
-automatically attempts to apply Richardson extrapolation and the
+automatically tries Richardson extrapolation and the
 Shanks transformation
 (Euler-Maclaurin summation can also be used)~\cite{BenderOrszag1999}.
 A function to evaluate oscillatory integrals by means of convergence
@@ -121,49 +116,11 @@ including complete and incomplete gamma functions,
 Bessel functions, orthogonal polynomials, elliptic functions and integrals,
 zeta and polylogarithm functions,
 the generalized hypergeometric function, and the Meijer G-function.
-
-Most special functions are implemented as linear
-combinations of the generalized hypergeometric function ${}_{p}F_{q}$,
-which is computed by a combination of direct summation,
-argument transformations (for ${}_2F_1$, ${}_3F_2$, $\ldots$)
-and asymptotic expansions
-(for ${}_0F_1$, ${}_1F_1$, ${}_1F_2$, ${}_2F_2$, ${}_2F_3$)
-to cover the whole complex domain.
-Numerical integration and generic convergence acceleration
-are also used in a few special cases.
-
-In general, linear combinations and argument transformations
-give rise to singularities that have to be removed for certain
-combinations of parameters.
-A typical example is the modified Bessel function of the second kind,
-
-$$K_{\nu}(z) = \frac{1}{2} \left[
-            {\left(\frac{z}{2}\right)}^{-\nu}
-                \Gamma(\nu)
-                {}_0F_1\!\left(1-\nu, \frac{z^2}{4}\right)
-             -
-             {\left(\frac{z}{2}\right)}^{\nu}
-                 \frac{\pi}{\nu \sin(\pi \nu) \Gamma(\nu)}
-                 {}_0F_1\!\left(\nu+1, \frac{z^2}{4}\right)
-            \right]$$
-where the limiting value $\lim_{\varepsilon \to 0} K_{n+\varepsilon}(z)$
-has to be computed when $\nu = n$ is an integer.
-A generic algorithm is used to evaluate
-hypergeometric-type linear combinations of the above type.
-This algorithm automatically detects cancellation problems,
-and computes limits numerically by perturbing parameters whenever
-internal singularities occur (the perturbation size is automatically
-decreased until the result is detected to converge numerically).
-
-Due to this generic approach, particular combinations of hypergeometric
-functions can be specified easily.
-The implementation of the Meijer G-function takes only a few dozen lines of
-code, yet covers the whole input domain in a robust way.
 The Meijer G-function instance
 $G_{1, 3}^{3, 0}\left(0 ; \tfrac{1}{2}, -1, - \tfrac{3}{2} | x \right)$
 is a good test case~\cite{Toth2007}; past versions of both Maple and
 Mathematica produced incorrect numerical values for large $x > 0$.
-Here, mpmath automatically removes the internal singularity
+Here, mpmath automatically removes an internal singularity
 and compensates for cancellations (amounting to 656 bits
 of precision when $x = 10000$), giving correct values:
 \begin{verbatim}
@@ -178,10 +135,8 @@ Equivalently, with SymPy's interface this function can be evaluated as:
 2.43925769071996e-94
 \end{verbatim}
 
-We highlight the generalized hypergeometric functions and the Meijer
-G-function, due to those functions' frequent appearance in closed forms for
-integrals and sums (see section~\ref{sec:calculus}). Via mpmath, SymPy has
-relatively good support for evaluating sums and integrals numerically, using
-two complementary approaches: direct numerical evaluation, or first computing
-a symbolic closed form involving special functions.
-% TODO: example?
+Symbolic integration and summation often produces hypergeometric
+and Meijer G-function closed forms (see section~\ref{sec:calculus});
+numerical evaluation of such special functions is a useful complement
+to direct numerical integration and summation.
+
