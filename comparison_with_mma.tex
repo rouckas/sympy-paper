@@ -168,3 +168,14 @@ common \verb|^|.
 % * comparison with Mathematica: ( ) is Sequence, functions are generally uppercase.
 % * comparsion with Mathematica: table of comparison?
 % * comparison with Mathematica: Wolfram language has loads of operator overloading, functional paradigm.
+
+SymPy's use of floating-point numbers is similar to that of most
+other CASs, including Maple and Maxima.
+By contrast, Mathematica uses a form
+of significance arithmetic~\cite{Sofroniou2005precise} for approximate numbers.
+This offers further protection against numerical errors,
+although it comes with its own set of problems
+(for a critique of significance arithmetic, see Fateman~\cite{Fateman1992}).
+Internally, SymPy's \texttt{evalf} method works similarly to Mathematica's
+significance arithmetic, but the semantics are isolated from the rest of the system.
+

@@ -1,5 +1,6 @@
 The \texttt{Float} class represents an arbitrary-precision binary floating-point
-by storing it value and precision (in bits). An operation between two \texttt{Float}
+number by storing its value and precision (in bits).
+An operation between two \texttt{Float}
 inputs is rounded to the larger of the two precisions.
 Since Python floating-point literals automatically evaluate to \texttt{double}
 (53-bit) precision, strings should be used to input precise decimal values:
@@ -12,46 +13,38 @@ Since Python floating-point literals automatically evaluate to \texttt{double}
 >>> Float("1.1", 30)
 1.10000000000000000000000000000
 \end{verbatim}
-
-The preferred way to evaluate an expression numerically is with the
-\texttt{evalf} method, which internally estimates the number of accurate
+The \texttt{evalf} method converts constant symbolic expressions
+to \texttt{Float} values with a specified precision, here 25 digits:
+\begin{verbatim}
+>>> (pi + 1).evalf(25)
+4.141592653589793238462643
+\end{verbatim}
+\texttt{Float} numbers do not track their \emph{accuracy},
+and should be used with caution within symbolic expressions
+since familiar dangers of floating-point arithmetic apply~\cite{goldberg1991every}.
+A notorious case is that of catastrophic cancellation:
+\begin{verbatim}
+>>> cos(exp(-100)).evalf(25) - 1
+0
+\end{verbatim}
+Applying the \texttt{evalf} method to the whole expression solves
+this problem. Internally, \texttt{evalf} estimates the number of accurate
 bits of the floating-point
 approximation for each sub-expression, and adaptively increases the
 working precision until the estimated accuracy of the
-final result matches the sought number of decimal digits.
-
+final result matches the sought number of decimal digits:
+\begin{verbatim}
+>>> (cos(exp(-100)) - 1).evalf(25)
+-6.919482633683687653243407e-88
+\end{verbatim}
+The \texttt{evalf} method works with complex numbers and supports
+more complicated expressions, such as
+special functions, infinite series and integrals.
 The internal error tracking does not provide rigorous error bounds
 (in the sense of interval arithmetic) and cannot be used to accurately track
 uncertainty in measurement data;
 the sole purpose is to mitigate loss of accuracy that typically occurs
-when converting symbolic expressions to numerical values. A well-known,
-notorious case
-is that of catastrophic cancellation. This is illustrated by the following
-example (the input 25 specifies that 25 digits are sought):
-
-\begin{verbatim}
->>> cos(exp(-100)).evalf(25) - 1
-0
->>> (cos(exp(-100)) - 1).evalf(25)
--6.919482633683687653243407e-88
-\end{verbatim}
-
-The \texttt{evalf} method works with complex numbers and supports
-more complicated expressions, such as
-special functions, infinite series and integrals.
-
-SymPy does not track the accuracy of
-approximate numbers outside of \texttt{evalf}.
-The familiar dangers of floating-point arithmetic apply~\cite{goldberg1991every},
-and symbolic expressions containing floating-point numbers should be treated
-with reasonable caution.
-This approach is similar to Maple and Maxima.
-By contrast, Mathematica uses a form
-of significance arithmetic~\cite{Sofroniou2005precise} for approximate numbers.
-This offers further protection against numerical errors,
-but leads to non-obvious semantics while
-still not being mathematically rigorous
-(for a critique of significance arithmetic, see Fateman~\cite{Fateman1992}).
+when converting symbolic expressions to numerical values.
 
 \subsection{The mpmath library}
 
@@ -126,7 +119,7 @@ of precision when $x = 10000$), giving correct values:
 \begin{verbatim}
 >>> mpmath.mp.dps = 15
 >>> mpmath.meijerg([[],[0]],[[-0.5,-1,-1.5],[]],10000)
-2.4392576907199564e-94
+mpf('2.4392576907199564e-94')
 \end{verbatim}
 
 Equivalently, with SymPy's interface this function can be evaluated as:
