@@ -8,16 +8,15 @@ Matrix([
 [y,     x]])
 \end{verbatim}
 
-All SymPy matrix types perform linear algebra including matrix addition,
-multiplication, exponentiation, computing determinants, solving linear systems,
-and computing inverses using LU decomposition, LDL decomposition, Gauss-Jordan
-elimination, Cholesky decomposition, Moore-Penrose pseudoinverse, and adjugate
-matrix.
+SymPy matrices support common symbolic linear algebra manipulations, including
+matrix addition, multiplication, exponentiation, computing determinants,
+solving linear systems, and computing inverses using LU decomposition, LDL
+decomposition, Gauss-Jordan elimination, Cholesky decomposition, Moore-Penrose
+pseudoinverse, and adjugate matrix.
 
 All operations are computed symbolically. For instance, eigenvalues are computed
 by generating the characteristic polynomial using the Berkowitz algorithm and
-then solving it using polynomial routines. Diagonalizable matrices can be
-diagonalized first to compute the eigenvalues.
+then solving it using polynomial routines.
 
 \begin{verbatim}
 >>> A.eigenvals()
