@@ -1,10 +1,11 @@
-The \texttt{Float} class represents an arbitrary-precision binary floating-point
-number by storing its value and precision (in bits).
-An operation between two \texttt{Float}
-inputs is rounded to the larger of the two precisions.
-Since Python floating-point literals automatically evaluate to \texttt{double}
-(53-bit) precision, strings should be used to input precise decimal values:
+Floating point numbers in SymPy are represented by the \texttt{Float} class,
+which represents an arbitrary-precision binary floating-point number by
+storing its value and precision (in bits). This representation is distinct
+from the Python built in \texttt{float} type, which is a wrapper around
+machine \texttt{double} types and uses a fixed precision (53-bit).
 
+Because Python \texttt{float} literals are limited in precision, strings
+should be used to input precise decimal values:
 \begin{verbatim}
 >>> Float(1.1)
 1.10000000000000
@@ -13,8 +14,8 @@ Since Python floating-point literals automatically evaluate to \texttt{double}
 >>> Float("1.1", 30)
 1.10000000000000000000000000000
 \end{verbatim}
-The \texttt{evalf} method converts constant symbolic expressions
-to \texttt{Float} values with a specified precision, here 25 digits:
+The \texttt{evalf} method converts a constant symbolic expression to a
+\texttt{Float} with the specified precision, here 25 digits:
 \begin{verbatim}
 >>> (pi + 1).evalf(25)
 4.141592653589793238462643
