@@ -129,7 +129,6 @@ qubit from the right using a Pauli-X gate:
 \begin{verbatim}
 >>> from sympy.physics.quantum.qubit import Qubit
 >>> from sympy.physics.quantum.gate import XGate
->>> from sympy.physics.quantum import qapply
 >>> q = Qubit('0101')
 >>> q
 |0101>
@@ -151,9 +150,8 @@ products:
 Quantum gates (unitary operators) can be applied to transform these states and
 then classical measurements can be performed on the results:
 \begin{verbatim}
->>> from sympy.physics.quantum.qubit import Qubit, measure_all
+>>> from sympy.physics.quantum.qubit import measure_all
 >>> from sympy.physics.quantum.gate import H, X, Y, Z
->>> from sympy.physics.quantum.qapply import qapply
 >>> c = H(0)*H(1)*Qubit('00')
 >>> c
 H(0)*H(1)*|00>
