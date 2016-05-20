@@ -23,10 +23,12 @@ then solving it using polynomial routines.
 {x - sqrt(y*(x + y)): 1, x + sqrt(y*(x + y)): 1}
 \end{verbatim}
 
-Internally these matrices store the elements as a list of lists, making it a dense
-representation. For storing sparse matrices, the \verb|SparseMatrix| class can
-be used. Sparse matrices store the elements in a dictionary of keys (DoK)
-format.
+Internally these matrices store the elements as a list of lists (LIL), making
+it a dense representation.\footnote{Similar to the polynomials module, dense
+  here means that all entries are stored in memory, contrasted with a sparse
+  representation where only nonzero entries are stored.} For storing sparse
+matrices, the \verb|SparseMatrix| class can be used. Sparse matrices store the
+elements in a dictionary of keys (DoK) format.
 
 SymPy also supports matrices with symbolic dimension values. \verb|MatrixSymbol|
 represents a matrix with dimensions $m\times n$, where $m$ and $n$ can be
