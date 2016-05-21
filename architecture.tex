@@ -167,7 +167,7 @@ $A\cdot B$ and $B\cdot A$ distinct.} Assumptions on any object can be checked wi
 \verb|is_|\texttt{\textit{assumption}} attributes, like \verb|t.is_positive|.
 
 Assumptions are only needed to restrict a domain so that certain
-simplifications can be performed. It is not required to make the domain match
+simplifications can be performed. They are not required to make the domain match
 the input of a function. For instance, one can create the object
 $\sum_{n=0}^m f(n)$ as \verb|Sum(f(n), (n, 0, m))| without setting
 \texttt{integer=True} when creating the Symbol object \texttt{n}.
