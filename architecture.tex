@@ -9,11 +9,11 @@ user-facing code as approriate.
 
 % symbols, various ways to declare them
 
-Because SymPy is built on Python, it requires that all variable names be
-defined prior to use. The following statement
+SymPy requires that all variable names be
+defined prior to use because it is built on Python. The following statement
 imports all SymPy functions into the global Python namespace.
 From here on, all examples in this paper assume that this statement has been
-run.
+executed.
 
 \begin{verbatim}
 >>> from sympy import *
@@ -21,8 +21,8 @@ run.
 
 Symbolic variables, called symbols, must be defined and assigned to
 Python variables before they can be used. This is typically done through the
-\texttt{symbols} function, which may create multiple symbols in a single call. For
-instance,
+\texttt{symbols} function, which may create multiple symbols in a single
+function call. For instance,
 \begin{verbatim}
 >>> x, y, z = symbols('x y z')
 \end{verbatim}
@@ -37,7 +37,8 @@ the symbols \verb|x|, \verb|y|, and \verb|z| have been assigned to Python variab
 identical to their symbolic names.
 
 Expressions are created from symbols using Python mathematical syntax. Note
-that in Python, exponentiation is represented by \verb|**|. For instance, the
+that in Python, exponentiation is represented by the \verb|**|
+binary infix operator. For instance, the
 following Python code creates the expression $(x^2 - 2x + 3)/y$.
 
 \begin{verbatim}
@@ -47,8 +48,8 @@ following Python code creates the expression $(x^2 - 2x + 3)/y$.
 
 Importantly, SymPy expressions are immutable. This simplifies the design of
 SymPy by allowing expression interning. It also enables expressions to be
-hashed and stored in Python dictionaries, thereby permitting caching and
-other features.
+hashed and stored in Python dictionaries, thereby permitting features
+such as caching.
 
 %% I volunteer to write this section. --Aaron
 %%
