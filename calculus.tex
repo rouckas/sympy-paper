@@ -47,9 +47,9 @@ $\lim\limits_{x\to \infty} x\sin(\frac{1}{x})=1$ (note that $\infty$ is
 >>> limit(x*sin(1/x), x, oo)
 1
 \end{verbatim}
-As a more complex example, SymPy computes $\lim\limits_{x\to 0}{\left(2 e^{\frac{1 - \cos{\left (x \right )}}{\sin{\left (x \right )}}} -
+As a more complex example, SymPy computes $$\lim\limits_{x\to 0}{\left(2 e^{\frac{1 - \cos{\left (x \right )}}{\sin{\left (x \right )}}} -
   1\right)}^{\frac{\sinh{\left (x \right )}}{\operatorname{atan}^{2}{\left (x
-      \right )}}} = e$.
+      \right )}}} = e.$$
 \begin{verbatim}
 >>> limit((2*E**((1-cos(x))/sin(x))-1)**(sinh(x)/atan(x)**2), x, 0)
 E
