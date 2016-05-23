@@ -12,14 +12,15 @@ function.
 It must be emphasized that simplification is not an unambiguously defined
 mathematical operation~\cite{Carette2004understanding}.
 The \texttt{simplify} function applies several simplification routines along
-with some heuristics to make the output expression as ``simple'' as possible.
+with heuristics to make the output expression as ``simple'' as possible.
 
 It is often preferable to apply more directed simplification functions. These
 apply very specific rules to the input expression and are typically able to make
-guarantees about the output (for instance, the \texttt{factor} function, given
-a polynomial with rational coefficients in several variables, is guaranteed to
-produce a factorization into irreducible factors). Table~\ref{simplify-table}
-lists some common simplification functions.
+guarantees about the output. Take for instance the \texttt{factor} function,
+which given a polynomial with rational coefficients in several variables,
+is guaranteed to
+produce a factorization into irreducible factors. Table~\ref{simplify-table}
+lists common simplification functions.
 
 % TODO: remove the empty lines between rows
 \begin{longtable}[htbc]{lp{0.83\linewidth}}
