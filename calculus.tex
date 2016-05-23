@@ -23,7 +23,7 @@ exp(x)*sin(x) + exp(x)*cos(x)
 Summations and products are computed with \verb|summation| and \verb|product|,
 respectively. Summations are computed using a combination of Gosper's
 algorithm, an algorithm that uses Meijer G-functions, and heuristics. Products
-are computed via some heuristics.
+are computed via a suite of heuristics.
 % TODO: Citations for Gosper and Meijer G-function algorithms
 % TODO: Are there other summation algorithms implemented?
 % TODO: A good summation example or two
@@ -38,7 +38,7 @@ $\lim\limits_{x\to \infty} x\sin(\frac{1}{x})=1$ (note that $\infty$ is
 >>> limit(x*sin(1/x), x, oo)
 1
 \end{verbatim}
-As a more complicated example, SymPy computes $\lim\limits_{x\to 0}{\left(2 e^{\frac{1 - \cos{\left (x \right )}}{\sin{\left (x \right )}}} -
+As a more complex example, SymPy computes $\lim\limits_{x\to 0}{\left(2 e^{\frac{1 - \cos{\left (x \right )}}{\sin{\left (x \right )}}} -
   1\right)}^{\frac{\sinh{\left (x \right )}}{\operatorname{atan}^{2}{\left (x
       \right )}}} = e$.
 \begin{verbatim}
