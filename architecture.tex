@@ -117,7 +117,14 @@ instead of \texttt{type(expr)} to allow the function of an expression to be
 distinct from its actual Python class. In most cases the two are the same.}
 Note that in SymPy the \texttt{==} operator represents exact
 structural equality, not mathematical equality. This allows testing if any two
-expressions are equal to one another as expression trees.
+expressions are equal to one another as expression trees. For example, even
+though $(x + 1)^2$ and $x^2 + 2x + 1$ are equal mathematically, SymPy gives
+\begin{verbatim}
+>>> (x + 1)**2 == x**2 + 2*x + 1
+False
+\end{verbatim}
+because they are different as expression trees (the former is a \verb|Pow|
+object and the latter is an \verb|Add| object).
 
 Python allows classes to override mathematical operators. The Python
 interpreter translates the above \texttt{x*y + 2} to, roughly,
