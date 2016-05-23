@@ -13,7 +13,6 @@ demonstrated below by the computation of $$\int_{0}^{\infty} e^{-s t}\log{\left
       )} + 1\right)}\, dx = \log{\left (\log{\left (x \right )} + 1 \right )}
 + \frac{1}{e^{x^{2}} + 1}.$$
 % TODO: What is the best citation for the Meijer G-function algorithm.
-% TODO: More interesting examples here
 \begin{verbatim}
 >>> s, t = symbols('s t', positive=True)
 >>> integrate(exp(-s*t)*log(t), (t, 0, oo)).simplify()
