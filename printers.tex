@@ -15,11 +15,13 @@ uses Unicode characters to render mathematical symbols such as integral signs,
 square roots, and parentheses. Greek letters and subscripts in symbol names
 that have Unicode code points associated with them
 are also rendered automatically.
+% TODO cite unicode?
 
 \noindent
 \includegraphics[width=1\textwidth]{pprint.pdf}
 Alternately, the \verb|use_unicode=False| flag can be set, which causes the
 expression to be printed using only ASCII characters.
+% TODO cite ASCII
 
 \begin{verbatim}
 >>> pprint(Integral(sqrt(phi0 + 1), phi0), use_unicode=False)
@@ -32,6 +34,7 @@ expression to be printed using only ASCII characters.
 \end{verbatim}
 
 The function \verb|latex| returns a \LaTeX{} representation of an expression.
+% TODO cite latex
 
 \begin{verbatim}
 >>> print(latex(Integral(sqrt(phi0 + 1), phi0)))
