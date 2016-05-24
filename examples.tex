@@ -1,41 +1,42 @@
 
 \subsubsection{Simplification}
-\noindent \texttt{expand}:
+\begin{itemize}
+\item \texttt{expand}:
 \begin{verbatim}
 >>> expand((x + y)**3)
 x**3 + 3*x**2*y + 3*x*y**2 + y**3
 \end{verbatim}
 
-\noindent \texttt{factor}:
+\item \texttt{factor}:
 \begin{verbatim}
 >>> factor(x**3 + 3*x**2*y + 3*x*y**2 + y**3)
 (x + y)**3
 \end{verbatim}
 
-\noindent \texttt{collect}:
+\item \texttt{collect}:
 \begin{verbatim}
 >>> collect(y*x**2 + 3*x**2 - x*y + x - 1, x)
 x**2*(y + 3) + x*(-y + 1) - 1
 \end{verbatim}
 
-\noindent \texttt{cancel}:
+\item \texttt{cancel}:
 \begin{verbatim}
 >>> cancel((x**2 + 2*x + 1)/(x**2 - 1))
 (x + 1)/(x - 1)
 \end{verbatim}
 
-\noindent \texttt{apart}:
+\item \texttt{apart}:
 \begin{verbatim}
 >>> apart((x**3 + 4*x - 1)/(x**2 - 1))
 x + 3/(x + 1) + 2/(x - 1)
 \end{verbatim}
 
-\noindent \texttt{trigsimp}:
+\item \texttt{trigsimp}:
 \begin{verbatim}
 >>> trigsimp(cos(x)**2*tan(x) - sin(2*x))
 -sin(2*x)/2
 \end{verbatim}
-
+\end{itemize}
 
 \subsubsection{Polynomials}
 %% TODO - explain why these matter
