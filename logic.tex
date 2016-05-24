@@ -19,8 +19,6 @@ constructed by directly creating the relevant objects: \verb|And()|,
 \verb|Nor()|, etc.
 
 \begin{verbatim}
->>> from sympy import *
->>> x, y, z = symbols('x y z')
 >>> e = (x & y) | z
 >>> e.subs({x: True, y: True, z: False})
 True
