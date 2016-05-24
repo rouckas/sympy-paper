@@ -32,12 +32,12 @@ The Gruntz algorithm is now illustrated on the following example:
     \label{gruntz_example_fn}
 f(x) = e^{x+2e^{-x}} - e^x + {1\over x} \,.
 \end{equation}
-The goal is to calculate $\lim\limits_{x\to\infty} f(x)$.
-First, the set of most rapidly varying subexpressions is determined---the so
-called \textit{mrv set}. For~\eqref{gruntz_example_fn}, the mrv set
+The goal is to calculate $\lim\limits_{x\to\infty} f(x)$. First, the set of
+most rapidly varying subexpressions is determined---the so-called \textit{mrv
+  set}. For~\eqref{gruntz_example_fn}, the mrv set
 $\{e^x, e^{-x}, e^{x+2e^{-x}}\}$ is obtained. These are all subexpressions of%
-~\eqref{gruntz_example_fn} and they all belong to the same comparability class.
-This calculation can be done using SymPy as follows:
+~\eqref{gruntz_example_fn} and they all belong to the same comparability
+class. This calculation can be done using SymPy as follows:
 
 % dict_keys output order varies
 % no-doctest
