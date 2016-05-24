@@ -31,7 +31,7 @@ Every input query from the user on SymPy Gamma is first parsed by its
 own parser, which handles several different forms of function names,
 which SymPy as a library does not support. For instance, SymPy Gamma
 supports queries like \texttt{sin\ x}, whereas SymPy does not support
-this, and supports only \verb|sin(x)|.
+this, only \verb|sin(x)|.
 
 This parser converts the input query to the equivalent SymPy readable code,
 which is then eventually processed by SymPy, and the result is finally printed
