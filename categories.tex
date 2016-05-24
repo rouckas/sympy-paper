@@ -1,20 +1,20 @@
 SymPy includes a module for dealing with categories---abstract mathematical
 objects representing classes of structures as classes of objects (points) and
-morphisms (arrows) between the objects. This version of the module was
+morphisms (arrows) between the objects. The module was
 designed with the following two goals in mind:
 
 \begin{enumerate}
 \item automatic typesetting of diagrams given by a collection of
   objects and of morphisms between them, and
-\item specification and (semi-)automatic derivation of properties
+\item specification and semi-automatic derivation of properties
   using commutative diagrams.
 \end{enumerate}
 
-At of version 1.0, SymPy only implements the first goal, while a (very partially
-working) draft of implementation of the second goal is available
+As of version 1.0, SymPy only implements the first goal, while a partially
+working draft of implementation of the second goal is available
 at~\cite{ct4commutativity}.
 
-In order to achieve the two goals, the module \texttt{categories} defines
+In order to achieve the two goals, the module \texttt{sympy.categories} defines
 several classes representing some of the essential concepts: objects, morphisms,
 categories, and diagrams.  In category theory, the inner structure of objects is
 often discarded in the favor of studying the properties of morphisms, so the
@@ -23,19 +23,19 @@ There are several morphism classes which do not have a particular internal
 structure either, though an exception is \texttt{CompositeMorphism}, which
 essentially stores a list of morphisms.
 
-To capture the properties of morphisms, the class \texttt{Diagram} is expected
-to be used.  This class stores a family of morphisms, the corresponding source
-and target objects, and, possibly, some properties of the morphisms.  Generally,
-no restrictions are imposed on what the properties may be---for example, one
-might use strings of the form ``forall'', ``exists'', ``unique'', etc.
-Furthermore, the morphisms of a diagram are grouped into \textit{premises} and
+The class \texttt{Diagram} captures the properties of morphisms. This class
+stores a family of morphisms, the corresponding source and target objects,
+and, possibly, some properties of the morphisms. Generally, no restrictions
+are imposed on what the properties may be---for example, one might use strings
+of the form ``forall'', ``exists'', ``unique'', etc. Furthermore, the
+morphisms of a diagram are grouped into \textit{premises} and
 \textit{conclusions}, in order to be able to represent logical implications of
-the form ``for a collection of morphisms $P$ with properties $p:P\to \Omega$ (the
-premises), there exists a collection of morphisms $C$ with properties $c:C\to
-\Omega$ (the conclusions)'', where $\Omega$ is the universal collection of
-properties.  Finally, the class \texttt{Category} includes a collection of
-diagrams which are deemed commutative and which therefore define the properties
-of this category.
+the form ``for a collection of morphisms $P$ with properties $p:P\to \Omega$
+(the premises), there exists a collection of morphisms $C$ with properties
+$c:C\to \Omega$ (the conclusions)'', where $\Omega$ is the universal
+collection of properties. Finally, the class \texttt{Category} includes a
+collection of diagrams which are deemed commutative and which therefore define
+the properties of this category.
 
 Automatic typesetting of diagrams takes a \texttt{Diagram} and produces \LaTeX{}
 code using the \texttt{Xy-pic} package.  Typesetting is done in two stages:
@@ -65,7 +65,7 @@ diagram automatically typeset by \texttt{DiagramgGrid} and
 As far as the second main goal of the module is concerned, a (non-working) draft
 of an implementation is at~\cite{ct4commutativity}.  The principal idea consists
 of automatically deciding whether a diagram is commutative or not, given a
-collection of ``axioms''---diagrams \textit{known} to be commutative.  The
+collection of ``axioms'': diagrams known to be commutative.  The
 implementation is based on graph embeddings (injective maps): whenever an
 embedding of a commutative diagram into a given diagram is found, one concludes
 that the subdiagram is commutative.  Deciding commutativity of the whole diagram
@@ -73,8 +73,3 @@ is therefore based (theoretically) on finding a ``cover'' of the target diagram
 by embeddings of the axioms.  The na\"{\i}ve implementation proved to be
 prohibitively slow; a better optimized version is therefore in order, as well as
 application of heuristics.
-
-Contributions to automatic inference of commutativity of diagrams are welcome.
-The source code (both the one in master and in \texttt{ct4-commutativity}) is
-extensively documented.  Even more extensive explanations (including some
-literary chatter) are given at~\cite{scolobb}.
