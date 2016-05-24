@@ -41,8 +41,7 @@ Products in Mathematica are determined by some built in node types, such as
 the \texttt{*} operator, and is always meant to represent a commutative product
 operator.  The other notable product is \texttt{Dot}, which represents the
 \texttt{.} operator.  This product represents matrix multiplication. It is not
-commutative.  In general, SymPy uses the same node for both scalar and matrix
-multiplication, the only exception being with abstract matrix symbols.  Unlike
+commutative.  Unlike
 Mathematica, SymPy determines commutativity with respect to multiplication from
 the factor's expression type.  Mathematica puts the \texttt{Orderless} attribute
 on the expression type.
