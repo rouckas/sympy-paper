@@ -32,7 +32,6 @@ a boolean expression is in any of the above mentioned forms.
 
 \begin{verbatim}
 >>> from sympy.logic.boolalg import is_dnf, is_cnf
->>> x, y, z = symbols('x y z')
 >>> to_cnf((x & y) | z)
 And(Or(x, z), Or(y, z))
 >>> to_dnf(x & (y | z))
@@ -51,8 +50,7 @@ be checked. In the case of equivalence, it is possible to return the mapping of
 variables in two expressions so as to represent the same logical behavior.
 
 \begin{verbatim}
->>> from sympy import *
->>> a, b, c, x, y, z = symbols('a b c x y z')
+>>> a, b, c = symbols('a b c')
 >>> e = a & (~a | ~b) & (a | c)
 >>> simplify(e)
 And(Not(b), a)
@@ -71,8 +69,6 @@ The SAT solver has a clause learning DPLL algorithm implemented with a watch
 literal scheme and VSIDS heuristic\cite{moskewicz2008method}.
 
 \begin{verbatim}
->>> from sympy import *
->>> a, b, c = symbols('a b c')
 >>> satisfiable(a & (~a | b) & (~b | c) & ~c)
 False
 >>> satisfiable(a & (~a | b) & (~b | c) & c)
