@@ -1,4 +1,4 @@
-SymPy includes a module for dealing with categories --- abstract mathematical
+SymPy includes a module for dealing with categories---abstract mathematical
 objects representing classes of structures as classes of objects (points) and
 morphisms (arrows) between the objects. This version of the module was
 designed with the following two goals in mind:
@@ -26,7 +26,7 @@ essentially stores a list of morphisms.
 To capture the properties of morphisms, the class \texttt{Diagram} is expected
 to be used.  This class stores a family of morphisms, the corresponding source
 and target objects, and, possibly, some properties of the morphisms.  Generally,
-no restrictions are imposed on what the properties may be --- for example, one
+no restrictions are imposed on what the properties may be---for example, one
 might use strings of the form ``forall'', ``exists'', ``unique'', etc.
 Furthermore, the morphisms of a diagram are grouped into \textit{premises} and
 \textit{conclusions}, in order to be able to represent logical implications of
@@ -66,7 +66,7 @@ diagram automatically typeset by \texttt{DiagramgGrid} and
 As far as the second main goal of the module is concerned, a (non-working) draft
 of an implementation is at~\cite{ct4commutativity}.  The principal idea consists
 of automatically deciding whether a diagram is commutative or not, given a
-collection of ``axioms'' --- diagrams \textit{known} to be commutative.  The
+collection of ``axioms''---diagrams \textit{known} to be commutative.  The
 implementation is based on graph embeddings (injective maps): whenever an
 embedding of a commutative diagram into a given diagram is found, one concludes
 that the subdiagram is commutative.  Deciding commutativity of the whole diagram
