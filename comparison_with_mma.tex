@@ -77,13 +77,11 @@ expression builder at runtime, or for specific subnodes.
 Consider for example:
 \begin{verbatim}
 In[1]:= Unprotect[Plus]
-
 Out[1]= {Plus}
 
 In[2]:= Sin[x_]^2 + Cos[y_]^2 := 1
 
 In[3]:= x + Sin[t]^2 + y + Cos[t]^2
-
 Out[3]= 1 + x + y
 \end{verbatim}
 This expression in Mathematica defines a substitution rule that overloads
