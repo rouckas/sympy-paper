@@ -52,7 +52,7 @@ $x\to\infty$. The item $\omega=e^{-x}$ is obtained. If such a term is not
 present in the mrv set (i.e., all terms converge to infinity instead of zero),
 the relation $f(x)\sim {1\over f(x)}$ can be used.
 
-Next step is to rewrite the mrv in terms of $\omega$: $\{{1\over\omega},
+The next step is to rewrite the mrv set in terms of $\omega$: $\{{1\over\omega},
 \omega, {1\over\omega}e^{2\omega}\}$. Then the original subexpressions are
 substituted back into $f(x)$ and expanded with respect to $\omega$:
 \begin{equation}
@@ -61,8 +61,8 @@ f(x) = {1\over x}-{1\over\omega}+{1\over\omega}e^{2\omega}
      = 2+{1\over x} + 2\omega + O(\omega^2)
 \end{equation}
 
-Since $\omega$ is from the mrv set, then in the limit $x\to\infty$ it is
-$\omega\to0$ and so $2\omega + O(\omega^2) \to 0$ in~\eqref{gruntz_example_fn2}:
+Since $\omega$ is from the mrv set, then in the limit as $x\to\infty$,
+$\omega\to0$, and so $2\omega + O(\omega^2) \to 0$ in~\eqref{gruntz_example_fn2}:
 \begin{equation}
 f(x) = {1\over x}-{1\over\omega}+{1\over\omega}e^{2\omega}
     = 2+{1\over x} + 2\omega + O(\omega^2)
@@ -91,5 +91,5 @@ f(x) = \underbrace{O\left({1\over \omega^3}\right)}_\infty
 The positive powers of $\omega$ are zero. If there are any negative powers of
 $\omega$, then the result of the limit is infinity, otherwise the limit is
 equal to $\lim\limits_{x\to\infty} C_0(x)$. The expression $C_0(x)$ is simpler
-than $f(x)$ and so the algorithm always converges. A proof of this, as well as
-further details are given in Gruntz's PhD thesis~\cite{Gruntz1996limits}.
+than $f(x)$ and so the algorithm always converges. A proof of this and further
+details on the algorithm are given in Gruntz's PhD thesis~\cite{Gruntz1996limits}.
