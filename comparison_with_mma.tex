@@ -8,10 +8,10 @@ which interprets its own programming language, Wolfram Language.
 
 Analogous to Lisp S-expressions,
 Mathematica uses its own style of M-expres\-sions,
-which are arrays of either atoms or other M-expression.
+which are arrays of either atoms or other M-expressions.
 The first element of the expression identifies the type of the expression
-and is indexed by zero, whereas the first argument is indexed by one.
-Notice that SymPy expression arguments are stored in a Python tuple
+and is indexed by zero, and the first argument is indexed starting with one.
+In SymPy, expression arguments are stored in a Python tuple
 (that is, an immutable array),
 while the expression type is identified by the type of the object storing the
 expression.
