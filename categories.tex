@@ -62,14 +62,13 @@ diagram automatically typeset by \texttt{DiagramgGrid} and
   \caption{An automatically typeset commutative diagram}\label{fig:cat:loops}
 \end{figure}
 
-As far as the second main goal of the module is concerned, a (non-working) draft
-of an implementation is at~\cite{ct4commutativity}.  The principal idea consists
-of automatically deciding whether a diagram is commutative or not, given a
-collection of ``axioms'': diagrams known to be commutative.  The
+As far as the second main goal of the module is concerned, the principal idea
+consists of automatically deciding whether a diagram is commutative or not,
+given a collection of ``axioms'': diagrams known to be commutative. The
 implementation is based on graph embeddings (injective maps): whenever an
-embedding of a commutative diagram into a given diagram is found, one concludes
-that the subdiagram is commutative.  Deciding commutativity of the whole diagram
-is therefore based (theoretically) on finding a ``cover'' of the target diagram
-by embeddings of the axioms.  The na\"{\i}ve implementation proved to be
-prohibitively slow; a better optimized version is therefore in order, as well as
-application of heuristics.
+embedding of a commutative diagram into a given diagram is found, one
+concludes that the subdiagram is commutative. Deciding commutativity of the
+whole diagram is therefore based (theoretically) on finding a ``cover'' of the
+target diagram by embeddings of the axioms. The na\"{\i}ve implementation
+proved to be prohibitively slow; a better optimized version is therefore in
+order, as well as application of heuristics.
