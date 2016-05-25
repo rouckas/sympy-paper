@@ -39,10 +39,10 @@ are computed via a suite of heuristics.
 
 Limits are computed with the \verb|limit| function. The limit module
 implements the Gruntz algorithm~\cite{Gruntz1996limits} for computing symbolic
-limits (a description of the Gruntz algorithm can be found in the supplement).
+limits (a description of the Gruntz algorithm may be found in the supplement).
 For example, the following computes
-$\lim\limits_{x\to \infty} x\sin(\frac{1}{x})=1$ (note that $\infty$ is
-\verb|oo| in SymPy).
+$\lim\limits_{x\to \infty} x\sin(\frac{1}{x})=1$. Note that SymPy denotes
+$\infty$ as \verb|oo|.
 \begin{verbatim}
 >>> limit(x*sin(1/x), x, oo)
 1
