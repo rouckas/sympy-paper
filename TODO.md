@@ -67,7 +67,7 @@ citations and "URL citations".
 
 ## Sections that need to be written:
 
-- [ ] Abstract (note: write this last)
+- [x] Abstract (note: write this last)
 
 - [x] Introduction
 
