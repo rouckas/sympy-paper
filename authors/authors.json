@@ -6,7 +6,7 @@
         "institution_address": "541 Main St., Columbia, SC 29201",
         "institution_address_siam": "Columbia, SC 29201",
         "name": "Aaron Meurer",
-        "sympy_commits": 2636
+        "sympy_commits": 2639
     },
     {
         "email": "mattpap@gmail.com",
@@ -60,7 +60,7 @@
         "institution_address": "One Shields Ave, Davis, CA, 95616, USA",
         "institution_address_siam": "Davis, CA 95616",
         "name": "Jason K. Moore",
-        "sympy_commits": 253
+        "sympy_commits": 255
     },
     {
         "email": "singhsartaj94@gmail.com",
@@ -69,7 +69,7 @@
         "institution_address": "Indian Institute of Technology (BHU), Varanasi, Uttar Pradesh, India - 221005",
         "institution_address_siam": "Varanasi, Uttar Pradesh 221005, India",
         "name": "Sartaj Singh",
-        "sympy_commits": 199
+        "sympy_commits": 200
     },
     {
         "email": "thilinarmtb.10@cse.mrt.ac.lk",
@@ -114,7 +114,7 @@
         "institution_address": "Am Mühlenberg 1, 14476 Potsdam, Germany",
         "institution_address_siam": "Am Mühlenberg 1, 14476 Potsdam, Germany",
         "name": "Francesco Bonazzi",
-        "sympy_commits": 150
+        "sympy_commits": 156
     },
     {
         "email": "hargup@protonmail.com",
@@ -162,6 +162,15 @@
         "sympy_commits": 17
     },
     {
+        "email": "scopatz@cec.sc.edu",
+        "github_id": "scopatz",
+        "institution": "University of South Carolina",
+        "institution_address": "541 Main St., Columbia, SC, 29201",
+        "institution_address_siam": "Columbia, SC 29201",
+        "name": "Anthony Scopatz",
+        "sympy_commits": 15
+    },
+    {
         "email": "isuru.11@cse.mrt.ac.lk",
         "github_id": "isuruf",
         "institution": "University of Moratuwa",
@@ -177,7 +186,7 @@
         "institution_address": "Indian Institute of Technology Bombay, Powai, Mumbai, Maharashtra, India - 400076",
         "institution_address_siam": "Powai, Mumbai, Maharashtra 400076, India",
         "name": "Sumith",
-        "sympy_commits": 6
+        "sympy_commits": 7
     },
     {
         "email": "cimrman3@ntc.zcu.cz",
@@ -187,15 +196,6 @@
         "institution_address_siam": "Univerzitní 8, 306 14 Plzeň, Czech Republic",
         "name": "Robert Cimrman",
         "sympy_commit_email": "robert.cimrman@gmail.com",
-        "sympy_commits": 1
-    },
-    {
-        "email": "scopatz@cec.sc.edu",
-        "github_id": "scopatz",
-        "institution": "University of South Carolina",
-        "institution_address": "541 Main St., Columbia, SC, 29201",
-        "institution_address_siam": "Columbia, SC 29201",
-        "name": "Anthony Scopatz",
         "sympy_commits": 1
     }
 ]

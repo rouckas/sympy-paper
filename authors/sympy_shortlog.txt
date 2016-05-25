@@ -1,7 +1,7 @@
-# Using SymPy d9eb2cc0fc1e1efc524693db1ceaaa6386b05a38
+# Using SymPy c40aca0149a70414377e83fe961b93f95b292b79
 # git shortlog -ns
   4011	Chris Smith
-  2636	Aaron Meurer
+  2639	Aaron Meurer
   1450	Mateusz Paprocki
   1443	Ondřej Čertík
   1055	Sergey B Kirpichev
@@ -17,23 +17,23 @@
    263	AMiT Kumar
    260	Sergiu Ivanov
    258	Sachin Joglekar
-   253	Jason Moore
+   255	Jason Moore
    221	Colin B. Macdonald
-   199	Sartaj Singh
+   200	Sartaj Singh
    190	Saptarshi Mandal
    186	Sean Vig
    186	Thilina Rathnayake
    174	Stefan Krastanov
    173	Jim Crist
+   169	Gaurav Dhingra
    167	David Li
    160	Brian E. Granger
    158	Rick Muller
-   150	Francesco Bonazzi
+   156	Francesco Bonazzi
    138	Vinzent Steinberg
-   137	Gaurav Dhingra
    134	Gilbert Gede
+   133	Kalevi Suominen
    133	Vladimir Perić
-   132	Kalevi Suominen
    131	Timothy Reluga
    127	Raymond Wong
    127	Thomas Hisch
@@ -71,6 +71,7 @@
     49	Kendhia
     47	Akshay
     46	Andy R. Terrel
+    44	Chai Wah Wu
     44	Grzegorz Świrski
     43	Pearu Peterson
     43	Sebastian Krämer
@@ -91,7 +92,6 @@
     35	Matthew Hoff
     35	Riccardo Gori
     35	Tanu Hari Dixit
-    34	Chai Wah Wu
     34	Shipra Banga
     33	Meghana Madhyastha
     33	Steve Anton
@@ -107,6 +107,7 @@
     28	Luke Peterson
     27	Angadh Nanjangud
     27	Arafat Dad Khan
+    26	Sampad Kumar Saha
     26	Stephen Loo
     25	Comer Duncan
     25	Renato Coutinho
@@ -116,11 +117,11 @@
     23	Chetna Gupta
     23	Dzhelil Rufat
     23	Jason Siefken
+    23	Kshitij Saraogi
     23	Miha Marolt
     23	Peleg Michaeli
     22	Amit Saha
     22	Soumya Dipta Biswas
-    21	Kshitij Saraogi
     21	Ralf Stephan
     21	Randy Heydon
     20	Saurabh Jha
@@ -141,6 +142,7 @@
     16	Pablo Zubieta
     16	Patrick Lacasse
     16	Swapnil Agarwal
+    15	Anthony Scopatz
     15	Gary Kerr
     14	Anish Shah
     14	Mike Boyle
@@ -170,7 +172,6 @@
      9	Curious72
      9	Friedrich Hagedorn
      9	Jennifer White
-     9	Sampad Kumar Saha
      9	Saroj Adhikari
      9	Sean Ge
      9	Zamrath Nizam
@@ -373,6 +374,7 @@
      2	Vladimir Poluhsin
      2	Yu Kobayashi
      2	Yury G. Kudryashov
+     2	bluebrook
      2	tsmars15
      1	Abhinav Chanda
      1	Akshat Jain
@@ -484,6 +486,7 @@
      1	Srinivas Vasudevan
      1	Stepan Simsa
      1	Subham Tibra
+     1	Sumith1896
      1	Takafumi Arakaki
      1	Tarang Patel
      1	Thomas Hickman
