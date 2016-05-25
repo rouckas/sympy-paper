@@ -162,6 +162,15 @@
         "sympy_commits": 17
     },
     {
+        "email": "scopatz@cec.sc.edu",
+        "github_id": "scopatz",
+        "institution": "University of South Carolina",
+        "institution_address": "541 Main St., Columbia, SC, 29201",
+        "institution_address_siam": "Columbia, SC 29201",
+        "name": "Anthony Scopatz",
+        "sympy_commits": 15
+    },
+    {
         "email": "isuru.11@cse.mrt.ac.lk",
         "github_id": "isuruf",
         "institution": "University of Moratuwa",
@@ -188,14 +197,5 @@
         "name": "Robert Cimrman",
         "sympy_commit_email": "robert.cimrman@gmail.com",
         "sympy_commits": 1
-    },
-    {
-        "email": "scopatz@cec.sc.edu",
-        "github_id": "scopatz",
-        "institution": "University of South Carolina",
-        "institution_address": "541 Main St., Columbia, SC, 29201",
-        "institution_address_siam": "Columbia, SC 29201",
-        "name": "Anthony Scopatz",
-        "sympy_commits": 15
     }
 ]
