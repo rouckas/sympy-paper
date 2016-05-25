@@ -153,6 +153,16 @@
         "sympy_commits": 114
     },
     {
+        "email": "mattjcurry@gmail.com",
+        "github_id": "mattcurry",
+        "institution": "Department of Physics and Astronomy, University of New Mexico",
+        "institution_address": "1919 Lomas Blvd NE, Albuquerque, NM 87131",
+        "institution_address_siam": "Albuquerque, NM 87131",
+        "name": "Matthew J. Curry",
+        "sympy_commit_email": "mattjcurry@gmail.com",
+        "sympy_commits": 67
+    },
+    {
         "email": "ashutosh.saboo@gmail.com",
         "github_id": "ashutoshsaboo",
         "institution": "Birla Institute of Technology and Science, Pilani, K.K. Birla Goa Campus",
