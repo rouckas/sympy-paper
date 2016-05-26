@@ -85,9 +85,9 @@ an addition, so it is of type \texttt{Add}. The child nodes of \texttt{expr} are
 (2, x*y)
 \end{verbatim}
 
-Traversing further into the expression tree grants the full expression. For
-example, the first child node, given by \texttt{expr.args[0]}, is
-\texttt{2}. Its class is \texttt{Integer}, and it has empty an \texttt{args}
+Descending further down into the expression tree yields the full expression. For
+example, the next child node (given by \texttt{expr.args[0]}) is
+\texttt{2}. Its class is \texttt{Integer}, and it has an empty \texttt{args}
 tuple, indicating that it is a leaf node.
 \begin{verbatim}
 >>> expr.args[0]
@@ -98,8 +98,8 @@ tuple, indicating that it is a leaf node.
 ()
 \end{verbatim}
 
-A useful way to view an expression tree is with the \texttt{srepr} function.
-This returns a string representation of an expression as valid Python code
+A useful way to view an expression tree is using the \texttt{srepr} function, which
+returns a string representation of an expression as valid Python code
 with all the nested class constructor calls to create the given expression.
 \begin{verbatim}
 >>> srepr(expr)
