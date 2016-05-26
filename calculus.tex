@@ -2,7 +2,7 @@ Integrals are calculated with the \verb|integrate| function. SymPy
 implements a combination of the Risch
 algorithm~\cite{bronstein2005integration}, table lookups, a reimplementation
 of Manuel Bronstein's ``Poor Man's Integrator''~\cite{Bronstein2005pmint}, and
-an algorithm for computing integrals based on Meijer G-functions~\cite{roach1997meijerg}. These allow
+an algorithm for computing integrals based on Meijer G-functions~\cite{Roach1996hyper,roach1997meijerg}. These allow
 SymPy to compute a wide variety of indefinite and definite integrals. The
 Meijer G-function algorithm and the Risch algorithm are respectively
 demonstrated below by the computation of \[\int_{0}^{\infty} e^{-s t}\log{\left
@@ -30,7 +30,7 @@ exp(x)*sin(x) + exp(x)*cos(x)
 
 Summations and products are computed with \verb|summation| and \verb|product|,
 respectively. Summations are computed using a combination of Gosper's
-algorithm, an algorithm that uses Meijer G-functions, and heuristics. Products
+algorithm~\cite{gosper1978decision}, an algorithm that uses Meijer G-functions~\cite{Roach1996hyper,roach1997meijerg}, and heuristics. Products
 are computed via a suite of heuristics.
 % TODO: Citations for Gosper and Meijer G-function algorithms
 % TODO: Are there other summation algorithms implemented?
