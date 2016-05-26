@@ -21,8 +21,8 @@ demonstrated below by the computation of \[\int_{0}^{\infty} e^{-s t}\log{\left
 log(log(x) + 1) + 1/(exp(x**2) + 1)
 \end{verbatim}
 
-Derivatives are computed with the \verb|diff| function. Derivatives are
-computed recursively using the various differentiation rules.
+Derivatives are computed recursively by the \verb|diff| function which
+relies on various differentiation rules.
 \begin{verbatim}
 >>> diff(sin(x)*exp(x), x)
 exp(x)*sin(x) + exp(x)*cos(x)
