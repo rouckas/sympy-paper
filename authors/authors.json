@@ -108,11 +108,11 @@
         "sympy_commits": 158
     },
     {
-        "email": "francesco.bonazzi@mpikg.mpg.de",
+        "email": "francesco.bonazzi@gmail.com",
         "github_id": "Upabjojr",
-        "institution": "Max Planck Institute of Colloids and Interfaces",
-        "institution_address": "Am Mühlenberg 1, 14476 Potsdam, Germany",
-        "institution_address_siam": "Am Mühlenberg 1, 14476 Potsdam, Germany",
+        "institution": "Technical University of Berlin, Physics Department",
+        "institution_address": "Hardenbergstr. 36, 10623 Berlin, Germany",
+        "institution_address_siam": "Hardenbergstr. 36, 10623 Berlin, Germany",
         "name": "Francesco Bonazzi",
         "sympy_commits": 156
     },
