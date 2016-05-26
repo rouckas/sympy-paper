@@ -21,12 +21,11 @@ coefficients are stored.} Both are used in the univariate and multivariate
 cases. The dense representation is the default for univariate polynomials. For
 multivariate polynomials, the choice of representation is based on the
 application. The most common case for the sparse representation is algorithms
-for computing Gr\"{o}bner bases (Buchberger, F4, and F5).
-% TODO: citation
-This is
-because different monomial orderings can be expressed easily in this
-representation. However, algorithms for computing multivariate GCDs or
-factorizations, at least those currently implemented in SymPy,
+for computing Gr\"{o}bner bases (Buchberger, F4, and
+F5)~\cite{Buchberger1965thesis,Faugere1999f4,Faugere2002f5}. This is because
+different monomial orderings can be expressed easily in this representation.
+However, algorithms for computing multivariate GCDs or factorizations, at
+least those currently implemented in SymPy~\cite{paprocki2010thesis},
 % TODO: citation
 are better expressed when the representation is dense. The dense multivariate
 representation is specifically a recursively dense representation, where
