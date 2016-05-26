@@ -6,8 +6,8 @@ or expression involving elementary and special functions and multiple
 variables. For this it has two different implementations: the \texttt{series}
 method and Ring Series.
 
-The first approach stores a series as an object of the \texttt{Basic} class.
-Each function has its specific implementation of its expansion which is able to
+The first approach stores a series as an instance of the \texttt{Expr} class.
+Each function has its specific implementation of its expansion, which is able to
 evaluate the Puiseux series expansion about a specified point. For example,
 consider a Taylor expansion about 0:
 
@@ -18,20 +18,20 @@ consider a Taylor expansion about 0:
 1 + sin(y) + x*cos(y) + O(x**2)
 \end{verbatim}
 
-The newer and much faster\cite{sympyRingSeries} approach called Ring Series makes use of the
-observation that a truncated Taylor series, is in fact a polynomial.
+The newer and much faster approach called Ring Series makes use of the
+observation that a truncated Taylor series is in fact a polynomial.
 Ring Series uses the efficient representation and operations of sparse
-polynomials. The choice of sparse polynomials is deliberate as it performs
+polynomials. The choice of sparse polynomials is deliberate, as it performs
 well in a wider range of cases than a dense representation. Ring Series gives
 the user the freedom to choose the type of coefficients he wants to have in
 his series, allowing the use of faster operations on certain types.
 
-For this, several low level methods for expansion of trigonometric, hyperbolic
+For this, several low level methods for expansion of trigonometric, hyperbolic,
 and other elementary functions like inverse of a series, calculating $n$th
 root, etc, are implemented using variants of the Newton Method~\cite{zimmerman}.
 All these support Puiseux series expansion. The following example demonstrates
 the use of an elementary function that calculates the Taylor expansion of the
-\texttt{sine} of a series.
+sine of a series.
 
 \begin{verbatim}
 >>> from sympy import ring
@@ -83,8 +83,8 @@ x - x**3/6 + x**5/120 + O(x**6)
 \subsubsection{Fourier Series}
 
 SymPy provides functionality to compute Fourier series of a function using the
-\texttt{fourier\_series} function. Under the hood, this function computes $a0$,
-$an$, $bn$ coefficients using standard integration formulas.
+\texttt{fourier\_series} function. Under the hood, this function computes $a_0$,
+$a_n$, and $b_n$ coefficients using standard integration formulas.
 
 Here's an example on how to compute Fourier series in SymPy:
 

@@ -28,7 +28,7 @@ SymPy has the following atomic set classes:
     \item \verb|Naturals| represents the set of natural numbers $\mathbb{N}$,
       i.e., the set of positive integers.
 
-    \item \verb|Naturals0| represents the set of whole numbers $\mathbb{N}^0$,
+    \item \verb|Naturals0| represents the set of whole numbers $\mathbb{N}_0$,
       which are all the non-negative integers.
 
     \item \verb|Range| represents a range of integers. A range is defined by
@@ -75,7 +75,7 @@ Other than unevaluated classes of \texttt{Union}, \texttt{Intersection}, and
 
 A few other classes are implemented as special cases of the classes described
 above. The set of real numbers, \verb|Reals|, is implemented as a special case
-of \verb|Interval| over the interval $(-\infty, \infty)$. \verb|ComplexRegion|
+of \verb|Interval|. \verb|ComplexRegion|
 is implemented as a special case of \verb|ImageSet|. \verb|ComplexRegion|
 supports both polar and rectangular representation of regions on the complex
 plane.

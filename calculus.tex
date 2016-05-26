@@ -5,13 +5,13 @@ of Manuel Bronstein's ``Poor Man's Integrator''~\cite{Bronstein2005pmint}, and
 an algorithm for computing integrals based on Meijer G-functions. These allow
 SymPy to compute a wide variety of indefinite and definite integrals. The
 Meijer G-function algorithm and the Risch algorithm are respectively
-demonstrated below by the computation of $$\int_{0}^{\infty} e^{-s t}\log{\left
+demonstrated below by the computation of \[\int_{0}^{\infty} e^{-s t}\log{\left
       (t \right )}\, dt = - \frac{ \log{\left (s \right
-    )} + \gamma}{s}$$ and $$\int \frac{- 2 x^{2}
+    )} + \gamma}{s}\] and \[\int \frac{- 2 x^{2}
   \left(\log{\left (x \right )} + 1\right) e^{x^{2}} + \left(e^{x^{2}} +
     1\right)^{2}}{x \left(e^{x^{2}} + 1\right)^{2} \left(\log{\left (x \right
       )} + 1\right)}\, dx = \log{\left (\log{\left (x \right )} + 1 \right )}
-+ \frac{1}{e^{x^{2}} + 1}.$$
++ \frac{1}{e^{x^{2}} + 1}.\]
 % TODO: What is the best citation for the Meijer G-function algorithm.
 \begin{verbatim}
 >>> s, t = symbols('s t', positive=True)
@@ -39,17 +39,17 @@ are computed via a suite of heuristics.
 
 Limits are computed with the \verb|limit| function. The limit module
 implements the Gruntz algorithm~\cite{Gruntz1996limits} for computing symbolic
-limits (a description of the Gruntz algorithm can be found in the supplement).
+limits (a description of the Gruntz algorithm may be found in the supplement).
 For example, the following computes
-$\lim\limits_{x\to \infty} x\sin(\frac{1}{x})=1$ (note that $\infty$ is
-\verb|oo| in SymPy).
+$\lim\limits_{x\to \infty} x\sin(\frac{1}{x})=1$. Note that SymPy denotes
+$\infty$ as \verb|oo|.
 \begin{verbatim}
 >>> limit(x*sin(1/x), x, oo)
 1
 \end{verbatim}
-As a more complex example, SymPy computes $$\lim\limits_{x\to 0}{\left(2 e^{\frac{1 - \cos{\left (x \right )}}{\sin{\left (x \right )}}} -
+As a more complex example, SymPy computes \[\lim\limits_{x\to 0}{\left(2 e^{\frac{1 - \cos{\left (x \right )}}{\sin{\left (x \right )}}} -
   1\right)}^{\frac{\sinh{\left (x \right )}}{\operatorname{atan}^{2}{\left (x
-      \right )}}} = e.$$
+      \right )}}} = e.\]
 \begin{verbatim}
 >>> limit((2*E**((1-cos(x))/sin(x))-1)**(sinh(x)/atan(x)**2), x, 0)
 E

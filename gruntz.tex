@@ -14,30 +14,30 @@ first be defined, by calculating $L$:
 \begin{equation}
 L\equiv \lim_{x\to\infty} {\log |f(x)| \over \log |g(x)|}
 \end{equation}
-And then operations $<$, $>$ and $\sim$ are defined as follows: $f>g$ when
+The relations $<$, $>$, and $\sim$ are defined as follows: $f>g$ when
 $L=\pm\infty$ (it is said that $f$ is more rapidly varying than $g$, i.e., $f$
-goes to $\infty$ or $0$ faster than $g$, $f$ is greater than any power of $g$),
-$f<g$ when $L=0$ ($f$ is less rapidly varying than $g$) and $f\sim g$ when
-$L\neq 0,\pm\infty$ (both $f$ and $g$ are bounded from above and below by
-suitable integral powers of the other). Here are some examples of comparability
-classes:
-$$2 < x < e^x < e^{x^2} < e^{e^x}$$
-$$2\sim 3\sim -5$$
-$$x\sim x^2\sim x^3\sim {1\over x}\sim x^m\sim -x$$
-$$e^x\sim e^{-x}\sim e^{2x}\sim e^{x+e^{-x}}$$
-$$f(x)\sim{1\over f(x)}$$
+goes to $\infty$ or $0$ faster than $g$), $f<g$ when $L=0$ ($f$ is less
+rapidly varying than $g$) and $f\sim g$ when $L\neq 0,\pm\infty$ (both $f$ and
+$g$ are bounded from above and below by suitable integral powers of the
+other). Note that if $f > g$, then $f > g^n$ for any $n$. Here
+are some examples of comparability classes:
+\[2 < x < e^x < e^{x^2} < e^{e^x}\]
+\[2\sim 3\sim -5\]
+\[x\sim x^2\sim x^3\sim {1\over x}\sim x^m\sim -x\]
+\[e^x\sim e^{-x}\sim e^{2x}\sim e^{x+e^{-x}}\]
+\[f(x)\sim{1\over f(x)}\]
 
 The Gruntz algorithm is now illustrated on the following example:
 \begin{equation}
     \label{gruntz_example_fn}
 f(x) = e^{x+2e^{-x}} - e^x + {1\over x} \,.
 \end{equation}
-The goal is to calculate $\lim\limits_{x\to\infty} f(x)$.
-First the set of most rapidly varying subexpressions is determined, the so
-called \textit{mrv set}. For~\eqref{gruntz_example_fn}, the following mrv set
+The goal is to calculate $\lim\limits_{x\to\infty} f(x)$. First, the set of
+most rapidly varying subexpressions is determined---the so-called \textit{mrv
+  set}. For~\eqref{gruntz_example_fn}, the mrv set
 $\{e^x, e^{-x}, e^{x+2e^{-x}}\}$ is obtained. These are all subexpressions of%
-~\eqref{gruntz_example_fn} and they all belong to the same comparability class.
-This calculation can be done using SymPy as follows:
+~\eqref{gruntz_example_fn} and they all belong to the same comparability
+class. This calculation can be done using SymPy as follows:
 
 % dict_keys output order varies
 % no-doctest
@@ -47,12 +47,12 @@ This calculation can be done using SymPy as follows:
 dict_keys([exp(x + 2*exp(-x)), exp(x), exp(-x)])
 \end{verbatim}
 
-Next any item $\omega$ is taken from mrv that converges to zero for
+Next, any item $\omega$ is taken from mrv that converges to zero for
 $x\to\infty$. The item $\omega=e^{-x}$ is obtained. If such a term is not
 present in the mrv set (i.e., all terms converge to infinity instead of zero),
 the relation $f(x)\sim {1\over f(x)}$ can be used.
 
-Next step is to rewrite the mrv in terms of $\omega$: $\{{1\over\omega},
+The next step is to rewrite the mrv set in terms of $\omega$: $\{{1\over\omega},
 \omega, {1\over\omega}e^{2\omega}\}$. Then the original subexpressions are
 substituted back into $f(x)$ and expanded with respect to $\omega$:
 \begin{equation}
@@ -61,8 +61,8 @@ f(x) = {1\over x}-{1\over\omega}+{1\over\omega}e^{2\omega}
      = 2+{1\over x} + 2\omega + O(\omega^2)
 \end{equation}
 
-Since $\omega$ is from the mrv set, then in the limit $x\to\infty$ it is
-$\omega\to0$ and so $2\omega + O(\omega^2) \to 0$ in~\eqref{gruntz_example_fn2}:
+Since $\omega$ is from the mrv set, then in the limit as $x\to\infty$,
+$\omega\to0$, and so $2\omega + O(\omega^2) \to 0$ in~\eqref{gruntz_example_fn2}:
 \begin{equation}
 f(x) = {1\over x}-{1\over\omega}+{1\over\omega}e^{2\omega}
     = 2+{1\over x} + 2\omega + O(\omega^2)
@@ -91,5 +91,5 @@ f(x) = \underbrace{O\left({1\over \omega^3}\right)}_\infty
 The positive powers of $\omega$ are zero. If there are any negative powers of
 $\omega$, then the result of the limit is infinity, otherwise the limit is
 equal to $\lim\limits_{x\to\infty} C_0(x)$. The expression $C_0(x)$ is simpler
-than $f(x)$ and so the algorithm always converges. A proof of this, as well as
-further details are given in Gruntz's PhD thesis~\cite{Gruntz1996limits}.
+than $f(x)$ and so the algorithm always converges. A proof of this and further
+details on the algorithm are given in Gruntz's PhD thesis~\cite{Gruntz1996limits}.

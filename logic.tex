@@ -1,26 +1,24 @@
 
 SymPy supports construction and manipulation of boolean expressions
-through the \texttt{logic} module. SymPy symbols can be used as
+through the \texttt{sympy.logic} module. SymPy symbols can be used as
 propositional variables and also be substituted as \texttt{True}
 or \texttt{False}. A good number of manipulation features for boolean
-expressions have been implemented in the \texttt{logic} module.
+expressions have been implemented in the \texttt{sympy.logic} module.
 
 \subsubsection{Constructing boolean expressions}
 
-A boolean variable can be declared as a SymPy symbol. Python operators
+A boolean variable can be declared as a SymPy \verb|Symbol|. Python operators
 \texttt{\&}, \texttt{\textbar{}} and \texttt{\textasciitilde{}} are overridden
-when using SymPy objects
-to use the SymPy functionality for logical \texttt{And}, \texttt{Or}, and
-\texttt{negate}.  Other logic functions are also integrated into SymPy,
-including \texttt{Xor} and \texttt{Implies}, which are constructed with
-\texttt{\^{}} and \texttt{\textgreater{}\textgreater{}}, respectively.  The above
-are just a shorthand, expressions can also be constructed by directly creating
-the relevant objects: \verb|And()|, \verb|Or()|, \verb|Not()|, \verb|Xor()|,
-\verb|Nand()|, \verb|Nor()|, etc.
+when using SymPy objects to use the SymPy functionality for logical
+\texttt{And}, \texttt{Or}, and \texttt{Not}. Other logic functions are also
+integrated into SymPy, including \texttt{Xor} and \texttt{Implies}, which are
+constructed with \texttt{\^{}} and \texttt{\textgreater{}\textgreater{}},
+respectively. The above are just a shorthand, expressions can also be
+constructed by directly creating the relevant objects: \verb|And()|,
+\verb|Or()|, \verb|Not()|, \verb|Xor()|, \verb|Implies()|, \verb|Nand()|,
+\verb|Nor()|, etc.
 
 \begin{verbatim}
->>> from sympy import *
->>> x, y, z = symbols('x y z')
 >>> e = (x & y) | z
 >>> e.subs({x: True, y: True, z: False})
 True
@@ -34,7 +32,6 @@ a boolean expression is in any of the above mentioned forms.
 
 \begin{verbatim}
 >>> from sympy.logic.boolalg import is_dnf, is_cnf
->>> x, y, z = symbols('x y z')
 >>> to_cnf((x & y) | z)
 And(Or(x, z), Or(y, z))
 >>> to_dnf(x & (y | z))
@@ -53,8 +50,7 @@ be checked. In the case of equivalence, it is possible to return the mapping of
 variables in two expressions so as to represent the same logical behavior.
 
 \begin{verbatim}
->>> from sympy import *
->>> a, b, c, x, y, z = symbols('a b c x y z')
+>>> a, b, c = symbols('a b c')
 >>> e = a & (~a | ~b) & (a | c)
 >>> simplify(e)
 And(Not(b), a)
@@ -70,11 +66,9 @@ The module also supports satisfiability (SAT) checking of a given boolean
 expression. If satisfiable, it is possible to return a model for which the
 expression is satisfiable. The API also supports returning all possible models.
 The SAT solver has a clause learning DPLL algorithm implemented with a watch
-literal scheme and VSIDS heuristic\cite{moskewicz2008method}.
+literal scheme and VSIDS heuristic~\cite{moskewicz2008method}.
 
 \begin{verbatim}
->>> from sympy import *
->>> a, b, c = symbols('a b c')
 >>> satisfiable(a & (~a | b) & (~b | c) & ~c)
 False
 >>> satisfiable(a & (~a | b) & (~b | c) & c)
