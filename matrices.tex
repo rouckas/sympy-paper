@@ -1,5 +1,7 @@
-Computations on matrices with symbolic entries are important for many algorithms
-within SymPy, as well as being an important feature in its own right.
+Besides being an important feature in its own right, computations on
+matrices with symbolic entries are important for many algorithms
+within SymPy.  The following code shows some basic usage of the
+\texttt{Matrix} class.
 \begin{verbatim}
 >>> A = Matrix(2, 2, [x, x + y, y, x])
 >>> A
@@ -14,7 +16,7 @@ solving linear systems, and computing inverses using LU decomposition, LDL
 decomposition, Gauss-Jordan elimination, Cholesky decomposition, Moore-Penrose
 pseudoinverse, and adjugate matrix.
 
-All operations are computed symbolically. For instance, eigenvalues are computed
+All operations are performed symbolically. For instance, eigenvalues are computed
 by generating the characteristic polynomial using the Berkowitz algorithm and
 then solving it using polynomial routines.
 
@@ -23,12 +25,12 @@ then solving it using polynomial routines.
 {x - sqrt(y*(x + y)): 1, x + sqrt(y*(x + y)): 1}
 \end{verbatim}
 
-Internally these matrices store the elements as a list of lists (LIL), making
+Internally these matrices store the elements as lists of lists, making
 it a dense representation.\footnote{Similar to the polynomials module, dense
   here means that all entries are stored in memory, contrasted with a sparse
   representation where only nonzero entries are stored.} For storing sparse
-matrices, the \verb|SparseMatrix| class can be used. Sparse matrices store the
-elements in a dictionary of keys (DOK) format.
+matrices, the \verb|SparseMatrix| class can be used. Sparse matrices store their
+elements as a dictionary of keys.
 
 SymPy also supports matrices with symbolic dimension values. \verb|MatrixSymbol|
 represents a matrix with dimensions $m\times n$, where $m$ and $n$ can be
