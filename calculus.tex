@@ -2,7 +2,7 @@ Integrals are calculated with the \verb|integrate| function. SymPy
 implements a combination of the Risch
 algorithm~\cite{bronstein2005integration}, table lookups, a reimplementation
 of Manuel Bronstein's ``Poor Man's Integrator''~\cite{Bronstein2005pmint}, and
-an algorithm for computing integrals based on Meijer G-functions. These allow
+an algorithm for computing integrals based on Meijer G-functions~\cite{roach1997meijerg}. These allow
 SymPy to compute a wide variety of indefinite and definite integrals. The
 Meijer G-function algorithm and the Risch algorithm are respectively
 demonstrated below by the computation of \[\int_{0}^{\infty} e^{-s t}\log{\left
@@ -12,7 +12,6 @@ demonstrated below by the computation of \[\int_{0}^{\infty} e^{-s t}\log{\left
     1\right)^{2}}{x \left(e^{x^{2}} + 1\right)^{2} \left(\log{\left (x \right
       )} + 1\right)}\, dx = \log{\left (\log{\left (x \right )} + 1 \right )}
 + \frac{1}{e^{x^{2}} + 1}.\]
-% TODO: What is the best citation for the Meijer G-function algorithm.
 \begin{verbatim}
 >>> s, t = symbols('s t', positive=True)
 >>> integrate(exp(-s*t)*log(t), (t, 0, oo)).simplify()
