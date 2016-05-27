@@ -1,8 +1,8 @@
 
 SymPy supports construction and manipulation of boolean expressions
 through the \texttt{logic} module. SymPy symbols can be used as
-propositional variables and also be substituted as \texttt{True}
-or \texttt{False}. A good number of manipulation features for boolean
+propositional variables and subsequently replaced with \texttt{True}
+or \texttt{False} values. A good number of manipulation features for boolean
 expressions have been implemented in the \texttt{logic} module.
 
 \subsubsection{Constructing boolean expressions}
@@ -14,7 +14,7 @@ to use the SymPy functionality for logical \texttt{And}, \texttt{Or}, and
 \texttt{negate}.  Other logic functions are also integrated into SymPy,
 including \texttt{Xor} and \texttt{Implies}, which are constructed with
 \texttt{\^{}} and \texttt{\textgreater{}\textgreater{}}, respectively.  The above
-are just a shorthand, expressions can also be constructed by directly creating
+are just shorthand; expressions can also be constructed by directly creating
 the relevant objects: \verb|And()|, \verb|Or()|, \verb|Not()|, \verb|Xor()|,
 \verb|Nand()|, \verb|Nor()|, etc.
 
@@ -30,7 +30,7 @@ True
 
 Any boolean expression can be converted to conjunctive normal form, disjunctive
 normal form, and negation normal form. The API also exposes methods to check if
-a boolean expression is in any of the above mentioned forms.
+a boolean expression is in any of the aforementioned forms.
 
 \begin{verbatim}
 >>> from sympy.logic.boolalg import is_dnf, is_cnf

@@ -27,6 +27,12 @@ are computed via some heuristics.
 % TODO: Citations for Gosper and Meijer G-function algorithms
 % TODO: Are there other summation algorithms implemented?
 % TODO: A good summation example or two
+\begin{verbatim}
+>>> summation(2**i, (i, 0, n - 1))
+2**n - 1
+>>> summation(i*factorial(i), (i, 1, n))
+n*factorial(n) + factorial(n) - 1
+\end{verbatim}
 
 Limits are computed with the \verb|limit| function. The limit module
 implements the Gruntz algorithm~\cite{Gruntz1996limits} for computing symbolic
@@ -52,4 +58,6 @@ user chooses.
 \begin{verbatim}
 >>> integrate(x**x, x)
 Integral(x**x, x)
+>>> Sum(2**i, (i, 0, n - 1))
+Sum(2**i, (i, 0, n - 1))
 \end{verbatim}

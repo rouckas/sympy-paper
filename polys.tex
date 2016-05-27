@@ -6,7 +6,7 @@ polynomials, to advanced methods for factoring multivariate polynomials
 into irreducibles, symbolically determining real and complex root isolation
 intervals, or computing Gr\"{o}bner bases.
 
-Polynomial manipulation is useful on its own. Within SymPy, though, it is mostly used
+Polynomial manipulation is useful in its own right. Within SymPy, though, it is mostly used
 indirectly as a tool in other areas of the library. In fact, many mathematical
 problems in symbolic computing are first expressed using entities from the
 symbolic core, preprocessed, and then transformed into a problem in the
@@ -29,12 +29,11 @@ representation. However, algorithms for computing multivariate GCDs or
 factorizations, at least those currently implemented in SymPy,
 % TODO: citation
 are better expressed when the representation is dense. The dense multivariate
-representation is specifically a recursively dense representation, where
+representation is specifically a recursively-dense representation, where
 polynomials in $K[x_0, x_1, \dotsc, x_n]$ are viewed as a polynomials in
 $K[x_0][x_1]\dotso[x_n]$. Note that despite this, the coefficient domain $K$,
 can be a multivariate polynomial domain as well. The dense recursive
-representation in Python gets inefficient when the number of variables gets
-high.
+representation in Python gets inefficient as the number of variables increases.
 
 Some examples for the \texttt{sympy.polys} module can be found in the
 supplement.
