@@ -69,10 +69,10 @@ mpf('0.100000000000000000000192874984794')
 \end{verbatim}
 
 For pure numerical computing, it is convenient to use mpmath directly
-with \texttt{from mpmath import *} (it is best to avoid such an
-import statement when using SymPy simultaneously, since numerical
-functions such as \texttt{exp} will collide names with the symbolic counterparts
-in SymPy).
+with \texttt{from mpmath import *}.  Nevertheless, it is best to avoid such an
+import statement when using SymPy simultaneously, since the names of numerical
+functions such as \texttt{exp} will collide with those of their symbolic counterparts
+in SymPy.
 
 Like SymPy, mpmath is a pure Python library.
 Internally, mpmath represents a floating-point number
@@ -87,8 +87,8 @@ The mpmath library supports
 special functions, root-finding, linear algebra, polynomial approximation,
 and numerical computation of limits, derivatives, integrals, infinite
 series, and ODE solutions. All features work in arbitrary precision
-and use algorithms that allow computing hundreds of digits rapidly,
-except in degenerate cases.
+and use algorithms that allow computing hundreds of digits rapidly
+(except in degenerate cases).
 
 The double exponential (tanh-sinh) quadrature is used for numerical
 integration by default. For smooth integrands, this algorithm usually
@@ -132,6 +132,6 @@ Equivalently, with SymPy's interface this function can be evaluated as:
 \end{verbatim}
 
 Symbolic integration and summation often produces hypergeometric
-and Meijer G-function closed forms (see section~\ref{sec:calculus});
+and Meijer G-function closed forms (see Subsection~\ref{sec:calculus});
 numerical evaluation of such special functions is a useful complement
 to direct numerical integration and summation.
