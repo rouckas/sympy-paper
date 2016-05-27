@@ -10,6 +10,15 @@
         "sympy_commits": 2639
     },
     {
+        "email": "smichr@gmail.com",
+        "github_id": "smichr",
+        "institution": "Polar Semiconductor, Inc.",
+        "institution_address": "2800 E. Old Shakopee Rd., Bloomington, MN 55425",
+        "institution_address_siam": "Bloomington, MN 55425",
+        "name": "Christopher P. Smith",
+        "sympy_commits": 4011
+    },
+    {
         "email": "mattpap@gmail.com",
         "github_id": "mattpap",
         "institution": "Continuum Analytics, Inc.",
@@ -210,11 +219,4 @@
         "name": "Anthony Scopatz",
         "sympy_commits": 15
     }
-    {
-        "email": "smichr@gmail.com",
-        "github_id": "smichr",
-        "name": "Christopher P. Smith",
-        "institution": "Polar Semiconductor, Inc.",
-        "institution_address": "2800 E. Old Shakopee Rd., Bloomington, MN 55425"
-    },
 ]
