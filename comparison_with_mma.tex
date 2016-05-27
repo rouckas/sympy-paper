@@ -1,6 +1,6 @@
 
-Wolfram Mathematica is a popular proprietary CAS\@.
-It features highly advanced algorithms.
+Wolfram Mathematica is a popular proprietary CAS\@,
+which features highly advanced algorithms.
 Mathematica has a core implemented in C++~\cite{Wolfram2003book}
 which interprets its own programming language, Wolfram Language.
 
@@ -93,10 +93,10 @@ unevaluated.  Nevertheless, it clearly illustrates the potential to define
 immediate transformation rules.
 In SymPy, the operations constructing the addition node in the expression tree
 are Python class constructors
-and cannot be modified at runtime.\footnote{In reality, Python supports monkey patching,
+and cannot be modified at runtime.\footnote{In fact, Python supports monkey patching;
 nonetheless, it is a discouraged programming pattern.}
-The way SymPy deals with extending the missing runtime overloadability functionality
-is by subclassing the node types.
+The SymPy equivalent of such runtime extensions is subclassing the
+node types.
 Subclasses may redefine the class constructor to yield the proper
 extended functionality.
 
