@@ -15,7 +15,7 @@ SymPy has the following atomic set classes:
 
     \item \verb|EmptySet| represents the empty set $\emptyset$.
 
-    \item \verb|UniversalSet| is an abstract ``universal set'' for which
+    \item \verb|UniversalSet| is an abstract ``universal set'' of which
       everything is a member. The union of the universal set with any set
       gives the universal set and the intersection gives the other set itself.
 
@@ -38,8 +38,8 @@ SymPy has the following atomic set classes:
       representation of infinite ranges.
 
     \item \verb|Interval| represents an interval of real numbers. It is
-      specified by giving the start and end point and specifying if it is open
-      or closed in the respective ends.
+      defined by giving the start and the end points and by specifying if the interval is open
+      or closed on the respective ends.
 
 
 \end{itemize}
@@ -55,17 +55,17 @@ Other than unevaluated classes of \texttt{Union}, \texttt{Intersection}, and
     \item \verb|ProductSet| defines the Cartesian product of two
         or more sets. The product set is useful when representing higher
         dimensional spaces. For example, to represent a three-dimensional space,
-        SymPy uses take the Cartesian product of three real sets.
+        SymPy uses the Cartesian product of three real sets.
 
       \item \verb|ImageSet| represents the image of a function when applied to
         a particular set. The image set of a function $F$ with respect to a set
-        $S$ is $\{ F(x) | x \in S \}$. SymPy uses image sets to represent sets
-        of infinite solutions equations such as $\sin(x)=0$.
+        $S$ is $\{ F(x) \mid x \in S \}$. SymPy uses image sets to represent sets
+        of infinite solutions of equations such as $\sin(x)=0$.
 
 
       \item \verb|ConditionSet| represents a subset of a set whose members
-        satisfies a particular condition. The condition set of the set $S$ with
-        respect to the condition $H$ is $\{x | H(x), x \in S \}$. SymPy uses
+        satisfy a particular condition. The subset of set $S$
+        given by the condition $H$ is $\{x \mid H(x), x \in S \}$. SymPy uses
         condition sets to represent the set of solutions of equations and
         inequalities, where the equation or the inequality is the condition and
         the set is the domain being solved
