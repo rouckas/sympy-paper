@@ -12,8 +12,8 @@ vector algebra symbolics and mechanics.
 \subsubsection{Vector Algebra}
 % TODO This section requires some citations.
 
-The \verb|sympy.physics.vector| package provides reference frame, time, and
-space aware vector and dyadic objects that allow for three-dimensional
+The \verb|sympy.physics.vector| package provides reference frame-, time-, and
+space-aware vector and dyadic objects that allow for three-di\-men\-sional
 operations such as addition, subtraction, scalar multiplication, inner and
 outer products, and cross products. Both of these objects can be written in
 very compact notation that make it easy to express the vectors and dyadics in
@@ -21,13 +21,13 @@ terms of multiple reference frames with arbitrarily defined relative
 orientations. The vectors are used to specify the positions, velocities, and
 accelerations of points, orientations, angular velocities, and angular
 accelerations of reference frames, and force and torques. The dyadics are
-essentially reference frame aware $3 \times 3$ tensors. The vector and dyadic
+essentially reference frame-aware $3 \times 3$ tensors. The vector and dyadic
 objects can be used for any one-, two-, or three-dimensional vector algebra, and
 they provide a strong framework for building physics and engineering tools.
 
 The following Python code demonstrates how a vector is created using
 the orthogonal unit vectors of three reference frames that are oriented with
-respect to each other and the result of expressing the vector in the $A$
+respect to each other, and the result of expressing the vector in the $A$
 frame. The $B$ frame is oriented with respect to the $A$ frame using Z-X-Z
 Euler Angles of magnitude $\pi$, $\frac{\pi}{2}$, and
 $\frac{\pi}{3}$\si{\radian}, respectively, whereas the $C$ frame is oriented
