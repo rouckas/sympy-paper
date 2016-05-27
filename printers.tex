@@ -1,5 +1,5 @@
-SymPy has a rich collection of expression printers for displaying expressions
-to the user. By default, an interactive Python session will render the
+SymPy has a rich collection of expression printers.
+By default, an interactive Python session will render the
 \verb|str| form of an expression, which has been used in all the examples in
 this paper so far. The \verb|str| form of an expression is valid Python and
 roughly matches what a user would type to enter the expression.
@@ -10,16 +10,18 @@ roughly matches what a user would type to enter the expression.
 'Integral(sqrt(phi0), phi0)'
 \end{verbatim}
 
-Expressions can be printed with 2D, monospace fonts via \verb|pprint|. This
-uses Unicode characters to render mathematical symbols such as integral signs,
+Expressions can be printed with 2D, monospace fonts via \verb|pprint|.
+Unicode characters are used for rendering mathematical symbols such as integral signs,
 square roots, and parentheses. Greek letters and subscripts in symbol names
-that have Unicode code points associated with them
+that have Unicode code points associated
 are also rendered automatically.
+% TODO cite unicode?
 
 \noindent
 \includegraphics[width=1\textwidth]{pprint.pdf}
 Alternately, the \verb|use_unicode=False| flag can be set, which causes the
 expression to be printed using only ASCII characters.
+% TODO cite ASCII
 
 \begin{verbatim}
 >>> pprint(Integral(sqrt(phi0 + 1), phi0), use_unicode=False)
@@ -32,6 +34,7 @@ expression to be printed using only ASCII characters.
 \end{verbatim}
 
 The function \verb|latex| returns a \LaTeX{} representation of an expression.
+% TODO cite latex
 
 \begin{verbatim}
 >>> print(latex(Integral(sqrt(phi0 + 1), phi0)))
@@ -46,8 +49,8 @@ expressions using MathJax or \LaTeX{}, if it is installed on the system. The
 2D text representation is used otherwise.
 
 Other printers such as MathML are also available. SymPy uses an extensible
-printer subsystem for customizing the printing for any given
-printer, and for custom objects to define their printing behavior for any
-printer. The code generation capabilities of SymPy
-use this subsystem to convert expressions into code in various target
+printer subsystem for customizing any given
+printer, and allows custom objects to define their printing behavior for any
+printer. The code generation functionality of SymPy
+relies on this subsystem to convert expressions into code in various target
 programming languages.

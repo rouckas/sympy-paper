@@ -1,14 +1,18 @@
-%TODO put some leading text here.
+Software architecture is of central importance in any large software
+project because it establishes predictable patterns of usage and
+development~\cite{Shaw1996}. This section describes the essential
+structural components of SymPy, provides justifications for the design
+decisions that have been made, and gives example
+user-facing code as appropriate.
 
 \subsection{Basic Usage}
 
 % symbols, various ways to declare them
 
-Because SymPy is built on Python, it requires that all variable names be
-defined prior to use. The following statement
+The following statement
 imports all SymPy functions into the global Python namespace.
 From here on, all examples in this paper assume that this statement has been
-run.
+executed.
 
 \begin{verbatim}
 >>> from sympy import *
@@ -16,8 +20,8 @@ run.
 
 Symbolic variables, called symbols, must be defined and assigned to
 Python variables before they can be used. This is typically done through the
-\texttt{symbols} function, which may create multiple symbols in a single call. For
-instance,
+\texttt{symbols} function, which may create multiple symbols in a single
+function call. For instance,
 \begin{verbatim}
 >>> x, y, z = symbols('x y z')
 \end{verbatim}
@@ -31,8 +35,9 @@ assume that
 the symbols \verb|x|, \verb|y|, and \verb|z| have been assigned to Python variables
 identical to their symbolic names.
 
-Expressions are created from symbols using Python mathematical syntax. Note
-that in Python, exponentiation is represented by \verb|**|. For instance, the
+Expressions are created from symbols using Python's mathematical syntax. Note
+that in Python, exponentiation is represented by the \verb|**|
+binary infix operator. For instance, the
 following Python code creates the expression $(x^2 - 2x + 3)/y$.
 
 \begin{verbatim}
@@ -42,8 +47,8 @@ following Python code creates the expression $(x^2 - 2x + 3)/y$.
 
 Importantly, SymPy expressions are immutable. This simplifies the design of
 SymPy by allowing expression interning. It also enables expressions to be
-hashed and stored in Python dictionaries, thereby permitting caching and
-other features.
+hashed and stored in Python dictionaries, thereby permitting features
+such as caching.
 
 %% I volunteer to write this section. --Aaron
 %%
@@ -52,7 +57,7 @@ other features.
 \subsection{The Core}
 
 A computer algebra system (CAS) represents mathematical expressions as data
-structures.  For example the mathematical expression $x + y$ is represented as
+structures.  For example, the mathematical expression $x + y$ is represented as
 a tree with three nodes, $+$, $x$, and $y$, where $x$ and $y$ are ordered
 children of $+$.  As users manipulate
 mathematical expressions with traditional mathematical syntax, the CAS
@@ -80,9 +85,9 @@ an addition, so it is of type \texttt{Add}. The child nodes of \texttt{expr} are
 (2, x*y)
 \end{verbatim}
 
-Traversing further into the expression tree grants the full expression. For
-example, the first child node, given by \texttt{expr.args[0]}, is
-\texttt{2}. Its class is \texttt{Integer}, and it has empty an \texttt{args}
+Descending further down into the expression tree yields the full expression. For
+example, the next child node (given by \texttt{expr.args[0]}) is
+\texttt{2}. Its class is \texttt{Integer}, and it has an empty \texttt{args}
 tuple, indicating that it is a leaf node.
 \begin{verbatim}
 >>> expr.args[0]
@@ -93,8 +98,8 @@ tuple, indicating that it is a leaf node.
 ()
 \end{verbatim}
 
-A useful way to view an expression tree is with the \texttt{srepr} function.
-This returns a string representation of an expression as valid Python code
+A useful way to view an expression tree is using the \texttt{srepr} function, which
+returns a string representation of an expression as valid Python code
 with all the nested class constructor calls to create the given expression.
 \begin{verbatim}
 >>> srepr(expr)
@@ -109,9 +114,16 @@ This means that expressions are
 rebuildable from their \texttt{args}.\footnote{\texttt{expr.func} is used
 instead of \texttt{type(expr)} to allow the function of an expression to be
 distinct from its actual Python class. In most cases the two are the same.}
-We note that in SymPy, the \texttt{==} operator represents exact
-structural equality, not mathematical equality. This allows one to test if
-any two expressions are equal to one another as expression trees.
+Note that in SymPy the \texttt{==} operator represents exact
+structural equality, not mathematical equality. This allows testing if any two
+expressions are equal to one another as expression trees. For example, even
+though ${(x + 1)}^2$ and $x^2 + 2x + 1$ are equal mathematically, SymPy gives
+\begin{verbatim}
+>>> (x + 1)**2 == x**2 + 2*x + 1
+False
+\end{verbatim}
+because they are different as expression trees (the former is a \verb|Pow|
+object and the latter is an \verb|Add| object).
 
 Python allows classes to override mathematical operators. The Python
 interpreter translates the above \texttt{x*y + 2} to, roughly,
@@ -151,7 +163,7 @@ avoids performing mathematically invalid operations. However, in many cases
 users will wish to simplify expressions containing terms like $\sqrt{t^2}$.
 
 Assumptions are set on \texttt{Symbol} objects when they are created. For
-instance \verb|Symbol('t', positive=True)| will create a symbol named
+instance \texttt{Symbol(\textquotesingle{}t\textquotesingle{}, positive=True)} will create a symbol named
 \texttt{t} that is assumed to be positive.
 \begin{verbatim}
 >>> t = Symbol('t', positive=True)
@@ -167,7 +179,7 @@ $A\cdot B$ and $B\cdot A$ distinct.} Assumptions on any object can be checked wi
 \verb|is_|\texttt{\textit{assumption}} attributes, like \verb|t.is_positive|.
 
 Assumptions are only needed to restrict a domain so that certain
-simplifications can be performed. It is not required to make the domain match
+simplifications can be performed. They are not required to make the domain match
 the input of a function. For instance, one can create the object
 $\sum_{n=0}^m f(n)$ as \verb|Sum(f(n), (n, 0, m))| without setting
 \texttt{integer=True} when creating the Symbol object \texttt{n}.
@@ -175,24 +187,23 @@ $\sum_{n=0}^m f(n)$ as \verb|Sum(f(n), (n, 0, m))| without setting
 The assumptions system additionally has deductive capabilities. The
 assumptions use a three-valued logic using the Python built in objects
 \texttt{True}, \texttt{False}, and \texttt{None}. \texttt{None} represents the
-``unknown'' case. This could mean that the given assumption could be either
-true or false under the given information, for instance,
-\verb|Symbol('x', real=True).is_positive| will give \texttt{None} because a real
-symbol might be positive or it might not. It could also mean not enough is
-implemented to compute the given fact. For instance,
-\verb|(pi + E).is_irrational| gives \texttt{None}, because SymPy does not know
-how to determine if $\pi + e$ is rational or irrational, indeed, it is an open
-problem in mathematics.
-% TODO: ref?
-
+``unknown'' case. This could mean that given assumptions do not unambiguously
+specify the truth of an attribute. For instance,
+\texttt{Symbol(\textquotesingle{}x\textquotesingle{}, real=True).is\_positive}
+will give \texttt{None} because a real symbol might be positive or negative.
+The \texttt{None} could also mean that not enough is known or implemented to
+compute the given fact. For instance, \texttt{(pi + E).is\_irrational} gives
+\texttt{None}, because determining whether $\pi + e$ is rational or irrational
+is an open problem in mathematics~\cite{lang1966introduction}.
 
 Basic implications between the facts are used to deduce assumptions. For
 instance, the assumptions system knows that being an integer implies being
-rational, so \verb|Symbol('x', integer=True).is_rational| returns
+rational, so \texttt{Symbol(\textquotesingle{}x\textquotesingle{}, integer=True).is\_rational} returns
 \texttt{True}. Furthermore, expressions compute the assumptions on themselves
 based on the assumptions of their arguments. For instance, if \texttt{x} and
 \texttt{y} are both created with \texttt{positive=True}, then
-\verb|(x + y).is_positive| will be \texttt{True}.
+\texttt{(x + y).is\_positive} will be \texttt{True} whereas
+\texttt{(x - y).is\_positive} will be \texttt{None}.
 
 %% TODO: describe how assumptions are implemented
 
@@ -238,7 +249,7 @@ the \verb|_eval_derivative(self, x)| method, which may in turn call
 \textit{assumption}.
 
 As an example of the notions presented in this section,
-Listing~\ref{fig:gamma-example} presents a stripped down version of the gamma
+Listing~\ref{fig:gamma-example} presents a minimal version of the gamma
 function $\Gamma(x)$ from SymPy, which evaluates itself on positive integer
 arguments, has the positive and real assumptions defined, can be rewritten in
 terms of factorial with \verb|gamma(x).rewrite(factorial)|, and can be
@@ -252,7 +263,7 @@ of \texttt{gamma} can reuse the methods.
   basicstyle=\ttfamily,
 }
 
-\begin{lstlisting}[caption={A stripped down version of \texttt{sympy.gamma}.},label=fig:gamma-example]
+\begin{lstlisting}[caption={A minimal implementation of \texttt{sympy.gamma}.},label=fig:gamma-example]
 from sympy import Integer, Function, floor, factorial, polygamma
 
 class gamma(Function)
@@ -284,5 +295,5 @@ class gamma(Function)
         else:
             raise ArgumentIndexError(self, argindex)
 \end{lstlisting}
-The actual gamma function defined in SymPy has many more capabilities, such as
-evaluation at rational points and series expansion.
+The gamma function implemented in SymPy has many more capabilities than the
+above listing, such as evaluation at rational points and series expansion.

@@ -1,20 +1,17 @@
 There are several projects that use SymPy as a library for implementing
-a part of their project, or even as a part of back-end for their
-application as well.
-\newline
-Some of them are listed below:
+a part of their functionality. Some of them are listed below:
 
 \begin{itemize}
 \item
   \href{http://cadabra.science/index.html}{\textbf{Cadabra}}: Cadabra is
-  a symbolic computer algebra system (CAS) designed specifically for the
-  solution of problems encountered in field theory.
+  a CAS designed specifically for the
+  resolution of problems encountered in field theory.
 \item
   \href{http://octave.sourceforge.net/symbolic/}{\textbf{Octave Symbolic}}:
   The Octave-Forge Symbolic package adds symbolic calculation features
-  to GNU Octave. These include common Computer Algebra System tools such
+  to GNU Octave. These include common CAS tools such
   as algebraic operations, calculus, equation solving, Fourier and
-  Laplace transforms, variable precision arithmetic and other features.
+  Laplace transforms, variable precision arithmetic, and other features.
 \item
   \href{https://github.com/jverzani/SymPy.jl}{\textbf{SymPy.jl}}:
   Provides a Julia interface to SymPy using PyCall.
@@ -24,9 +21,8 @@ Some of them are listed below:
   syntax and functions. It is backed by highly extensible Python code,
   relying on SymPy for most mathematical tasks.
 \item
-  \href{http://mathpix.com/}{\textbf{Mathpix}}: An iOS App, that uses
-  Artificial Intelligence to detect handwritten math as input, and uses
-  SymPy Gamma, to evaluate the math input and generate the relevant
+  \href{http://mathpix.com/}{\textbf{Mathpix}}: An iOS App, that detects handwritten math as input, and uses
+  SymPy Gamma to evaluate the math input and generate the relevant
   steps to solve the problem.
 \item
   \href{http://openrave.org/docs/0.8.2/openravepy/ikfast/}{\textbf{IKFast}}:
@@ -37,7 +33,8 @@ Some of them are listed below:
 \item
   \href{http://www.sagemath.org/}{\textbf{Sage}}: A CAS, visioned to be
   a viable free open source alternative to Magma, Maple, Mathematica and
-  MATLAB\@.
+  MATLAB\@. Sage includes many open source mathematical libraries, including
+  SymPy.
 \item
   \href{https://cloud.sagemath.com}{\textbf{SageMathCloud}}:
   SageMathCloud is a web-based cloud computing and course management
@@ -47,10 +44,10 @@ Some of them are listed below:
   Python.
 \item
   \href{https://github.com/brombo/galgebra}{\textbf{galgebra}}:
-  Geometric algebra (previously sympy.galgebra).
+  Geometric algebra (previously \texttt{sympy.galgebra}).
 \item
   \href{http://yt-project.org/}{\textbf{yt}}: Python package for
-  analyzing and visualizing volumetric data (yt.units uses SymPy).
+  analyzing and visualizing volumetric data (\texttt{yt.units} uses SymPy).
 \item
   \href{http://sfepy.org/}{\textbf{SfePy}}: Simple finite elements in
   Python, see section~\ref{sfepy}.
@@ -66,7 +63,7 @@ Some of them are listed below:
   Quantum Mapping Gate.
 \item
   \href{http://mech.fsv.cvut.cz/~stransky/software/latexexpr/doc/}{\textbf{LaTeX
-  Expression project}}: Easy LaTeX typesetting of algebraic expressions
+  Expression project}}: Easy \LaTeX{} typesetting of algebraic expressions
   in symbolic form with automatic substitution and result computation.
 \item
   \href{https://www.researchgate.net/publication/260585491_Symbolic_Statistics_with_SymPy/}{\textbf{Symbolic
@@ -74,15 +71,10 @@ Some of them are listed below:
   physical models.
 \end{itemize}
 
-\subsection{Project Details}\label{projects-details}
-
-Below we provide particular examples of SymPy use in some of the projects
-listed above.
-
-\subsubsection{SfePy}\label{sfepy}
+\subsection{SfePy}\label{sfepy}
 
 \href{http://sfepy.org/}{\textbf{SfePy}} (Simple finite elements in Python),
-cf.~\cite{cimrman2014sfepy} is a Python package for solving partial
+cf.~\cite{cimrman2014sfepy}, is a Python package for solving partial
 differential equations (PDEs) in 1D, 2D and 3D by the finite element (FE)
 method~\cite{Zienkiewicz2013FEM}. SymPy is used within this package mostly for
 code generation and testing, namely:

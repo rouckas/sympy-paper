@@ -1,40 +1,39 @@
 
 SymPy supports construction and manipulation of boolean expressions
-through the \texttt{logic} module. SymPy symbols can be used as
-propositional variables and also be substituted as \texttt{True}
-or \texttt{False}. A good number of manipulation features for boolean
+through the \texttt{sympy.logic} module. SymPy symbols can be used as
+propositional variables and subsequently be replaced with \texttt{True}
+or \texttt{False} values. Many functions for manipulating boolean
 expressions have been implemented in the \texttt{logic} module.
 
-\subsubsection{Constructing boolean expressions}
+\subsection{Constructing boolean expressions}
 
-A boolean variable can be declared as a SymPy symbol. Python operators
+A boolean variable can be declared as a SymPy \verb|Symbol|. Python operators
 \texttt{\&}, \texttt{\textbar{}} and \texttt{\textasciitilde{}} are overridden
-when using SymPy objects
-to use the SymPy functionality for logical \texttt{And}, \texttt{Or}, and
-\texttt{negate}.  Other logic functions are also integrated into SymPy,
-including \texttt{Xor} and \texttt{Implies}, which are constructed with
-\texttt{\^{}} and \texttt{\textgreater{}\textgreater{}}, respectively.  The above
-are just a shorthand, expressions can also be constructed by directly creating
-the relevant objects: \verb|And()|, \verb|Or()|, \verb|Not()|, \verb|Xor()|,
-\verb|Nand()|, \verb|Nor()|, etc.
+when using SymPy objects to use the SymPy functionality for logical
+\texttt{And}, \texttt{Or}, and \texttt{Not}. Other logic functions are also
+integrated into SymPy, including \texttt{Xor} and \texttt{Implies}, which are
+constructed with \texttt{\^{}} and \texttt{\textgreater{}\textgreater{}},
+respectively. Expressions can therefore be constructed either by using
+the shortcut operator notation or by directly creating the relevant
+objects: \verb|And()|,
+\verb|Or()|, \verb|Not()|, \verb|Xor()|, \verb|Implies()|, \verb|Nand()|,
+\verb|Nor()|, etc.
+>>>>>>> reviews
 
 \begin{verbatim}
->>> from sympy import *
->>> x, y, z = symbols('x y z')
 >>> e = (x & y) | z
 >>> e.subs({x: True, y: True, z: False})
 True
 \end{verbatim}
 
-\subsubsection{CNF and DNF}
+\subsection{CNF and DNF}
 
 Any boolean expression can be converted to conjunctive normal form, disjunctive
-normal form, and negation normal form. The API also exposes methods to check if
-a boolean expression is in any of the above mentioned forms.
+normal form, or negation normal form. The API also exposes methods to check if
+a boolean expression is in any of the aforementioned forms.
 
 \begin{verbatim}
 >>> from sympy.logic.boolalg import is_dnf, is_cnf
->>> x, y, z = symbols('x y z')
 >>> to_cnf((x & y) | z)
 And(Or(x, z), Or(y, z))
 >>> to_dnf(x & (y | z))
@@ -45,16 +44,16 @@ True
 True
 \end{verbatim}
 
-\subsubsection{Simplification and Equivalence}
+\subsection{Simplification and Equivalence}
 
-The module supports simplification of given boolean expression by making
+The \texttt{sympy.logic} module supports simplification of given boolean expression by making
 deductions from the expression. Equivalence of two logical expressions can also
-be checked. In the case of equivalence, it is possible to return the mapping of
-variables in two expressions so as to represent the same logical behavior.
+be checked. In the case of equivalence, the function \texttt{bool\_map}
+can be used to show which variables of the first expression correspond
+to which variables of the second one.
 
 \begin{verbatim}
->>> from sympy import *
->>> a, b, c, x, y, z = symbols('a b c x y z')
+>>> a, b, c = symbols('a b c')
 >>> e = a & (~a | ~b) & (a | c)
 >>> simplify(e)
 And(Not(b), a)
@@ -64,17 +63,16 @@ And(Not(b), a)
 (And(Or(b, c), a), {a: x, b: y, c: z})
 \end{verbatim}
 
-\subsubsection{SAT solving}
+\subsection{SAT solving}
 
 The module also supports satisfiability (SAT) checking of a given boolean
-expression. If satisfiable, it is possible to return a model for which the
-expression is satisfiable. The API also supports returning all possible models.
+expression. If an expression is satisfiable, it is possible to return
+a variable assignment which satisfies it. The API also supports
+listing all possible assignments.
 The SAT solver has a clause learning DPLL algorithm implemented with a watch
-literal scheme and VSIDS heuristic\cite{moskewicz2008method}.
+literal scheme and VSIDS heuristic~\cite{moskewicz2008method}.
 
 \begin{verbatim}
->>> from sympy import *
->>> a, b, c = symbols('a b c')
 >>> satisfiable(a & (~a | b) & (~b | c) & ~c)
 False
 >>> satisfiable(a & (~a | b) & (~b | c) & c)

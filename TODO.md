@@ -13,7 +13,7 @@
 
 - [ ] "Other projects that use SymPy" section should use a table.
 
-- [ ] Add Unicode pretty printing example (see discussion on #89).
+- [x] Add Unicode pretty printing example (see discussion on #89).
 
 - [x] Code examples use curly quotes (’) instead of regular quotes (').
 
@@ -67,11 +67,11 @@ citations and "URL citations".
 
 ## Sections that need to be written:
 
-- [ ] Abstract (note: write this last)
+- [x] Abstract (note: write this last)
 
 - [x] Introduction
 
-- [ ] Polynomials module architecture (if we can't get anyone to write it, add
+- [x] Polynomials module architecture (if we can't get anyone to write it, add
   a blurb and cite Mateusz's thesis)
 
 - [x] Something on printers

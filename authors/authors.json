@@ -1,5 +1,6 @@
 [
     {
+        "author_order": 10000,
         "email": "asmeurer@gmail.com",
         "github_id": "asmeurer",
         "institution": "University of South Carolina",
@@ -7,6 +8,15 @@
         "institution_address_siam": "Columbia, SC 29201",
         "name": "Aaron Meurer",
         "sympy_commits": 2639
+    },
+    {
+        "email": "smichr@gmail.com",
+        "github_id": "smichr",
+        "institution": "Polar Semiconductor, Inc.",
+        "institution_address": "2800 E. Old Shakopee Rd., Bloomington, MN 55425",
+        "institution_address_siam": "Bloomington, MN 55425",
+        "name": "Christopher P. Smith",
+        "sympy_commits": 4011
     },
     {
         "email": "mattpap@gmail.com",
@@ -66,7 +76,7 @@
         "email": "singhsartaj94@gmail.com",
         "github_id": "leosartaj",
         "institution": "Indian Institute of Technology (BHU)",
-        "institution_address": "Indian Institute of Technology (BHU), Varanasi, Uttar Pradesh, India - 221005",
+        "institution_address": "Indian Institute of Technology (BHU), Varanasi, Uttar Pradesh, India -- 221005",
         "institution_address_siam": "Varanasi, Uttar Pradesh 221005, India",
         "name": "Sartaj Singh",
         "sympy_commits": 200
@@ -120,7 +130,7 @@
         "email": "hargup@protonmail.com",
         "github_id": "hargup",
         "institution": "Indian Institute of Technology Kharagpur",
-        "institution_address": "Indian Institute of Technology Kharagpur, Kharagpur, West Bengal, India - 721302",
+        "institution_address": "Indian Institute of Technology Kharagpur, Kharagpur, West Bengal, India -- 721302",
         "institution_address_siam": "Kharagpur, West Bengal 721302, India",
         "name": "Harsh Gupta",
         "sympy_commits": 123
@@ -129,7 +139,7 @@
         "email": "shivamvats.iitkgp@gmail.com",
         "github_id": "shivamvats",
         "institution": "Indian Institute of Technology Kharagpur",
-        "institution_address": "Indian Institute of Technology Kharagpur, Kharagpur, West Bengal, India - 721302",
+        "institution_address": "Indian Institute of Technology Kharagpur, Kharagpur, West Bengal, India -- 721302",
         "institution_address_siam": "Kharagpur, West Bengal 721302, India",
         "name": "Shivam Vats",
         "sympy_commits": 122
@@ -137,7 +147,7 @@
     {
         "email": "fredrik.johansson@gmail.com",
         "github_id": "fredrik-johansson",
-        "institution": "INRIA Bordeaux-Sud-Ouest - LFANT project-team",
+        "institution": "INRIA Bordeaux-Sud-Ouest -- LFANT project-team",
         "institution_address": "200 Avenue de la Vieille Tour, 33405 Talence, France",
         "institution_address_siam": "200 Avenue de la Vieille Tour, 33405 Talence, France",
         "name": "Fredrik Johansson",
@@ -146,7 +156,7 @@
     {
         "email": "f@bianp.net",
         "github_id": "fabianp",
-        "institution": "INRIA - SIERRA project-team",
+        "institution": "INRIA -- SIERRA project-team",
         "institution_address": "2 Rue Simone IFF, 75012 Paris",
         "institution_address_siam": "2 Rue Simone IFF, 75012 Paris, France",
         "name": "Fabian Pedregosa",
@@ -184,7 +194,7 @@
         "email": "sumith@cse.iitb.ac.in",
         "github_id": "Sumith1896",
         "institution": "Indian Institute of Technology Bombay",
-        "institution_address": "Indian Institute of Technology Bombay, Powai, Mumbai, Maharashtra, India - 400076",
+        "institution_address": "Indian Institute of Technology Bombay, Powai, Mumbai, Maharashtra, India -- 400076",
         "institution_address_siam": "Powai, Mumbai, Maharashtra 400076, India",
         "name": "Sumith",
         "sympy_commits": 7
@@ -192,7 +202,7 @@
     {
         "email": "cimrman3@ntc.zcu.cz",
         "github_id": "rc",
-        "institution": "New Technologies - Research Centre, University of West Bohemia",
+        "institution": "New Technologies -- Research Centre, University of West Bohemia",
         "institution_address": "Univerzitní 8, 306 14 Plzeň, Czech Republic",
         "institution_address_siam": "Univerzitní 8, 306 14 Plzeň, Czech Republic",
         "name": "Robert Cimrman",

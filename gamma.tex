@@ -8,7 +8,7 @@ diagram. Entering a function will display its docstring; in general,
 entering an arbitrary expression will display its derivative, integral,
 series expansion, plot, and roots.
 
-SymPy Gamma also has several additional features than just computing the
+SymPy Gamma also has several features beyond just computing the
 results using SymPy.
 
 \begin{itemize}
@@ -28,11 +28,11 @@ results using SymPy.
   for free, which Wolfram\textbar{}Alpha only offers to its paid users.
 \end{itemize}
 Every input query from the user on SymPy Gamma is first parsed by its
-own parser, which handles several different forms of function names,
+own parser capable of handling several different forms of function names
 which SymPy as a library does not support. For instance, SymPy Gamma
-supports queries like \texttt{sin\ x}, whereas SymPy does not support
-this, and supports only \verb|sin(x)|.
+supports queries like \texttt{sin\ x}, whereas SymPy will only recognise
+\verb|sin(x)|.
 
 This parser converts the input query to the equivalent SymPy readable code,
-which is then eventually processed by SymPy, and the result is finally printed
-with the built-in LaTeX output and rendered on the SymPy Gamma web-application.
+which is then processed by SymPy, and the result is finally printed
+with the built-in \LaTeX{} output and rendered by the SymPy Gamma web application.

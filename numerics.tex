@@ -1,10 +1,11 @@
-The \texttt{Float} class represents an arbitrary-precision binary floating-point
-number by storing its value and precision (in bits).
-An operation between two \texttt{Float}
-inputs is rounded to the larger of the two precisions.
-Since Python floating-point literals automatically evaluate to \texttt{double}
-(53-bit) precision, strings should be used to input precise decimal values:
+Floating point numbers in SymPy are implemented by the \texttt{Float} class,
+which represents an arbitrary-precision binary floating-point number by
+storing its value and precision (in bits). This representation is distinct
+from the Python built-in \texttt{float} type, which is a wrapper around
+machine \texttt{double} types and uses a fixed precision (53-bit).
 
+Because Python \texttt{float} literals are limited in precision, strings
+should be used to input precise decimal values:
 \begin{verbatim}
 >>> Float(1.1)
 1.10000000000000
@@ -13,13 +14,13 @@ Since Python floating-point literals automatically evaluate to \texttt{double}
 >>> Float("1.1", 30)
 1.10000000000000000000000000000
 \end{verbatim}
-The \texttt{evalf} method converts constant symbolic expressions
-to \texttt{Float} values with a specified precision, here 25 digits:
+The \texttt{evalf} method converts a constant symbolic expression to a
+\texttt{Float} with the specified precision, here 25 digits:
 \begin{verbatim}
 >>> (pi + 1).evalf(25)
 4.141592653589793238462643
 \end{verbatim}
-\texttt{Float} numbers do not track their \emph{accuracy},
+\texttt{Float} numbers do not track their accuracy,
 and should be used with caution within symbolic expressions
 since familiar dangers of floating-point arithmetic apply~\cite{goldberg1991every}.
 A notorious case is that of catastrophic cancellation:
@@ -39,7 +40,7 @@ final result matches the sought number of decimal digits:
 \end{verbatim}
 The \texttt{evalf} method works with complex numbers and supports
 more complicated expressions, such as
-special functions, infinite series and integrals.
+special functions, infinite series, and integrals.
 The internal error tracking does not provide rigorous error bounds
 (in the sense of interval arithmetic) and cannot be used to accurately track
 uncertainty in measurement data;
@@ -49,8 +50,8 @@ when converting symbolic expressions to numerical values.
 \subsection{The mpmath library}
 
 The implementation of arbitrary-precision floating-point arithmetic is
-supplied by the mpmath library, which originally was developed as a SymPy
-module but subsequently has been moved to a standalone pure Python package.
+supplied by the mpmath library. Originally, it was developed as a SymPy
+module but has subsequently been moved to a standalone pure-Python package.
 The basic datatypes in mpmath are \texttt{mpf} and \texttt{mpc}, which
 respectively act as multiprecision substitutes for Python's \texttt{float} and
 \texttt{complex}. The floating-point precision is controlled by a global
@@ -68,10 +69,10 @@ mpf('0.100000000000000000000192874984794')
 \end{verbatim}
 
 For pure numerical computing, it is convenient to use mpmath directly
-with \texttt{from mpmath import *} (it is best to avoid such an
-import statement when using SymPy simultaneously, since numerical
-functions such as \texttt{exp} will collide names with the symbolic counterparts
-in SymPy).
+with \texttt{from mpmath import *}.  Nevertheless, it is best to avoid such an
+import statement when using SymPy simultaneously, since the names of numerical
+functions such as \texttt{exp} will collide the symbolic counterparts
+in SymPy.
 
 Like SymPy, mpmath is a pure Python library.
 Internally, mpmath represents a floating-point number
@@ -86,8 +87,8 @@ The mpmath library supports
 special functions, root-finding, linear algebra, polynomial approximation,
 and numerical computation of limits, derivatives, integrals, infinite
 series, and ODE solutions. All features work in arbitrary precision
-and use algorithms that allow computing hundreds of digits rapidly,
-except in degenerate cases.
+and use algorithms that allow computing hundreds of digits rapidly
+(except in degenerate cases).
 
 The double exponential (tanh-sinh) quadrature is used for numerical
 integration by default. For smooth integrands, this algorithm usually
@@ -131,6 +132,6 @@ Equivalently, with SymPy's interface this function can be evaluated as:
 \end{verbatim}
 
 Symbolic integration and summation often produces hypergeometric
-and Meijer G-function closed forms (see section~\ref{sec:calculus});
+and Meijer G-function closed forms (see Subsection~\ref{sec:calculus});
 numerical evaluation of such special functions is a useful complement
 to direct numerical integration and summation.
