@@ -39,9 +39,9 @@ X unit vector through $\frac{\pi}{2}$\si{\radian}.
 >>> A = ReferenceFrame('A')
 >>> B = ReferenceFrame('B')
 >>> C = ReferenceFrame('C')
->>> B.orient(A, 'body', (pi, pi / 3, pi / 4), 'zxz')
->>> C.orient(B, 'axis', (pi / 2, B.x))
->>> v = 1 * A.x + 2 * B.z + 3 * C.y
+>>> B.orient(A, 'body', (pi, pi/3, pi/4), 'zxz')
+>>> C.orient(B, 'axis', (pi/2, B.x))
+>>> v = 1*A.x + 2*B.z + 3*C.y
 >>> v
 A.x + 2*B.z + 3*C.y
 >>> v.express(A)
