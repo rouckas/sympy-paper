@@ -210,4 +210,11 @@
         "name": "Anthony Scopatz",
         "sympy_commits": 15
     }
+    {
+        "email": "smichr@gmail.com",
+        "github_id": "smichr",
+        "name": "Christopher P. Smith",
+        "institution": "Polar Semiconductor, Inc.",
+        "institution_address": "2800 E. Old Shakopee Rd., Bloomington, MN 55425",
+    },
 ]

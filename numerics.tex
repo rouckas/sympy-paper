@@ -50,8 +50,8 @@ when converting symbolic expressions to numerical values.
 \subsection{The mpmath library}
 
 The implementation of arbitrary-precision floating-point arithmetic is
-supplied by the mpmath library, which originally was developed as a SymPy
-module but subsequently has been moved to a standalone pure Python package.
+supplied by the mpmath library. Originally, it was developed as a SymPy
+module but has subsequently been moved to a standalone pure-Python package.
 The basic datatypes in mpmath are \texttt{mpf} and \texttt{mpc}, which
 respectively act as multiprecision substitutes for Python's \texttt{float} and
 \texttt{complex}. The floating-point precision is controlled by a global
@@ -71,7 +71,7 @@ mpf('0.100000000000000000000192874984794')
 For pure numerical computing, it is convenient to use mpmath directly
 with \texttt{from mpmath import *}.  Nevertheless, it is best to avoid such an
 import statement when using SymPy simultaneously, since the names of numerical
-functions such as \texttt{exp} will collide with those of their symbolic counterparts
+functions such as \texttt{exp} will collide the symbolic counterparts
 in SymPy.
 
 Like SymPy, mpmath is a pure Python library.

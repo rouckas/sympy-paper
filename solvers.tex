@@ -1,6 +1,10 @@
-SymPy includes a module of equation solvers for symbolic equations. There are two
-functions for solving algebraic equations in SymPy: \texttt{solve}
-and \texttt{solveset}.
+SymPy has a module of equation solvers that can handle ordinary differential
+equations, recurrence relationships, Diophantine equations, and algebraic
+equations. There is also
+rudimentary support for simple partial differential equations.
+
+There are two functions for solving algebraic equations in SymPy:
+\texttt{solve} and \texttt{solveset}.
 \texttt{solveset} has several design changes with respect to the older
 \texttt{solve} function. This distinction is present in order to resolve the
 usability issues with the
@@ -14,6 +18,12 @@ solveset(f, symbol, domain=S.Complexes)
 \end{verbatim}
 The \texttt{domain} parameter is typically either \texttt{S.Complexes} (the
 default) or \texttt{S.Reals}; the latter causes \texttt{solveset} to only return real solutions.
+
+An important difference between the two functions is that the output API of \texttt{solve}
+varies with input (sometimes returning a Python list and sometimes a Python dictionary) whereas
+\texttt{solveset} always returns
+a SymPy set object.
+
 Both functions implicitly assume that expressions are equal to 0. For
 instance, \texttt{solveset(x - 1, x)} solves $x - 1 = 0$ for $x$.
 
@@ -27,5 +37,6 @@ a SymPy set object.
 \texttt{solve}. There are certain features which are implemented in
 \texttt{solve} that are not yet implemented in \texttt{solveset}. Notably,
 these include nonlinear multivariate system and transcendental equations.
+
 More examples of \texttt{solveset} and \texttt{solve} can be found in the
 supplement.

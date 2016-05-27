@@ -22,13 +22,13 @@ Mathematica can associate attributes to its atoms.
 Attributes may define mathematical properties and behavior of the nodes
 associated to the atom.
 In SymPy, the usage of static class fields is roughly similar to Mathematica's
-attributes, though other programming patterns may also be used the achieve an
-equivalent behavior, such as class inheritance.
+attributes, though other programming patterns may also be used to achieve an
+equivalent behavior such as class inheritance.
 
 % Expression mutability
 
-Unlike SymPy, Mathematica expressions are mutable,
-that is, one can change parts of the expression tree without
+Unlike SymPy, Mathematica's expressions are mutable:
+one can change parts of the expression tree without the need of
 creating a new object.
 The mutability of Mathematica expressions allows for a lazy updating of any references
 to a given data structure.
@@ -70,10 +70,10 @@ SymPy has various ways to perform pattern matching.
 All of them play a lesser role in the CAS than in Mathematica
 and are basically available as a tool to rewrite expressions.
 The differential equation solver in SymPy somewhat relies on pattern matching to
-identify the kind of differential equation, but it is envisaged to replace
+identify differential equation types, but it is envisaged to replace
 that strategy with analysis of Lie symmetries in the future.
-Mathematica's real advantage is the ability to add new overloading to the
-expression builder at runtime, or for specific subnodes.
+Mathematica's real advantage is the ability to add (at runtime) new overloading
+to the expression builder or specific subnodes.
 Consider for example:
 \begin{verbatim}
 In[1]:= Unprotect[Plus]
@@ -86,19 +86,17 @@ Out[3]= 1 + x + y
 \end{verbatim}
 This expression in Mathematica defines a substitution rule that overloads
 the functionality of the \texttt{Plus} node (the node for additions in Mathematica).
-The trailing underscore after a symbol means that it is to be considered a
-wildcard.
-This example may not be practical, as one may wish to keep this identity
-unevaluated.  Nevertheless, it clearly illustrates the potential to define
-immediate transformation rules.
+A symbol with a trailing underscore is treated as a wildcard.
+Although one may wish to keep this identity unevaluated, this example clearly
+illustrates the potential to define
+one's own immediate transformation rules.
 In SymPy, the operations constructing the addition node in the expression tree
 are Python class constructors
-and cannot be modified at runtime.\footnote{In fact, Python supports monkey patching;
-nonetheless, it is a discouraged programming pattern.}
-The SymPy equivalent of such runtime extensions is subclassing the
-node types.
-Subclasses may redefine the class constructor to yield the proper
-extended functionality.
+and cannot be modified at runtime.\footnote{Nonetheless, Python supports monkey
+patching but it is a discouraged programming pattern.}
+The way SymPy deals with extending the missing runtime overloadability functionality
+is by subclassing the node types: subclasses may redefine the class constructor
+to yield the proper extended functionality.
 
 
 %% TODO list:
@@ -116,21 +114,21 @@ methods and implement the basic hashing system.
 
 % Matrices
 
-Matrices in SymPy are separate types from lists.
-In Mathematica, nested lists are interpreted as matrices whenever the sublists
-have the same length.
-The main difference to SymPy is that ordinary operators and functions
-do not get generalized the same way as used in traditional mathematics.
+While Mathematica interprets nested lists as matrices whenever
+the sublists have the same length, matrices in SymPy are a type in their own
+right, allowing ordinary operators and functions (like multiplication and
+exponentiation) to be used as they traditionally are in mathematics.
+\begin{verbatim}
+>>> exp(Matrix([[1, 1],[0, 2]])) * Matrix([a, b])
+Matrix([
+[E*a + b*(-E + exp(2))],
+[             b*exp(2)]])
+\end{verbatim}
+
 Using the standard multiplication in Mathematica performs an element-wise
-product. This is compatible with Mathematica's convention of commutativity of
-\texttt{Times} nodes.
-Matrix products are expressed by the \textit{dot} operator,
-or the \texttt{Dot} node.
-The same is true for the other operators, and even functions.
-Most notably, calling the exponential function \texttt{Exp} on a matrix
+product and
+calling the exponential function \texttt{Exp} on a matrix
 returns an element-wise exponentiation of its elements.
-The usual matrix exponential is available through the \texttt{MatrixExp}
-function.
 
 % * comparison with Mathematica: avoid misspelling variables through forced declaration (check that you can't do it in Mathematica).
 % * evaluate=False vs HoldForm
@@ -138,11 +136,11 @@ function.
 Unevaluated expressions in Mathematica can be achieved in various ways,
 most commonly with the \texttt{HoldForm} or \texttt{Hold} nodes,
 that block the evaluation of subnodes by the parser.
-Note that such a node cannot be expressed in Python, because of greedy evaluation.
+Such a node cannot be expressed in Python because of greedy evaluation.
 Whenever needed in SymPy, it is necessary to add the parameter \texttt{evaluate=False}
 to all subnodes.
 
-% * comparison with Mathematica: == is structural equality, not
+% * comparison with Mathematica: == is structural (not mathematical) equality
 
 In Mathematica, the operator \texttt{==} returns a boolean whenever it is able
 to immediately evaluate the truth of the equality, otherwise it returns an
@@ -154,8 +152,9 @@ class.
 % * comparison with Mathematica: polynomial module.
 % * comparison with Mathematica: space is product, ** vs ^
 
-SymPy, in accordance with Python uses \texttt{**} to express the power
-operator, while Mathematica uses the more common \verb|^|.
+SymPy, in accordance with Python (and unlike the usual programming convention),
+uses \texttt{**} to express the power operator, while Mathematica uses the more
+common \verb|^|.
 
 % * comparison with Mathematica: ( ) is Sequence, functions are generally uppercase.
 % * comparsion with Mathematica: table of comparison?

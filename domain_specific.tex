@@ -19,9 +19,10 @@ outer products, and cross products. Both of these objects can be written in
 very compact notation that make it easy to express the vectors and dyadics in
 terms of multiple reference frames with arbitrarily defined relative
 orientations. The vectors are used to specify the positions, velocities, and
-accelerations of points, orientations, angular velocities, and angular
-accelerations of reference frames, and force and torques. The dyadics are
-essentially reference frame-aware $3 \times 3$ tensors~\cite{tai1997generalized}. The vector and dyadic
+accelerations of points; orientations, angular velocities, and angular
+accelerations of reference frames; and forces and torques. The dyadics are
+essentially reference frame-aware $3 \times 3$ tensors~\cite{tai1997generalized}.
+The vector and dyadic
 objects can be used for any one-, two-, or three-dimensional vector algebra, and
 they provide a strong framework for building physics and engineering tools.
 
@@ -32,7 +33,7 @@ frame. The $B$ frame is oriented with respect to the $A$ frame using Z-X-Z
 Euler Angles of magnitude $\pi$, $\frac{\pi}{2}$, and
 $\frac{\pi}{3}$\si{\radian}, respectively, whereas the $C$ frame is oriented
 with respect to the $B$ frame through a simple rotation about the $B$ frame's
-X unit vector through $\frac{\pi}{2}$\si{\radian}.
+$X$ unit vector through $\frac{\pi}{2}$\si{\radian}.
 
 \begin{verbatim}
 >>> from sympy.physics.vector import ReferenceFrame
@@ -51,7 +52,7 @@ A.x + 5*sqrt(3)/2*A.y + 5/2*A.z
 \subsubsection{Mechanics}
 
 The \verb|sympy.physics.mechanics| package utilizes the \texttt{sympy.\allowbreak{}physics.\allowbreak{}vector} package
-to populate time aware particle and rigid body objects to fully describe the
+to populate time-aware particle and rigid-body objects to fully describe the
 kinematics and kinetics of a rigid multi-body system. These objects store all
 of the information needed to derive the ordinary differential or differential
 algebraic equations that govern the motion of the system, i.e., the equations

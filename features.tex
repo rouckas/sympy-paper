@@ -1,8 +1,8 @@
 % Features to discuss in-depth:
 
-SymPy has an extensive feature set that is too encompassing for complete, in-depth
-coverage in this paper. However, calculus and other bedrock areas receive
-their own subsections here. Additionally,
+Although SymPy's extensive feature set cannot be covered in-depth in this paper,
+calculus and other bedrock areas are discussed in their own subsections.
+Additionally,
 Table~\ref{features-table} gives a compact listing of all major capabilities
 present in the SymPy codebase. This grants a sampling from the breadth of
 topics and application domains that SymPy services. Unless stated otherwise,
@@ -31,11 +31,10 @@ and Prufer sequences~\cite{biggs1976graph}.\\
 
 Concrete Math & Summation, products, tools for determining whether summation
 and product expressions are convergent, absolutely convergent, hypergeometric,
-and
-other properties. May also compute Gosper's normal form~\cite{petkovvsek1996bak} for two univariate polynomials.\\
+and for determining other properties; computation of Gosper's normal form~\cite{petkovvsek1996bak} for two univariate polynomials.\\
 
 Cryptography & Block and stream ciphers, including shift, Affine,
-substitution, Vigenere's, Hill's, bifid, RSA, Kid RSA,
+substitution, Vigen\`{e}re's, Hill's, bifid, RSA, Kid RSA,
 linear-feedback shift registers, and Elgamal encryption.\\
 
 Differential Geometry & Representations of manifolds, metrics, tensor
@@ -46,7 +45,7 @@ geometries~\cite{FunctionalDifferentialGeometry}.\\
 Geometry & Representations of 2D geometrical entities, such as lines and
 circles. Enables queries on these entities, such as asking the area of an
 ellipse, checking for collinearity of a set of
-points, or finding the intersection between two lines.\\
+points, or finding the intersection between objects.\\
 
 Lie Algebras & Representations of Lie algebras and root systems.\\
 
@@ -64,7 +63,7 @@ Block matrices.\\
 Number Theory & Prime number generation, primality testing, integer
 factorization, continued fractions, Egyptian fractions, modular arithmetic,
 quadratic residues, partitions, binomial and multinomial coefficients,
-prime number tools, and integer factorization. \\
+prime number tools, hexidecimal digits of $pi$, and integer factorization. \\
 
 Plotting & Hooks for visualizing expressions via matplotlib~\cite{Hunter:2007}
 or as text drawings when lacking a graphical back-end. 2D function plotting,
@@ -143,7 +142,7 @@ to 3D Cartesian coordinate systems.\\
 \subsection{Solvers}
 \input{solvers.tex}
 
-% Matrices (worth including to stress that they are symbolic)
+% Matrices (worth emphasizing that they are symbolic)
 \subsection{Matrices}
 
 \input{matrices}
