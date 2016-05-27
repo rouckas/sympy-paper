@@ -29,6 +29,7 @@ are computed via a suite of heuristics.
 % TODO: Are there other summation algorithms implemented?
 % TODO: A good summation example or two
 \begin{verbatim}
+>>> i, n = symbols('i n')
 >>> summation(2**i, (i, 0, n - 1))
 2**n - 1
 >>> summation(i*factorial(i), (i, 1, n))
