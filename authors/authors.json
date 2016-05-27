@@ -110,9 +110,9 @@
     {
         "email": "francesco.bonazzi@gmail.com",
         "github_id": "Upabjojr",
-        "institution": "Technical University of Berlin, Physics Department",
-        "institution_address": "Hardenbergstr. 36, 10623 Berlin, Germany",
-        "institution_address_siam": "Hardenbergstr. 36, 10623 Berlin, Germany",
+        "institution": "Technical University of Berlin",
+        "institution_address": "Straße des 17. Juni 135, 10623 Berlin, Germany",
+        "institution_address_siam": "Straße des 17. Juni 135, 10623 Berlin, Germany",
         "name": "Francesco Bonazzi",
         "sympy_commits": 156
     },
