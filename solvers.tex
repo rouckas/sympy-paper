@@ -27,12 +27,6 @@ a SymPy set object.
 Both functions implicitly assume that expressions are equal to 0. For
 instance, \texttt{solveset(x - 1, x)} solves $x - 1 = 0$ for $x$.
 
-It should be noted that \texttt{solve} has an inconsistent output API for different types
-of inputs. For instance, depending on the input, it may return a Python
-list or a Python dictionary. On the other hand,
-\texttt{solveset} has a canonical output API: it always returns
-a SymPy set object.
-
 \texttt{solveset} is under active development as a planned replacement for
 \texttt{solve}. There are certain features which are implemented in
 \texttt{solve} that are not yet implemented in \texttt{solveset}. Notably,
