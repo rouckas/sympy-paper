@@ -20,14 +20,18 @@ cd upload
 
 if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
     export name=paper-${TRAVIS_BRANCH}.pdf
+    export namesupplement=paper-${TRAVIS_BRANCH}-supplement.pdf
     export msg="Upload for branch ${TRAVIS_BRANCH} - ${commit_id}"
 else
     export name=paper-${TRAVIS_PULL_REQUEST}.pdf
+    export namesupplement=paper-${TRAVIS_PULL_REQUEST}-supplement.pdf
     export msg="Upload for sympy/sympy-paper#${TRAVIS_PULL_REQUEST} - ${commit_id}"
 fi
 
 mv ../paper.pdf ${name}
+mv ../supplement.pdf ${namesupplement}
 git add ${name}
+git add ${namesupplement}
 git commit -m "${msg} - [skip ci]."
 
 PUSH_COUNTER=0

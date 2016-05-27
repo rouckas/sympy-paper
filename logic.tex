@@ -5,7 +5,7 @@ propositional variables and also be substituted by \texttt{True}
 or \texttt{False}. A good number of manipulation features for boolean
 expressions have been implemented in the \texttt{sympy.logic} module.
 
-\subsubsection{Constructing boolean expressions}
+\subsection{Constructing boolean expressions}
 
 A boolean variable can be declared as a SymPy \verb|Symbol|. Python operators
 \texttt{\&}, \texttt{\textbar{}} and \texttt{\textasciitilde{}} are overridden
@@ -25,7 +25,7 @@ objects: \verb|And()|,
 True
 \end{verbatim}
 
-\subsubsection{CNF and DNF}
+\subsection{CNF and DNF}
 
 Any boolean expression can be converted to conjunctive normal form, disjunctive
 normal form, or negation normal form. The API also exposes methods to check if
@@ -43,7 +43,7 @@ True
 True
 \end{verbatim}
 
-\subsubsection{Simplification and Equivalence}
+\subsection{Simplification and Equivalence}
 
 The \texttt{sympy.logic} module supports simplification of given boolean expression by making
 deductions from the expression. Equivalence of two logical expressions can also
@@ -62,7 +62,7 @@ And(Not(b), a)
 (And(Or(b, c), a), {a: x, b: y, c: z})
 \end{verbatim}
 
-\subsubsection{SAT solving}
+\subsection{SAT solving}
 
 The module also supports satisfiability (SAT) checking of a given boolean
 expression. If an expression is satisfiable, it is possible to return

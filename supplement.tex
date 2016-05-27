@@ -1,3 +1,57 @@
+% SIAM Article Template
+\documentclass[supplement]{siamart0216}
+
+% Apply a fix to the SIAM Article Template
+\input{siamart0216_uppercase_fix}
+
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled=0.8]{DejaVuSansMono}
+
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[all]{xy}
+\usepackage{amsmath}
+\usepackage{caption}
+\graphicspath{ {images/} }
+
+% Makes quote characters in monospace font not be curly
+\usepackage{upquote}
+
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{hyperref}
+
+% this is required for all the \url{} commands in the bib file
+%\usepackage{hyperref}
+
+% for nice units
+\usepackage{siunitx}
+
+% for images: png, pdf, etc
+\usepackage{graphicx}
+
+% for nice table formatting, i.e., /toprule, /midrule, etc
+\usepackage{booktabs}
+
+% to allow for \verb++ declarations in captions.
+\usepackage{cprotect}
+
+% to allow usage of \mathbb symbols
+\usepackage{amssymb}
+
+\usepackage{longtable}
+
+\usepackage{listings}
+
+\title{SymPy: Symbolic Computing in Python}
+
+\input{authors}
+
+\begin{document}
+\maketitle
+
 As in the paper, all examples in the supplement assume the following has been
 run:
 \begin{verbatim}
@@ -5,57 +59,64 @@ run:
 >>> x, y, z = symbols('x y z')
 \end{verbatim}
 
-\subsection{Limits: The Gruntz Algorithm}
+\section{Limits: The Gruntz Algorithm}
 
 \input{gruntz.tex}
 
 % Series module (Formal Power Series, Fourier Series)
-\subsection{Series}
+\section{Series}
 
 \input{series.tex}
 
 % Logic module
-\subsection{Logic}
+\section{Logic}
 
 \input{logic}
 
-\subsection{Diophantine Equations}
+\section{Diophantine Equations}
 
 \input{diophantine}
 
 % Sets
-\subsection{Sets}
+\section{Sets}
 \input{sets}
 
-\subsection{Category Theory}
+\section{Category Theory}
 \input{categories}
 
-\subsection{SymPy Gamma}\label{sympy-gamma}
+\section{SymPy Gamma}\label{sympy-gamma}
 
 \input{gamma}
 
-\subsection{SymPy Live}\label{sympy-live}
+\section{SymPy Live}\label{sympy-live}
 
 \input{live}
 
-\subsection{Comparison with Mathematica}
+\section{Comparison with Mathematica}
 
 \input{comparison_with_mma}
 
-\subsection{Other Projects that use SymPy}
+\section{Other Projects that use SymPy}
 
 \input{other_projects_that_use_sympy}
 
 
-\subsection{Tensors}
+\section{Tensors}
 
 \input{tensors}
 
 
-\subsection{Numerical simplification}
+\section{Numerical simplification}
 
 \input{nsimplify}
 
-\subsection{Examples}
+\section{Examples}
 
 \input{examples}
+
+\section{References}
+
+\bibliographystyle{siamplain}
+\bibliography{paper}
+
+\end{document}
