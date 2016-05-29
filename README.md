@@ -13,6 +13,11 @@ The latest rendered version of the PDF can be viewed via the Travis build:
 
 Latest pdf: [paper-master.pdf](https://github.com/isuruf-bot/sympy-paper/blob/pdfs/paper-master.pdf)
 
+# Preprint
+
+A [preprint](https://peerj.com/preprints/2083/) of this paper has been submitted to
+PeerJ.
+
 # Contributing
 
 Join our chat room to discuss contributions:
