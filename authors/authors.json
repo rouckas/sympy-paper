@@ -37,6 +37,14 @@
         "sympy_commits": 1443
     },
     {
+        "email": "skirpichev@gmail.com",
+        "github_id": "skirpichev",
+        "institution": "Moscow State University, Faculty of Physics",
+        "institution_address_siam": "Leninskie Gory, Moscow, 119991, Russia",
+        "name": "Sergey B. Kirpichev",
+        "sympy_commits": 1055
+    },
+    {
         "email": "mrocklin@gmail.com",
         "github_id": "mrocklin",
         "institution": "Continuum Analytics, Inc.",
@@ -44,14 +52,6 @@
         "institution_address_siam": "Austin, TX 78701",
         "name": "Matthew Rocklin",
         "sympy_commits": 1046
-    },
-    {
-        "email": "skirpichev@gmail.com",
-        "github_id": "skirpichev",
-        "name": "Sergey B. Kirpichev",
-        "institution": "Moscow State University, Faculty of Physics",
-        "institution_address_siam": "Leninskie Gory, Moscow, 119991, Russia",
-        "sympy_commits": 1055
     },
     {
         "email": "dtu.amit@gmail.com",
