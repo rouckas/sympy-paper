@@ -12,8 +12,6 @@ evaluate the Puiseux series expansion about a specified point. For example,
 consider a Taylor expansion about 0:
 
 \begin{verbatim}
->>> from sympy import symbols, series
->>> x, y = symbols('x, y')
 >>> series(sin(x+y) + cos(x*y), x, 0, 2)
 1 + sin(y) + x*cos(y) + O(x**2)
 \end{verbatim}
@@ -33,7 +31,6 @@ the use of an elementary function that calculates the Taylor expansion of the
 sine of a series.
 
 \begin{verbatim}
->>> from sympy import ring
 >>> from sympy.polys.ring_series import rs_sin
 >>> R, t = ring('t', QQ)
 >>> rs_sin(t**2 + t, t, 5)
@@ -56,7 +53,6 @@ demonstrating its use:
 \begin{verbatim}
 >>> from sympy.polys.ring_series import rs_series
 >>> from sympy.abc import a, b
->>> from sympy import sin, cos
 >>> rs_series(sin(a + b), a, 4)
 -1/2*(sin(b))*a**2 + (sin(b)) - 1/6*a**3*(cos(b)) + a*(cos(b))
 \end{verbatim}
