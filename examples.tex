@@ -43,7 +43,7 @@ x + 3/(x + 1) + 2/(x - 1)
 \begin{itemize}
 \item Factorization:
 \begin{verbatim}
->>> t = symbols("t")
+>>> t = symbols('t')
 >>> f = (2115*x**4*y + 45*x**3*z**3*t**2 - 45*x**3*t**2 -
 ...      423*x*y**4 - 47*x*y**3 + 141*x*y*z**3 + 94*x*y*z*t -
 ...      9*y**3*z**3*t**2 + 9*y**3*t**2 - y**2*z**3*t**2 +
@@ -153,10 +153,10 @@ and a parabola):
 \begin{itemize}
 \item Matrix expressions
 \begin{verbatim}
->>> m, n, p = symbols("m, n, p", integer=True)
->>> R = MatrixSymbol("R", m, n)
->>> S = MatrixSymbol("S", n, p)
->>> T = MatrixSymbol("T", m, p)
+>>> m, n, p = symbols('m n p', integer=True)
+>>> R = MatrixSymbol('R', m, n)
+>>> S = MatrixSymbol('S', n, p)
+>>> T = MatrixSymbol('T', m, p)
 >>> U = R*S + 2*T
 >>> U.shape
 (m, p)
