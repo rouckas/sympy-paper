@@ -186,10 +186,10 @@ $\sum_{n=0}^m f(n)$ as \verb|Sum(f(n), (n, 0, m))| without setting
 
 The assumptions system additionally has deductive capabilities. The
 assumptions use a three-valued logic using the Python built in objects
-\texttt{True}, \texttt{False}, and \texttt{None}.  \texttt{True} is returned if the
-SymPy object has the property and \texttt{False} is returned if it doesn't or can't.
-For example, \texttt{I.is\_real} and \texttt{I.is\_prime} return
-\texttt{False} for imaginary unit \texttt{I}.
+\texttt{True}, \texttt{False}, and \texttt{None}.  Note that \texttt{False}
+is returned if the SymPy object doesn't or can't have the assumption.
+For example, both \texttt{I.is\_real} and \texttt{I.is\_prime} return
+\texttt{False} for the imaginary unit \texttt{I}.
 
 \texttt{None} represents the
 ``unknown'' case. This could mean that given assumptions do not unambiguously
