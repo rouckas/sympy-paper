@@ -268,12 +268,12 @@ of \texttt{gamma} can reuse the methods.
 }
 
 \begin{lstlisting}[caption={A minimal implementation of \texttt{sympy.gamma}.},label=fig:gamma-example]
-from sympy import Integer, Function, floor, factorial, polygamma
+from sympy import Function, floor, factorial, polygamma
 
 class gamma(Function)
     @classmethod
     def eval(cls, arg):
-        if isinstance(arg, Integer) and arg.is_positive:
+        if arg.is_integer and arg.is_positive:
             return factorial(arg - 1)
 
     def _eval_is_positive(self):
