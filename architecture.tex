@@ -247,7 +247,9 @@ Classes define their behavior in such functions by defining a relevant
 \verb|_eval_|\texttt{\textit{*}} method. For instance, an object can indicate
 to the \texttt{diff} function how to take the derivative of itself by defining
 the \verb|_eval_derivative(self, x)| method, which may in turn call
-\texttt{diff} on its \texttt{args}. The most common
+\texttt{diff} on its \texttt{args}. (Subclasses of \texttt{Function} should
+implement \texttt{fdiff} method instead, it returns the derivative of the function
+without considering the chain rule.) The most common
 \verb|_eval_|\texttt{\textit{*}} methods relate to the assumptions.
 \verb|_eval_is_|\texttt{\textit{assumption}} defines the assumptions for
 \textit{assumption}.
@@ -257,9 +259,7 @@ Listing~\ref{fig:gamma-example} presents a minimal version of the gamma
 function $\Gamma(x)$ from SymPy, which evaluates itself on positive integer
 arguments, has the positive and real assumptions defined, can be rewritten in
 terms of factorial with \verb|gamma(x).rewrite(factorial)|, and can be
-differentiated. \texttt{fdiff} is a convenience method for subclasses of
-\texttt{Function}. \texttt{fdiff} returns the derivative of the function
-without considering the chain rule. \texttt{self.func} is used throughout
+differentiated. \texttt{self.func} is used throughout
 instead of referencing \texttt{gamma} explicitly so that potential subclasses
 of \texttt{gamma} can reuse the methods.
 
