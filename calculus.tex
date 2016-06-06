@@ -36,9 +36,8 @@ are computed with \verb|product| function via a suite of heuristics.
 n*factorial(n) + factorial(n) - 1
 \end{verbatim}
 
-Limits are computed with the \verb|limit| function. The limit module
-implements the Gruntz algorithm~\cite{Gruntz1996limits} for computing symbolic
-limits.
+Limits are computed with the \verb|limit| function, using the Gruntz
+algorithm~\cite{Gruntz1996limits} for computing symbolic limits and heuristics.
 For example, the following computes
 $\lim\limits_{x\to \infty} x\sin(\frac{1}{x})=1$. Note that SymPy denotes
 $\infty$ as \verb|oo|.
