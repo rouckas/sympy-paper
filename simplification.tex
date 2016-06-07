@@ -12,7 +12,11 @@ function.
 It must be emphasized that simplification is not an unambiguously defined
 mathematical operation~\cite{Carette2004understanding}.
 The \texttt{simplify} function applies several simplification routines along
-with heuristics to make the output expression as ``simple'' as possible.
+with heuristics to make the output expression ``simple''.\footnote{The
+\texttt{measure} parameter of the \texttt{simplify}
+function lets specify the Python function used to determine how complex an
+expression is.  The default measure function returns the total number of
+operations in the expression.}
 
 It is often preferable to apply more directed simplification functions. These
 apply very specific rules to the input expression and are typically able to make
@@ -33,6 +37,7 @@ canceled \\
 \verb|apart| & compute the partial fraction decomposition of a rational function
 \\
 \verb|trigsimp| & simplify trigonometric expressions~\cite{fu2006automated} \\
+\verb|hyperexpand| & expand hypergeometric functions~\cite{Roach1996hyper,roach1997meijerg} \\
 \bottomrule
 \end{longtable}
 

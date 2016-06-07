@@ -22,10 +22,10 @@ the various differentiation rules.
 exp(x)*sin(x) + exp(x)*cos(x)
 \end{verbatim}
 
-Summations and products are computed with \verb|summation| and \verb|product|,
-respectively. Summations are computed using a combination of Gosper's
-algorithm~\cite{gosper1978decision}, an algorithm that uses Meijer G-functions~\cite{Roach1996hyper,roach1997meijerg}, and heuristics. Products
-are computed via a suite of heuristics.
+Summations are computed with \verb|summation|  using a combination of Gosper's
+algorithm~\cite{gosper1978decision}, an algorithm that uses Meijer
+G-functions~\cite{Roach1996hyper,roach1997meijerg}, and heuristics. Products
+are computed with \verb|product| function via a suite of heuristics.
 % TODO: Are there other summation algorithms implemented?
 % TODO: A good summation example or two
 \begin{verbatim}
@@ -36,9 +36,8 @@ are computed via a suite of heuristics.
 n*factorial(n) + factorial(n) - 1
 \end{verbatim}
 
-Limits are computed with the \verb|limit| function. The limit module
-implements the Gruntz algorithm~\cite{Gruntz1996limits} for computing symbolic
-limits.
+Limits are computed with the \verb|limit| function, using the Gruntz
+algorithm~\cite{Gruntz1996limits} for computing symbolic limits and heuristics.
 For example, the following computes
 $\lim\limits_{x\to \infty} x\sin(\frac{1}{x})=1$. Note that SymPy denotes
 $\infty$ as \verb|oo|.
