@@ -37,6 +37,14 @@
         "sympy_commits": 1443
     },
     {
+        "email": "skirpichev@gmail.com",
+        "github_id": "skirpichev",
+        "institution": "Moscow State University, Faculty of Physics",
+        "institution_address_siam": "Leninskie Gory, Moscow, 119991, Russia",
+        "name": "Sergey B. Kirpichev",
+        "sympy_commits": 1055
+    },
+    {
         "email": "mrocklin@gmail.com",
         "github_id": "mrocklin",
         "institution": "Continuum Analytics, Inc.",
@@ -171,6 +179,15 @@
         "name": "Matthew J. Curry",
         "sympy_commit_email": "mattjcurry@gmail.com",
         "sympy_commits": 67
+    },
+    {
+        "email": "andy.terrel@gmail.com",
+        "github_id": "aterrel",
+        "institution": "Fashion Metric, Inc",
+        "institution_address": "221 E. 9th St, Austin, TX 78681",
+        "institution_address_siam": "Austin, TX 78681",
+        "name": "Andy R. Terrel",
+        "sympy_commits": 46
     },
     {
         "email": "ashutosh.saboo96@gmail.com",

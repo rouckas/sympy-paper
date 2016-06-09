@@ -35,10 +35,8 @@ assume that
 the symbols \verb|x|, \verb|y|, and \verb|z| have been assigned to Python variables
 identical to their symbolic names.
 
-Expressions are created from symbols using Python's mathematical syntax. Note
-that in Python, exponentiation is represented by the \verb|**|
-binary infix operator. For instance, the
-following Python code creates the expression $(x^2 - 2x + 3)/y$.
+Expressions are created from symbols using Python's mathematical syntax.  For
+instance, the following Python code creates the expression $(x^2 - 2x + 3)/y$.
 
 \begin{verbatim}
 >>> (x**2 - 2*x + 3)/y
@@ -146,8 +144,8 @@ assumptions system allows users to specify that symbols have certain common
 mathematical properties, such as being positive, imaginary, or integral. SymPy
 is careful to never perform simplifications on an expression unless the
 assumptions allow them. For instance, the identity $\sqrt{t^2} = t$ holds if
-$t$ is nonnegative ($t\ge 0$). If $t$ is real, the identity $\sqrt{t^2}=|t|$
-holds. However, for general complex $t$, no such identity holds.
+$t$ is nonnegative ($t\ge 0$). However, for general complex $t$, no
+such identity holds.
 
 By default, SymPy performs all calculations assuming that symbols are
 complex valued. This assumption makes it easier to treat mathematical problems
@@ -172,8 +170,8 @@ t
 \end{verbatim}
 
 Some of the common assumptions that SymPy allows are \texttt{positive},
-\texttt{negative}, \texttt{real}, \texttt{nonpositive}, \texttt{nonnegative},
-\texttt{real}, \texttt{integer}, and \texttt{commutative}.\footnote{If $A$ and
+\texttt{negative}, \texttt{real}, \texttt{nonpositive}, \texttt{integer},
+\texttt{prime} and \texttt{commutative}.\footnote{If $A$ and
 $B$ are Symbols created with \texttt{commutative=False} then SymPy will keep
 $A\cdot B$ and $B\cdot A$ distinct.} Assumptions on any object can be checked with the
 \verb|is_|\texttt{\textit{assumption}} attributes, like \verb|t.is_positive|.
@@ -186,7 +184,12 @@ $\sum_{n=0}^m f(n)$ as \verb|Sum(f(n), (n, 0, m))| without setting
 
 The assumptions system additionally has deductive capabilities. The
 assumptions use a three-valued logic using the Python built in objects
-\texttt{True}, \texttt{False}, and \texttt{None}. \texttt{None} represents the
+\texttt{True}, \texttt{False}, and \texttt{None}.  Note that \texttt{False}
+is returned if the SymPy object doesn't or can't have the assumption.
+For example, both \texttt{I.is\_real} and \texttt{I.is\_prime} return
+\texttt{False} for the imaginary unit \texttt{I}.
+
+\texttt{None} represents the
 ``unknown'' case. This could mean that given assumptions do not unambiguously
 specify the truth of an attribute. For instance,
 \texttt{Symbol(\textquotesingle{}x\textquotesingle{}, real=True).is\_positive}
@@ -234,8 +237,9 @@ The \texttt{Function} class is a subclass of \texttt{Expr} which makes it
 easier to define mathematical functions called with arguments. This includes
 named functions like $\sin(x)$ and $\log(x)$ as well as undefined functions
 like $f(x)$. Subclasses of \texttt{Function} should define a
-class method \texttt{eval}, which returns values for which the function should
-be automatically evaluated, and \texttt{None} for arguments that should not be
+class method \texttt{eval}, which returns a canonical form of the function
+application (usually an instance of some other class, i.e. a \texttt{Number})
+or \texttt{None}, if for given arguments that function should not be
 automatically evaluated.
 
 Many SymPy functions perform various evaluations down the expression tree.
@@ -243,19 +247,19 @@ Classes define their behavior in such functions by defining a relevant
 \verb|_eval_|\texttt{\textit{*}} method. For instance, an object can indicate
 to the \texttt{diff} function how to take the derivative of itself by defining
 the \verb|_eval_derivative(self, x)| method, which may in turn call
-\texttt{diff} on its \texttt{args}. The most common
-\verb|_eval_|\texttt{\textit{*}} methods relate to the assumptions.
-\verb|_eval_is_|\texttt{\textit{assumption}} defines the assumptions for
-\textit{assumption}.
+\texttt{diff} on its \texttt{args}. (Subclasses of \texttt{Function} should
+implement \texttt{fdiff} method instead, it returns the derivative of the function
+without considering the chain rule.) The most common
+\verb|_eval_|\texttt{\textit{*}} methods relate to the assumptions:
+\verb|_eval_is_|\texttt{\textit{assumption}} is used to deduce
+\textit{assumption} on the object.
 
 As an example of the notions presented in this section,
 Listing~\ref{fig:gamma-example} presents a minimal version of the gamma
 function $\Gamma(x)$ from SymPy, which evaluates itself on positive integer
 arguments, has the positive and real assumptions defined, can be rewritten in
 terms of factorial with \verb|gamma(x).rewrite(factorial)|, and can be
-differentiated. \texttt{fdiff} is a convenience method for subclasses of
-\texttt{Function}. \texttt{fdiff} returns the derivative of the function
-without considering the chain rule. \texttt{self.func} is used throughout
+differentiated. \texttt{self.func} is used throughout
 instead of referencing \texttt{gamma} explicitly so that potential subclasses
 of \texttt{gamma} can reuse the methods.
 

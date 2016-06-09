@@ -1,6 +1,6 @@
 SymPy is a full featured computer algebra system (CAS) written in the Python
 programming language~\cite{lutz2013learning}.
-It is free and open source software, being licensed under the 3-clause BSD
+It is free and open source software, licensed under the 3-clause BSD
 license~\cite{rosen2005open}.
 The SymPy project was started by Ond\v{r}ej \v{C}ert\'{\i}k in 2005, and it has
 since grown to over 500 contributors. Currently, SymPy is
@@ -22,7 +22,7 @@ SfePy~\cite{cimrman2014sfepy} (finite elements).
 
 Unlike many CASs, SymPy does not invent its own programming language. Python
 itself is used both for the internal implementation and end user
-interaction. The exclusive usage of a single programming language makes it easier
+interaction. By using the operator overloading functionality of Python, SymPy follows the embedded domain specific language paradigm proposed by Hudak~\cite{dsl-little-languages}.  The exclusive usage of a single programming language makes it easier
 for people already familiar with that language to use or develop SymPy.
 Simultaneously, it enables developers to focus on mathematics, rather than
 language design.
@@ -37,8 +37,8 @@ be in an interactive environment or as a programmatic part in a larger system.
 
 As a library, SymPy does not have a built-in graphical user
 interface (GUI). However, SymPy exposes a rich interactive display system,
-including registering printers with Jupyter~\cite{perez2007ipython} frontends---%
-the Notebook and Qt Console---which will render SymPy
+and supports registering printers with Jupyter~\cite{perez2007ipython}
+frontends, including the Notebook and Qt Console, which will render SymPy
 expressions using MathJax~\cite{cervone2012mathjax} or \LaTeX{}.
 
 The remainder of this paper discusses key components of the SymPy software.
