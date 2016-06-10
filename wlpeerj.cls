@@ -41,7 +41,8 @@
                 labelsep=period,%
                 justification=raggedright]{caption}
                 
-\RequirePackage{natbib}
+% custom modification - use numbered citations
+\RequirePackage[numbers]{natbib}
 \bibliographystyle{apalike}
 
 %
