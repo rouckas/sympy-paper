@@ -1,8 +1,14 @@
-% SIAM Article Template
-\documentclass[review]{siamart0216}
+%% Submissions for peer-review must enable line-numbering 
+%% using the lineno option in the \documentclass command.
+%%
+%% Preprints and camera-ready submissions do not need 
+%% line numbers, and should have this option removed.
+%%
+%% Please note that the line numbering option requires
+%% version 1.1 or newer of the wlpeerj.cls file.
 
-% Apply a fix to the SIAM Article Template
-\input{siamart0216_uppercase_fix}
+\documentclass[fleqn,10pt,lineno]{wlpeerj} % for journal submissions
+% \documentclass[fleqn,10pt]{wlpeerj} % for preprint submissions
 
 \usepackage{lmodern}
 \usepackage[T1]{fontenc}
@@ -45,12 +51,12 @@
 
 \usepackage{listings}
 
+\newcommand\email[1]{\href{mailto:#1}{#1}}
 \title{SymPy: Symbolic Computing in Python}
 
 \input{authors}
 
-\begin{document}
-\maketitle
+\keywords{Keyword1, Keyword2, Keyword3}
 
 \begin{abstract}
   SymPy is an open source computer algebra system written in pure Python. It
@@ -61,6 +67,12 @@
   architecture of SymPy, a description of its features, and a discussion of
   select domain specific submodules.
 \end{abstract}
+
+\begin{document}
+
+\flushbottom
+\maketitle
+\thispagestyle{empty}
 
 \section{Introduction}
 
@@ -114,9 +126,6 @@
 
 \input{acknowledgements}
 
-\section{References}
-
-\bibliographystyle{siamplain}
 \bibliography{paper}
 
 \end{document}
